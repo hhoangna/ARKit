@@ -1,0 +1,6 @@
+framework module Pods_ARChemistry {
+  umbrella header "Pods-ARChemistry-umbrella.h"
+
+  export *
+  module * { export * }
+}
