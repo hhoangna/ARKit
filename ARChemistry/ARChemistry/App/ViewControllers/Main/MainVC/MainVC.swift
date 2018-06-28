@@ -29,7 +29,7 @@ class MainVC: BaseVC {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        showSlideMenu(isShow: false, animation: false)
+        showSlideMenu(isShow: true, animation: false)
         pushWorkingListToMain()
         setUpPanGesture()
     }
