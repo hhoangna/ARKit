@@ -100,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="340" y="-113"/>
         </scene>
-        <!--BaseNV-->
+        <!--Custom Navigation-->
         <scene sceneID="79f-pf-ZMu">
             <objects>
-                <navigationController id="gI0-WH-9gm" customClass="BaseNV" customModule="ARChemistry" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="gI0-WH-9gm" customClass="CustomNavigation" customModule="ARChemistry" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oqx-DW-miF">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -124,7 +124,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oum-V1-hwq">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pU8-iC-icI">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_background" translatesAutoresizingMaskIntoConstraints="NO" id="pU8-iC-icI">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="667"/>
                                     </imageView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="13X-Py-vyb">
@@ -138,7 +138,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="103"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-DefaultUser" translatesAutoresizingMaskIntoConstraints="NO" id="eJg-wR-v56">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_user" translatesAutoresizingMaskIntoConstraints="NO" id="eJg-wR-v56">
                                                             <rect key="frame" x="10" y="26.5" width="50" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="ARA-vI-2Zk"/>
@@ -213,29 +213,16 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7j-XY-RNY">
-                                                            <rect key="frame" x="255" y="39" width="30" height="25"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="25" id="5Zz-5G-BmL"/>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="R17-Ih-gjA"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                                            <state key="normal" title="20"/>
-                                                        </button>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="8Nh-5I-oXc" firstAttribute="centerY" secondItem="J9t-qy-EBL" secondAttribute="centerY" id="0Ev-oX-ISp"/>
                                                         <constraint firstItem="8Nh-5I-oXc" firstAttribute="leading" secondItem="9s7-iP-73h" secondAttribute="leading" constant="55" id="BKx-tE-ZaP"/>
-                                                        <constraint firstItem="i7j-XY-RNY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Nh-5I-oXc" secondAttribute="trailing" constant="10" id="HlV-2t-bcF"/>
                                                         <constraint firstItem="J9t-qy-EBL" firstAttribute="centerY" secondItem="9s7-iP-73h" secondAttribute="centerY" id="OKb-jt-wWW"/>
-                                                        <constraint firstItem="i7j-XY-RNY" firstAttribute="centerY" secondItem="9s7-iP-73h" secondAttribute="centerY" id="c9H-bS-UuR"/>
                                                         <constraint firstItem="J9t-qy-EBL" firstAttribute="leading" secondItem="9s7-iP-73h" secondAttribute="leading" constant="15" id="fmc-rm-B1y"/>
-                                                        <constraint firstAttribute="trailing" secondItem="i7j-XY-RNY" secondAttribute="trailing" constant="15" id="gO7-Vh-VSv"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <outlet property="btnNoti" destination="i7j-XY-RNY" id="aMQ-wi-kHT"/>
                                                     <outlet property="imvIcon" destination="J9t-qy-EBL" id="NWa-s1-t8C"/>
                                                     <outlet property="lblTitle" destination="8Nh-5I-oXc" id="1b9-WJ-PSG"/>
                                                 </connections>
@@ -250,7 +237,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G0w-39-wz1">
                                                             <rect key="frame" x="100" y="21.5" width="100" height="60"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-Logout" translatesAutoresizingMaskIntoConstraints="NO" id="oTa-fp-ZLw">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logout" translatesAutoresizingMaskIntoConstraints="NO" id="oTa-fp-ZLw">
                                                                     <rect key="frame" x="0.0" y="4" width="26" height="26"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="26" id="59F-Fm-b4C"/>
@@ -333,8 +320,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic-DefaultUser" width="50" height="50"/>
-        <image name="ic-Logout" width="16" height="18"/>
         <image name="ic-Working" width="19" height="19"/>
+        <image name="ic_logout" width="30" height="30"/>
+        <image name="ic_user" width="30" height="30"/>
+        <image name="img_background" width="315" height="667"/>
     </resources>
 </document>

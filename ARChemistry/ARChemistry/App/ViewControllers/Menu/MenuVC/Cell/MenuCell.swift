@@ -22,13 +22,6 @@ class MenuCell: BaseTbvCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setUpbuttonNoti()
-    }
-    
-    func setUpbuttonNoti() {
-        btnNoti?.setRousdaryButton(radius: (btnNoti?.frame.height)! / 2)
-        btnNoti?.backgroundColor = Color.blueHeader;
-        btnNoti?.setTitleColor(Color.white, for: .normal);
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

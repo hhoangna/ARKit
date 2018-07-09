@@ -34,16 +34,24 @@
 		3BEB60D120E5299900A234FE /* LoginDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60D020E5299900A234FE /* LoginDto.swift */; };
 		3BEB60D420E529B400A234FE /* RegisterDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60D320E529B400A234FE /* RegisterDto.swift */; };
 		3BEB60DA20E52A3A00A234FE /* NSAtribitedString+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60D720E52A3900A234FE /* NSAtribitedString+Ext.swift */; };
-		3BEB60DB20E52A3A00A234FE /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60D820E52A3900A234FE /* Font.swift */; };
-		3BEB60DC20E52A3A00A234FE /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60D920E52A3900A234FE /* Color.swift */; };
 		3BEB60E120E52A8B00A234FE /* BaseClvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60DE20E52A8A00A234FE /* BaseClvCell.swift */; };
 		3BEB60E520E52ABC00A234FE /* BaseTbvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60E420E52ABC00A234FE /* BaseTbvCell.swift */; };
 		3BEB60E720E52C2D00A234FE /* BaseNV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60E620E52C2D00A234FE /* BaseNV.swift */; };
+		4040BF5C20F315CE000158A0 /* ARKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4040BF5B20F315CE000158A0 /* ARKit.storyboard */; };
+		4040BF5E20F315D8000158A0 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4040BF5D20F315D8000158A0 /* Setting.storyboard */; };
+		4040BF6020F31601000158A0 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040BF5F20F31601000158A0 /* SettingVC.swift */; };
+		4040BF6220F31776000158A0 /* ARKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040BF6120F31776000158A0 /* ARKit.swift */; };
+		4040BF6420F31E96000158A0 /* PeriodicTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040BF6320F31E96000158A0 /* PeriodicTable.swift */; };
+		4040BF6820F32720000158A0 /* table.json in Resources */ = {isa = PBXBuildFile; fileRef = 4040BF6720F32720000158A0 /* table.json */; };
 		4045B5F620E50F3F00E225A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4045B5F520E50F3F00E225A5 /* AppDelegate.swift */; };
 		4045B5FD20E50F4000E225A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4045B5FC20E50F4000E225A5 /* Assets.xcassets */; };
 		4045B60020E50F4000E225A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4045B5FE20E50F4000E225A5 /* LaunchScreen.storyboard */; };
 		4045B60B20E50F4000E225A5 /* ARChemistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4045B60A20E50F4000E225A5 /* ARChemistryTests.swift */; };
 		4045B61620E50F4100E225A5 /* ARChemistryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4045B61520E50F4100E225A5 /* ARChemistryUITests.swift */; };
+		407089C620F303CD00B922D4 /* PeriodicTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407089C520F303CD00B922D4 /* PeriodicTable.storyboard */; };
+		407089CC20F30C9200B922D4 /* PeriodicTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407089CB20F30C9200B922D4 /* PeriodicTableVC.swift */; };
+		407089D020F3119F00B922D4 /* Style+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407089CF20F3119F00B922D4 /* Style+Navigation.swift */; };
+		407089D220F3120D00B922D4 /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407089D120F3120D00B922D4 /* CustomNavigation.swift */; };
 		670CBD7411125318224EBACF /* Pods_ARChemistry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD748A86F5F7457567991A5B /* Pods_ARChemistry.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,11 +102,15 @@
 		3BEB60D020E5299900A234FE /* LoginDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDto.swift; sourceTree = "<group>"; };
 		3BEB60D320E529B400A234FE /* RegisterDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDto.swift; sourceTree = "<group>"; };
 		3BEB60D720E52A3900A234FE /* NSAtribitedString+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAtribitedString+Ext.swift"; sourceTree = "<group>"; };
-		3BEB60D820E52A3900A234FE /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
-		3BEB60D920E52A3900A234FE /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		3BEB60DE20E52A8A00A234FE /* BaseClvCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseClvCell.swift; sourceTree = "<group>"; };
 		3BEB60E420E52ABC00A234FE /* BaseTbvCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTbvCell.swift; sourceTree = "<group>"; };
 		3BEB60E620E52C2D00A234FE /* BaseNV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNV.swift; sourceTree = "<group>"; };
+		4040BF5B20F315CE000158A0 /* ARKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARKit.storyboard; sourceTree = "<group>"; };
+		4040BF5D20F315D8000158A0 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		4040BF5F20F31601000158A0 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		4040BF6120F31776000158A0 /* ARKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKit.swift; sourceTree = "<group>"; };
+		4040BF6320F31E96000158A0 /* PeriodicTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTable.swift; sourceTree = "<group>"; };
+		4040BF6720F32720000158A0 /* table.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = table.json; sourceTree = "<group>"; };
 		4045B5F220E50F3F00E225A5 /* ARChemistry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARChemistry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4045B5F520E50F3F00E225A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4045B5FC20E50F4000E225A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +122,10 @@
 		4045B61120E50F4100E225A5 /* ARChemistryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARChemistryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4045B61520E50F4100E225A5 /* ARChemistryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARChemistryUITests.swift; sourceTree = "<group>"; };
 		4045B61720E50F4100E225A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		407089C520F303CD00B922D4 /* PeriodicTable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PeriodicTable.storyboard; sourceTree = "<group>"; };
+		407089CB20F30C9200B922D4 /* PeriodicTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableVC.swift; sourceTree = "<group>"; };
+		407089CF20F3119F00B922D4 /* Style+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Style+Navigation.swift"; sourceTree = "<group>"; };
+		407089D120F3120D00B922D4 /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
 		FD748A86F5F7457567991A5B /* Pods_ARChemistry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARChemistry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -159,6 +175,7 @@
 		3BEB607D20E5231A00A234FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				407089C720F30B5D00B922D4 /* Feature */,
 				3BEB60B220E5279B00A234FE /* Login */,
 				3BEB608D20E524ED00A234FE /* Base */,
 				3BEB608320E523EA00A234FE /* Menu */,
@@ -178,6 +195,7 @@
 		3BEB607F20E5233B00A234FE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4040BF6620F3263F000158A0 /* json */,
 				3BEB608120E5234F00A234FE /* Images */,
 				3BEB608020E5234300A234FE /* Storyboards */,
 			);
@@ -190,6 +208,9 @@
 				3BEB60B920E527CB00A234FE /* Login.storyboard */,
 				3BEB608520E5246700A234FE /* Main.storyboard */,
 				4045B5FE20E50F4000E225A5 /* LaunchScreen.storyboard */,
+				407089C520F303CD00B922D4 /* PeriodicTable.storyboard */,
+				4040BF5B20F315CE000158A0 /* ARKit.storyboard */,
+				4040BF5D20F315D8000158A0 /* Setting.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -351,6 +372,7 @@
 				3BEB607C20E5230800A234FE /* AppDelegate */,
 				3BEB60BB20E5284100A234FE /* Utils */,
 				3BEB60AB20E5263300A234FE /* Models */,
+				407089CD20F3115700B922D4 /* VIews */,
 				3BEB607D20E5231A00A234FE /* ViewControllers */,
 				3BEB609420E5254100A234FE /* Manager */,
 			);
@@ -447,8 +469,6 @@
 			isa = PBXGroup;
 			children = (
 				3BEB60D720E52A3900A234FE /* NSAtribitedString+Ext.swift */,
-				3BEB60D820E52A3900A234FE /* Font.swift */,
-				3BEB60D920E52A3900A234FE /* Color.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -467,6 +487,22 @@
 				3BEB60E420E52ABC00A234FE /* BaseTbvCell.swift */,
 			);
 			path = BaseTbvCell;
+			sourceTree = "<group>";
+		};
+		4040BF6520F31E9C000158A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4040BF6320F31E96000158A0 /* PeriodicTable.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4040BF6620F3263F000158A0 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				4040BF6720F32720000158A0 /* table.json */,
+			);
+			path = json;
 			sourceTree = "<group>";
 		};
 		4045B5E920E50F3F00E225A5 = {
@@ -519,6 +555,58 @@
 			path = ARChemistryUITests;
 			sourceTree = "<group>";
 		};
+		407089C720F30B5D00B922D4 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				407089C820F30B6A00B922D4 /* PeriodicTable */,
+				407089C920F30B7800B922D4 /* ARKit */,
+				407089CA20F30B8900B922D4 /* Setting */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		407089C820F30B6A00B922D4 /* PeriodicTable */ = {
+			isa = PBXGroup;
+			children = (
+				4040BF6520F31E9C000158A0 /* View */,
+				407089CB20F30C9200B922D4 /* PeriodicTableVC.swift */,
+			);
+			path = PeriodicTable;
+			sourceTree = "<group>";
+		};
+		407089C920F30B7800B922D4 /* ARKit */ = {
+			isa = PBXGroup;
+			children = (
+				4040BF6120F31776000158A0 /* ARKit.swift */,
+			);
+			path = ARKit;
+			sourceTree = "<group>";
+		};
+		407089CA20F30B8900B922D4 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				4040BF5F20F31601000158A0 /* SettingVC.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		407089CD20F3115700B922D4 /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				407089CE20F3116B00B922D4 /* Navigation */,
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
+		407089CE20F3116B00B922D4 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				407089CF20F3119F00B922D4 /* Style+Navigation.swift */,
+				407089D120F3120D00B922D4 /* CustomNavigation.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		779C234AA47064025A4DCB08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,7 +627,6 @@
 				4045B5EF20E50F3F00E225A5 /* Frameworks */,
 				4045B5F020E50F3F00E225A5 /* Resources */,
 				E2BD36533E9EE80D1BA64A3A /* [CP] Embed Pods Frameworks */,
-				ECBEAA391E69B195A4A1FC0D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -636,8 +723,12 @@
 			files = (
 				3BEB60BA20E527CB00A234FE /* Login.storyboard in Resources */,
 				3BEB608620E5246700A234FE /* Main.storyboard in Resources */,
+				4040BF6820F32720000158A0 /* table.json in Resources */,
+				4040BF5E20F315D8000158A0 /* Setting.storyboard in Resources */,
+				4040BF5C20F315CE000158A0 /* ARKit.storyboard in Resources */,
 				4045B60020E50F4000E225A5 /* LaunchScreen.storyboard in Resources */,
 				4045B5FD20E50F4000E225A5 /* Assets.xcassets in Resources */,
+				407089C620F303CD00B922D4 /* PeriodicTable.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,34 +776,23 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ARChemistry/Pods-ARChemistry-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Macaw/Macaw.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Macaw.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARChemistry/Pods-ARChemistry-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ECBEAA391E69B195A4A1FC0D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARChemistry/Pods-ARChemistry-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -722,6 +802,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				407089CC20F30C9200B922D4 /* PeriodicTableVC.swift in Sources */,
 				3BEB60C620E5284100A234FE /* UIColor+Ext.swift in Sources */,
 				3BEB60A620E5254100A234FE /* BaseAPIError.swift in Sources */,
 				3BEB60A320E5254100A234FE /* Configuration.swift in Sources */,
@@ -735,21 +816,24 @@
 				3BEB608C20E524BC00A234FE /* MenuVC.swift in Sources */,
 				3BEB60C420E5284100A234FE /* UIButton+Ext.swift in Sources */,
 				3BEB60E120E52A8B00A234FE /* BaseClvCell.swift in Sources */,
+				407089D020F3119F00B922D4 /* Style+Navigation.swift in Sources */,
 				3BEB60DA20E52A3A00A234FE /* NSAtribitedString+Ext.swift in Sources */,
 				3BEB60AE20E5266500A234FE /* UserDto.swift in Sources */,
 				3BEB60B820E5279B00A234FE /* ResgisterVC.swift in Sources */,
 				3BEB60C720E5284100A234FE /* UIView+Ext.swift in Sources */,
-				3BEB60DB20E52A3A00A234FE /* Font.swift in Sources */,
 				3BEB60E520E52ABC00A234FE /* BaseTbvCell.swift in Sources */,
-				3BEB60DC20E52A3A00A234FE /* Color.swift in Sources */,
+				4040BF6020F31601000158A0 /* SettingVC.swift in Sources */,
+				407089D220F3120D00B922D4 /* CustomNavigation.swift in Sources */,
 				3BEB60A420E5254100A234FE /* LocationManager.swift in Sources */,
 				4045B5F620E50F3F00E225A5 /* AppDelegate.swift in Sources */,
 				3BEB60B720E5279B00A234FE /* LoginVC.swift in Sources */,
 				3BEB60C820E5284100A234FE /* MoneyUtils.swift in Sources */,
 				3BEB60A920E5254100A234FE /* APIService.swift in Sources */,
+				4040BF6220F31776000158A0 /* ARKit.swift in Sources */,
 				3BEB60CB20E5289E00A234FE /* BaseDto.swift in Sources */,
 				3BEB608B20E524BC00A234FE /* MenuCell.swift in Sources */,
 				3BEB609220E524ED00A234FE /* BaseVC.swift in Sources */,
+				4040BF6420F31E96000158A0 /* PeriodicTable.swift in Sources */,
 				3BEB60C520E5284100A234FE /* UIKit+IB.swift in Sources */,
 				3BEB60AA20E5254100A234FE /* APIService+Profile.swift in Sources */,
 				3BEB60A520E5254100A234FE /* APIError.swift in Sources */,

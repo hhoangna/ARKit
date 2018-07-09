@@ -117,10 +117,10 @@ class ResgisterVC: BaseVC {
         
         let isEmail = ValidateUtils.validateEmail(tfEmail.text ?? "");
         if ((tfEmail.text?.isEmpty)! || isEmail == false){
-            tfEmail.textColor = Color.red
+            tfEmail.textColor = .red
             isValidateRegister.isValidateEmail = false
         }else{
-            tfEmail.textColor = Color.black
+            tfEmail.textColor = .black
             isValidateRegister.isValidateEmail = true
         }
     }
@@ -137,10 +137,10 @@ class ResgisterVC: BaseVC {
     func performLocalValidateConfirmPassword(rePass:String?){
         if (rePass?.isEmpty)! ||
             rePass != tfPassword.text{
-            tfRePassword.textColor = Color.red;
+            tfRePassword.textColor = .red;
             isValidateRegister.isValidateConfirmPassword = false
         }else{
-            tfRePassword.textColor = Color.black;
+            tfRePassword.textColor = .black;
             isValidateRegister.isValidateConfirmPassword = true
         }
     }

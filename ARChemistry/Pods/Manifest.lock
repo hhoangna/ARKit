@@ -1,23 +1,38 @@
 PODS:
   - Alamofire (4.5.1)
+  - Macaw (0.9.2):
+    - SWXMLHash
   - MBProgressHUD (1.1.0)
   - ObjectMapper (3.1.0)
   - SDWebImage (4.3.1):
     - SDWebImage/Core (= 4.3.1)
   - SDWebImage/Core (4.3.1)
+  - SWXMLHash (4.7.0)
 
 DEPENDENCIES:
   - Alamofire (= 4.5.1)
+  - Macaw (= 0.9.2)
   - MBProgressHUD
   - ObjectMapper (~> 3.1)
   - SDWebImage
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Macaw
+    - MBProgressHUD
+    - ObjectMapper
+    - SDWebImage
+    - SWXMLHash
+
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Macaw: 6db42cb10c1e018ee940a906b42a1ead5557e080
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   SDWebImage: 09808bac78357b39f8db4ea360c7b5534d785ef4
+  SWXMLHash: f4522438189f72b41e39676d19469a8969d60dd1
 
-PODFILE CHECKSUM: 1a8cfd0f88b17bbf8e601fe3c244f2fbd1fe0c6b
+PODFILE CHECKSUM: 35bd320d3c9af14864d400ac122919f6f481f749
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

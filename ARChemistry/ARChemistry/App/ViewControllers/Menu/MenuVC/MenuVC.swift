@@ -10,20 +10,17 @@ import UIKit
 
 class MenuVC: BaseVC {
     
-    enum GW_Feature {
-        case GWF_Working;
-        case GWF_History;
-        case GWF_Earning;
-        case GWF_Team ;
-        case GWF_Setting;
-        case GWF_Terms
+    enum AR_Feature {
+        case AR_PredicTable;
+        case AR_Camera;
+        case AR_Setting
     }
     
     @IBOutlet weak var tbvContent:UITableView?
 
     
     var arrData:[Array<Any>]?
-    var curentFeature:GW_Feature?
+    var curentFeature:AR_Feature?
     
     fileprivate static let MenuProfileIdentifierCell:String = "MenuProfileCell"
     fileprivate static let MenuLogoutIdentifierCell:String = "MenuLogoutCell"
@@ -38,18 +35,15 @@ class MenuVC: BaseVC {
     }
     
     func initVar() {
-        curentFeature = .GWF_Working
+        curentFeature = .AR_PredicTable
         initArrData()
     }
     
     func initArrData() {
         arrData = Array()
-        arrData?.append(["Working",GW_Feature.GWF_Working,"ic-Working"])
-        arrData?.append(["History",GW_Feature.GWF_History,"ic-History"])
-        arrData?.append(["Earning",GW_Feature.GWF_Earning,"ic-Earning"])
-        arrData?.append(["Team",GW_Feature.GWF_Team,"ic-Team"])
-        arrData?.append(["Setting",GW_Feature.GWF_Setting,"ic-Setting"])
-        arrData?.append(["Terms & Conditions",GW_Feature.GWF_Team,"ic-Terms"])
+        arrData?.append(["Periodic Table",AR_Feature.AR_PredicTable,"ic_table"])
+        arrData?.append(["View in AR",AR_Feature.AR_Camera,"ic_arkit"])
+        arrData?.append(["Setting",AR_Feature.AR_Setting,"ic_setting"])
 
     }
     
@@ -94,8 +88,8 @@ extension MenuVC:UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header:MenuCell = self.tbvContent?.dequeueReusableCell(withIdentifier: MenuVC.MenuProfileIdentifierCell) as! MenuCell;
         
-        header.lblTitle?.text = Config().user?.user?.userId;
-        header.lblSubTitle?.text = Config().user?.user?.email;
+        header.lblTitle?.text = "HHumorous";
+        header.lblSubTitle?.text = "Student";
         header.delegate = self;
         return header;
     }
@@ -111,19 +105,19 @@ extension MenuVC:UITableViewDataSource {
         
         let row = indexPath.row;
         if let data:Array = arrData?[row] {
-            cell.tag = (data[1] as! GW_Feature).hashValue;
+            cell.tag = (data[1] as! AR_Feature).hashValue;
             if let image = UIImage.init(named: data[2] as! String) {
                 cell.imvIcon?.image = image.withRenderingMode(.alwaysTemplate)
             }
             
             cell.lblTitle?.text = (data[0] as! String);
             if curentFeature?.hashValue == row {
-                cell.lblTitle?.textColor = Color.blueHeader;
-                cell.imvIcon?.tintColor =  Color.blueHeader;
+                cell.lblTitle?.textColor = UIColor(rgb: 0x009DF7);
+                cell.imvIcon?.tintColor =  UIColor(rgb: 0x009DF7);
 
             }else {
-                cell.lblTitle?.textColor = Color.black;
-                cell.imvIcon?.tintColor =  Color.black;
+                cell.lblTitle?.textColor = .black;
+                cell.imvIcon?.tintColor =  .black;
             }
         }
         
@@ -139,36 +133,23 @@ extension MenuVC:UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         App().mainVC?.showSlideMenu(isShow: false, animation: true)
         let row = indexPath.row;
-        guard let feature: GW_Feature = arrData![row][1] as? GW_Feature else {
+        guard let feature: AR_Feature = arrData![row][1] as? AR_Feature else {
             return;
         }
         
-        /*
         var vc:BaseVC?;
         
         switch feature {
-        case .GWF_Working:
-            vc = VCFromSB(WorkingListVC(), SB: .Working)
+        case .AR_PredicTable:
+            vc = VCFromSB(PeriodicTableVC(), SB: .PeriodicTable)
+            break
+    
+        case .AR_Camera:
+            vc = VCFromSB(ARKit(), SB: .ARKit)
             break
             
-        case .GWF_History:
-            vc = VCFromSB(HistoryListVC(), SB: .History)
-            break
-        case .GWF_Earning:
-            vc = VCFromSB(EarningListVC(), SB: .Earning)
-
-            break
-        case .GWF_Setting:
+        case .AR_Setting:
             vc = VCFromSB(SettingVC(), SB: .Setting)
-
-            break
-        case .GWF_Team:
-            vc = VCFromSB(TeamListVC(), SB: .Team)
-
-            break
-        case .GWF_Terms:
-            vc = VCFromSB(TermsConditionsVC(), SB: .TeamsConditions)
-
             break
         }
  
@@ -180,7 +161,6 @@ extension MenuVC:UITableViewDelegate {
                 tableView.reloadData()
             }
         }
-         */
     }
 }
 

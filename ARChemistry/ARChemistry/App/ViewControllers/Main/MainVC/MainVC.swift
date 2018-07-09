@@ -21,7 +21,7 @@ class MainVC: BaseVC {
     var originLeftX: CGFloat?;
 
     
-    var rootNV:BaseNV?
+    var rootNV:CustomNavigation?
     var menuVC:MenuVC?
 
 
@@ -49,7 +49,7 @@ class MainVC: BaseVC {
         if segue.identifier == "Main_Menu" {
             menuVC = segue.destination as? MenuVC
         }else if (segue.identifier == "Main_RootNV") {
-            rootNV = segue.destination as? BaseNV;
+            rootNV = segue.destination as? CustomNavigation;
         }
     }
     
@@ -61,8 +61,8 @@ class MainVC: BaseVC {
     
     func pushWorkingListToMain() {
         //Push vào màn hình chính
-//        let vc:WorkingListVC = .loadSB(SB: SBName.Working);
-//        rootNV?.setViewControllers([vc], animated: false);
+        let vc:PeriodicTableVC = .loadSB(SB: SBName.PeriodicTable);
+        rootNV?.setViewControllers([vc], animated: false);
     }
     
     @objc func onDragEvent(gesture:UILongPressGestureRecognizer) {

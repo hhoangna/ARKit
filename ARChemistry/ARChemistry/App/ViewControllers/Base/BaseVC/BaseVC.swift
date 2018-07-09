@@ -13,32 +13,39 @@ class BaseVC: UIViewController {
     fileprivate var gesDismissKeyboardDetector : UITapGestureRecognizer? = nil;
     fileprivate var obsKeyboardChangeFrame: NSObjectProtocol? = nil;
     
+    fileprivate lazy var backBarItem : UIBarButtonItem = UIBarButtonItem.back(target: self, action: #selector(onNavigationBack(_:)))
+    fileprivate lazy var menuBarItem : UIBarButtonItem = UIBarButtonItem.menu(target: self, action: #selector(onNavigationMenu(_:)))
+    fileprivate lazy var saveBarItem : UIBarButtonItem = UIBarButtonItem.SaveButton(target: self, action: #selector(onNavigationSaveDone(_:)))
+    fileprivate lazy var doneBarItem : UIBarButtonItem = UIBarButtonItem.doneButton(target: self, action: #selector(onNavigationSaveDone(_:)))
+    fileprivate lazy var cancelBarItem : UIBarButtonItem = UIBarButtonItem.cancelButton(target: self, action: #selector(onNavigationBack(_:)))
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     
     deinit {
@@ -112,5 +119,63 @@ extension BaseVC {
         
         return keyboardHeight;
     }
+}
+
+
+// MARK: - Navigation
+extension BaseVC {
+    func updateNavigationBar(_ barStyle:BarStyle, _ title:String?) {
+        
+        if let title = title {
+            self.addTitleToNavigationBar(title: title)
+        }
+        switch barStyle {
+        case .Menu:
+            self.navigationItem.leftBarButtonItem = menuBarItem
+            break;
+        case .BackOnly:
+            self.navigationItem.leftBarButtonItem = backBarItem
+            break;
+        case .BackDone:
+            self.navigationItem.leftBarButtonItem = backBarItem
+            self.navigationItem.rightBarButtonItem = doneBarItem
+            break;
+        case .CancelSave:
+            self.navigationItem.leftBarButtonItem = cancelBarItem
+            self.navigationItem.rightBarButtonItem = saveBarItem
+            
+            break;
+        case .CanCelDone:
+            break;
+        }
+    }
+    
+    @objc func onNavigationBack(_ sender: UIBarButtonItem) {
+        self.view.endEditing(true)
+        
+        if let navi = self.navigationController {
+            
+            if (navi.viewControllers.count <= 1) {
+                if (navi.presentingViewController != nil) {
+                    navi.dismiss(animated: true, completion: nil)
+                }
+            }else {
+                navi.popViewController(animated: true);
+            }
+            
+        }else {
+            if (self.presentingViewController != nil) {
+                self.dismiss(animated: true, completion: nil);
+            }
+        }
+    }
+    
+    @objc func onNavigationMenu(_ sender: UIBarButtonItem) {
+        App().mainVC?.showSlideMenu(isShow: true, animation: true)
+    }
+    
+    @objc func onNavigationSaveDone(_ sender: UIBarButtonItem) {
+    }
+    
 }
 

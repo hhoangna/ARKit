@@ -98,13 +98,9 @@ func API() -> APIService {
 public enum SBName : String {
     case Main = "Main";
     case Login = "Login";
-    case Working = "Working";
-    case History = "History";
-    case Earning = "Earning";
-    case Team = "Team";
+    case PeriodicTable = "PeriodicTable";
+    case ARKit = "ARKit";
     case Setting = "Setting";
-    case TeamsConditions = "TeamsConditions";
-    case Common = "Common";
 
 }
 
