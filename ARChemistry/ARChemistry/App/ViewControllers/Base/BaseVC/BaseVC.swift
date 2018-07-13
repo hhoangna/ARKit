@@ -10,6 +10,8 @@ import UIKit
 
 class BaseVC: UIViewController {
     
+    public var contentVC: BaseNV?
+    
     fileprivate var gesDismissKeyboardDetector : UITapGestureRecognizer? = nil;
     fileprivate var obsKeyboardChangeFrame: NSObjectProtocol? = nil;
     
@@ -29,28 +31,20 @@ class BaseVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if needLandscapeMode() {
         
-            let value = UIInterfaceOrientation.landscapeLeft.rawValue
-            UIDevice.current.setValue(value, forKey: "orientation")
+        if self.needLandscapeMode() {
+            UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
         }
-    }
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .landscapeLeft
-    }
-    
-    override var shouldAutorotate: Bool {
-        return true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if needLandscapeMode() {
-            
-            let value = UIInterfaceOrientation.portrait.rawValue
-            UIDevice.current.setValue(value, forKey: "orientation")
+        if self.needLandscapeMode() {
+            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
         }
+    }
+    
+    func permitInterfaceOrientation() -> UIInterfaceOrientationMask {
+        return .portrait
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -63,7 +57,7 @@ class BaseVC: UIViewController {
     }
     
     func needLandscapeMode() -> Bool {
-        if self .isKind(of: ARKit.self) {
+        if self is ARKit{
             return true
         }
         

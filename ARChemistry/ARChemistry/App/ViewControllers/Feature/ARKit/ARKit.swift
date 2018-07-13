@@ -19,10 +19,22 @@ class ARKit: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let value = UIInterfaceOrientation.landscapeLeft.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
+//        AppDelegate.AppUtility.lockOrientation(.landscapeRight, andRotateTo: .landscapeRight)
+         UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
         
         self.updateNavigationBar(.Menu, "View in AR");
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+//        AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -33,15 +45,8 @@ class ARKit: BaseVC {
         return true
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        let value = UIInterfaceOrientation.portrait.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func permitInterfaceOrientation() -> UIInterfaceOrientationMask {
+        return .landscapeRight
     }
     
 

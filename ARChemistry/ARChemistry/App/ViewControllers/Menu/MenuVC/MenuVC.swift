@@ -80,9 +80,7 @@ extension MenuVC:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
-        let heightFooter = SHEIGHT() - ((CGFloat(self.arrData?.count ?? 0) * CGFloat(60.0)) +  CGFloat(100))
-
-        return (heightFooter >= 60) ? heightFooter : 60;
+        return 60
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
