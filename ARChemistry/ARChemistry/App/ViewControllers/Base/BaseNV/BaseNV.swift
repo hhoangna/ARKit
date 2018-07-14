@@ -17,30 +17,6 @@ class BaseNV: UINavigationController {
         // Do any additional setup after loading the view.
     }
     
-    func permitInterfaceOrientation() -> UIInterfaceOrientationMask {
-        return .portrait
-    }
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        
-        let count = self.viewControllers.count
-        if count > 1 {
-            if let vc: BaseVC = App().rootNV?.viewControllers.last as? BaseVC {
-                return vc.permitInterfaceOrientation()
-            }
-        } else {
-            
-            if let vc: BaseVC = App().rootNV?.viewControllers.last as? BaseVC {
-                return vc.permitInterfaceOrientation()
-            }
-        }
-        
-        return .portrait;
-    }
-    
-    override var shouldAutorotate: Bool {
-        return false
-    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent

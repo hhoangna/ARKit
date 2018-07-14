@@ -34,16 +34,24 @@ class BaseVC: UIViewController {
         
         if self.needLandscapeMode() {
             UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        if self.needLandscapeMode() {
+        }else {
             UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
         }
     }
     
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if self.needLandscapeMode() {
+            return .landscape
+        }
+        return .portrait
+    }
+
+    
     func permitInterfaceOrientation() -> UIInterfaceOrientationMask {
+        if self.needLandscapeMode() {
+           return .landscape
+        }
         return .portrait
     }
     

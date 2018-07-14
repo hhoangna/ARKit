@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyX-Ws-jVi" customClass="PeriodicTable" customModule="ARChemistry" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -28,7 +28,7 @@
                             <constraint firstItem="TJ2-Gx-sEi" firstAttribute="trailing" secondItem="gyX-Ws-jVi" secondAttribute="trailing" id="0WG-rg-ZWs"/>
                             <constraint firstItem="gyX-Ws-jVi" firstAttribute="leading" secondItem="TJ2-Gx-sEi" secondAttribute="leading" id="D8M-ye-dUQ"/>
                             <constraint firstItem="TJ2-Gx-sEi" firstAttribute="bottom" secondItem="gyX-Ws-jVi" secondAttribute="bottom" id="Qmb-8S-OWi"/>
-                            <constraint firstItem="gyX-Ws-jVi" firstAttribute="top" secondItem="TJ2-Gx-sEi" secondAttribute="top" id="TRR-HG-IPO"/>
+                            <constraint firstItem="gyX-Ws-jVi" firstAttribute="top" secondItem="jR2-YU-7k2" secondAttribute="top" id="sJq-BF-hpF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TJ2-Gx-sEi"/>
                     </view>

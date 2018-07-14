@@ -40,7 +40,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgV-27-K8Q">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="gI0-WH-9gm" kind="embed" identifier="Main_RootNV" id="hIU-Xr-fAJ"/>
                                 </connections>
@@ -73,12 +73,12 @@
                             <constraint firstItem="KoY-zc-UoV" firstAttribute="bottom" secondItem="vpA-60-P76" secondAttribute="bottom" id="S2a-cZ-CQf"/>
                             <constraint firstItem="xgV-27-K8Q" firstAttribute="leading" secondItem="KoY-zc-UoV" secondAttribute="leading" id="U0d-xw-gVn"/>
                             <constraint firstItem="qgO-tC-eEi" firstAttribute="leading" secondItem="KoY-zc-UoV" secondAttribute="leading" id="UqM-Zw-6UL"/>
+                            <constraint firstItem="xgV-27-K8Q" firstAttribute="top" secondItem="1Ve-Eh-OIE" secondAttribute="top" id="WED-xD-y3T"/>
                             <constraint firstItem="KoY-zc-UoV" firstAttribute="trailing" secondItem="kdk-G9-JjB" secondAttribute="trailing" id="b4z-9r-7Xv"/>
                             <constraint firstItem="KoY-zc-UoV" firstAttribute="trailing" secondItem="xgV-27-K8Q" secondAttribute="trailing" id="exU-no-f2k"/>
                             <constraint firstItem="qgO-tC-eEi" firstAttribute="top" secondItem="1Ve-Eh-OIE" secondAttribute="top" id="lrP-NT-x9Q"/>
                             <constraint firstItem="KoY-zc-UoV" firstAttribute="bottom" secondItem="qgO-tC-eEi" secondAttribute="bottom" id="tVk-Sd-ovG"/>
                             <constraint firstItem="vpA-60-P76" firstAttribute="trailing" secondItem="KoY-zc-UoV" secondAttribute="trailing" id="vW3-UO-Ltp"/>
-                            <constraint firstItem="xgV-27-K8Q" firstAttribute="top" secondItem="KoY-zc-UoV" secondAttribute="top" id="wf3-Vf-Gs2"/>
                             <constraint firstItem="KoY-zc-UoV" firstAttribute="bottom" secondItem="xgV-27-K8Q" secondAttribute="bottom" id="y8S-If-gSs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KoY-zc-UoV"/>
