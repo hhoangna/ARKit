@@ -61,7 +61,7 @@ class MainVC: BaseVC {
     
     func pushWorkingListToMain() {
         //Push vào màn hình chính
-        let vc:PeriodicTableVC = .loadSB(SB: SBName.PeriodicTable);
+        let vc:PeriodicTableVC = .load(SB: SBName.PeriodicTable);
         rootNV?.setViewControllers([vc], animated: false);
     }
     

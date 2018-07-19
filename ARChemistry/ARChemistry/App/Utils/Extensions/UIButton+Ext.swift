@@ -6,19 +6,64 @@
 //  Copyright © 2018 machnguyen_uit. All rights reserved.
 //
 
-import Foundation
-import UIKit
-
+import UIKit;
 
 extension UIButton {
-    func setBorderButton(color: UIColor?, lineW: CGFloat) {
-        self.layer.borderColor = color?.cgColor;
-        self.layer.borderWidth = lineW;
+    
+    // MARK: - Util properties
+    
+    var title: String? {
+        get {
+            return title(for: .normal);
+        }
+        set {
+            setTitle(newValue, for: .normal);
+        }
     }
     
-    func setRousdaryButton(radius: CGFloat) {
-        self.layer.masksToBounds = true;
-        self.clipsToBounds = true;
-        self.layer.cornerRadius = radius;
+    var titleColor: UIColor? {
+        get {
+            return titleColor(for: .normal);
+        }
+        set {
+            setTitleColor(newValue, for: .normal);
+        }
     }
+    
+    var attrTitle: NSAttributedString? {
+        get {
+            return attributedTitle(for: .normal);
+        }
+        set {
+            setAttributedTitle(newValue, for: .normal);
+        }
+    }
+    
+    var image: UIImage? {
+        get {
+            return image(for: .normal);
+        }
+        set {
+            setImage(newValue, for: .normal);
+        }
+    }
+    
+    var backgroundImage: UIImage? {
+        get {
+            return backgroundImage(for: .normal);
+        }
+        set {
+            setBackgroundImage(newValue, for: .normal);
+        }
+    }
+    
+    // MARK: -
+    
+    func setShadow(shadowOpacity: CGFloat,shadowOffset: CGSize,shadowRadius: CGFloat,shadowColor: UIColor){
+        self.layer.shadowColor = shadowColor.cgColor
+        self.layer.shadowOpacity = Float(shadowOpacity)
+        self.layer.shadowOffset = shadowOffset
+        self.layer.shadowRadius = shadowRadius
+    }
+    
 }

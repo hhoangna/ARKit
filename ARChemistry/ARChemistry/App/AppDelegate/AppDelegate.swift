@@ -15,30 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var config:Configuration?
     public var rootNV:BaseNV?
     public var mainVC:MainVC?
-    
-//    var orientationLock = UIInterfaceOrientationMask.all
-//    
-//    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-//        return self.orientationLock
-//    }
-//    
-//    struct AppUtility {
-//        
-//        static func lockOrientation(_ orientation: UIInterfaceOrientationMask) {
-//            
-//            if let delegate = UIApplication.shared.delegate as? AppDelegate {
-//                delegate.orientationLock = orientation
-//            }
-//        }
-//        
-//        /// OPTIONAL Added method to adjust lock and rotate to the desired orientation
-//        static func lockOrientation(_ orientation: UIInterfaceOrientationMask, andRotateTo rotateOrientation:UIInterfaceOrientation) {
-//            
-//            self.lockOrientation(orientation)
-//            
-//            UIDevice.current.setValue(rotateOrientation.rawValue, forKey: "orientation")
-//        }
-//    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -75,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //set rootNV
         rootNV = window?.rootViewController as? BaseNV
         if (!(config?.hasLogin ?? false)) {
-            let vc:LoginVC = VCFromSB(SB: .Login)
+            let vc:LoginRegisterVC = VCFromSB(SB: .Login)
             rootNV?.setViewControllers([vc], animated: false)
         }else {
             loginSuccess()
@@ -91,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func onReLogin() {
-        let vc:LoginVC = VCFromSB(SB: .Login)
+        let vc:LoginRegisterVC = VCFromSB(SB: .Login)
         rootNV?.setViewControllers([vc], animated: false)
         Config().setUser(nil)
     }

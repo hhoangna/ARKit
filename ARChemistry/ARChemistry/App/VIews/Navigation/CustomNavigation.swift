@@ -26,9 +26,9 @@ class CustomNavigation: BaseNV {
         super.viewDidLoad()
         
         setNavigationBarHidden(false, animated: false);
-        self.navigationBar.barTintColor = UIColor(rgb: 0x009DF7)
+        self.navigationBar.barTintColor = AppColor.mainColor
         self.navigationBar.tintColor = .white
-        self.navigationBar.backgroundColor = UIColor(rgb: 0x009DF7)
+        self.navigationBar.backgroundColor = AppColor.mainColor
     }
     
     override func didReceiveMemoryWarning() {

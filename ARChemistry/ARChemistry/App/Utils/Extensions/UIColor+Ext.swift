@@ -11,21 +11,42 @@ import UIKit
 
 extension UIColor {
     
-    convenience init(redI: Int, greenI: Int, blueI: Int, alpha: CGFloat = 1.0) {
-        assert(redI >= 0 && redI <= 255, "Invalid red component");
-        assert(greenI >= 0 && greenI <= 255, "Invalid green component");
-        assert(blueI >= 0 && blueI <= 255, "Invalid blue component");
-        assert(alpha >= 0.0 && alpha <= 1.0, "Invalid alpha component");
-        
-        self.init(red: CGFloat(redI) / 255.0, green: CGFloat(greenI) / 255.0, blue: CGFloat(blueI) / 255.0, alpha: alpha);
+    convenience init(hex: String) {
+        self.init(hex: hex, alpha:1)
     }
     
-    convenience init(rgb: Int, alpha: CGFloat = 1.0) {
+    convenience init(hex: String, alpha: CGFloat) {
+        var hexWithoutSymbol = hex
+        if hexWithoutSymbol.hasPrefix("#") {
+            hexWithoutSymbol = hex.substring(from: 1)
+        }
+        
+        let scanner = Scanner(string: hexWithoutSymbol)
+        var hexInt:UInt32 = 0x0
+        scanner.scanHexInt32(&hexInt)
+        
+        var r:UInt32!, g:UInt32!, b:UInt32!
+        switch (hexWithoutSymbol.length) {
+        case 3: // #RGB
+            r = ((hexInt >> 4) & 0xf0 | (hexInt >> 8) & 0x0f)
+            g = ((hexInt >> 0) & 0xf0 | (hexInt >> 4) & 0x0f)
+            b = ((hexInt << 4) & 0xf0 | hexInt & 0x0f)
+            break;
+        case 6: // #RRGGBB
+            r = (hexInt >> 16) & 0xff
+            g = (hexInt >> 8) & 0xff
+            b = hexInt & 0xff
+            break;
+        default:
+            // TODO:ERROR
+            break;
+        }
+        
         self.init(
-            redI: (rgb >> 16) & 0xFF,
-            greenI: (rgb >> 8) & 0xFF,
-            blueI: rgb & 0xFF,
-            alpha: alpha
-        )
+            red: (CGFloat(r)/255),
+            green: (CGFloat(g)/255),
+            blue: (CGFloat(b)/255),
+            alpha:alpha)
     }
 }
+

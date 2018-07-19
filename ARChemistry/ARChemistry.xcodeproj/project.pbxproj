@@ -37,6 +37,7 @@
 		3BEB60E120E52A8B00A234FE /* BaseClvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60DE20E52A8A00A234FE /* BaseClvCell.swift */; };
 		3BEB60E520E52ABC00A234FE /* BaseTbvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60E420E52ABC00A234FE /* BaseTbvCell.swift */; };
 		3BEB60E720E52C2D00A234FE /* BaseNV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60E620E52C2D00A234FE /* BaseNV.swift */; };
+		403832FF20FFB989005E3940 /* video_background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 403832FE20FFB7C1005E3940 /* video_background.mp4 */; };
 		4040BF5C20F315CE000158A0 /* ARKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4040BF5B20F315CE000158A0 /* ARKit.storyboard */; };
 		4040BF5E20F315D8000158A0 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4040BF5D20F315D8000158A0 /* Setting.storyboard */; };
 		4040BF6020F31601000158A0 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040BF5F20F31601000158A0 /* SettingVC.swift */; };
@@ -52,6 +53,17 @@
 		407089CC20F30C9200B922D4 /* PeriodicTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407089CB20F30C9200B922D4 /* PeriodicTableVC.swift */; };
 		407089D020F3119F00B922D4 /* Style+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407089CF20F3119F00B922D4 /* Style+Navigation.swift */; };
 		407089D220F3120D00B922D4 /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407089D120F3120D00B922D4 /* CustomNavigation.swift */; };
+		40BC88DF20FF9F160049CC44 /* TabBarTopViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88DB20FF9F160049CC44 /* TabBarTopViewCell.swift */; };
+		40BC88E020FF9F160049CC44 /* TabBarTopViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40BC88DC20FF9F160049CC44 /* TabBarTopViewCell.xib */; };
+		40BC88E120FF9F160049CC44 /* TabBarTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88DD20FF9F160049CC44 /* TabBarTopView.swift */; };
+		40BC88E220FF9F160049CC44 /* TabBarTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40BC88DE20FF9F160049CC44 /* TabBarTopView.xib */; };
+		40BC88E420FF9FAE0049CC44 /* LoginClvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88E320FF9FAE0049CC44 /* LoginClvCell.swift */; };
+		40BC88E620FF9FC20049CC44 /* RegisterClvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88E520FF9FC20049CC44 /* RegisterClvCell.swift */; };
+		40BC88E820FF9FFB0049CC44 /* LoginRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88E720FF9FFB0049CC44 /* LoginRegisterVC.swift */; };
+		40BC88EA20FFA2330049CC44 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88E920FFA2330049CC44 /* Font.swift */; };
+		40BC88EC20FFA2F70049CC44 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88EB20FFA2F70049CC44 /* String+Ext.swift */; };
+		40BC88F020FFAA240049CC44 /* HView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88EF20FFAA240049CC44 /* HView.swift */; };
+		40BC88F220FFAA2E0049CC44 /* HButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88F120FFAA2E0049CC44 /* HButton.swift */; };
 		670CBD7411125318224EBACF /* Pods_ARChemistry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD748A86F5F7457567991A5B /* Pods_ARChemistry.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +117,7 @@
 		3BEB60DE20E52A8A00A234FE /* BaseClvCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseClvCell.swift; sourceTree = "<group>"; };
 		3BEB60E420E52ABC00A234FE /* BaseTbvCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTbvCell.swift; sourceTree = "<group>"; };
 		3BEB60E620E52C2D00A234FE /* BaseNV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNV.swift; sourceTree = "<group>"; };
+		403832FE20FFB7C1005E3940 /* video_background.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_background.mp4; sourceTree = "<group>"; };
 		4040BF5B20F315CE000158A0 /* ARKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARKit.storyboard; sourceTree = "<group>"; };
 		4040BF5D20F315D8000158A0 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		4040BF5F20F31601000158A0 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
@@ -126,6 +139,17 @@
 		407089CB20F30C9200B922D4 /* PeriodicTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableVC.swift; sourceTree = "<group>"; };
 		407089CF20F3119F00B922D4 /* Style+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Style+Navigation.swift"; sourceTree = "<group>"; };
 		407089D120F3120D00B922D4 /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
+		40BC88DB20FF9F160049CC44 /* TabBarTopViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarTopViewCell.swift; sourceTree = "<group>"; };
+		40BC88DC20FF9F160049CC44 /* TabBarTopViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarTopViewCell.xib; sourceTree = "<group>"; };
+		40BC88DD20FF9F160049CC44 /* TabBarTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarTopView.swift; sourceTree = "<group>"; };
+		40BC88DE20FF9F160049CC44 /* TabBarTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarTopView.xib; sourceTree = "<group>"; };
+		40BC88E320FF9FAE0049CC44 /* LoginClvCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginClvCell.swift; sourceTree = "<group>"; };
+		40BC88E520FF9FC20049CC44 /* RegisterClvCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterClvCell.swift; sourceTree = "<group>"; };
+		40BC88E720FF9FFB0049CC44 /* LoginRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterVC.swift; sourceTree = "<group>"; };
+		40BC88E920FFA2330049CC44 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		40BC88EB20FFA2F70049CC44 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		40BC88EF20FFAA240049CC44 /* HView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HView.swift; sourceTree = "<group>"; };
+		40BC88F120FFAA2E0049CC44 /* HButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HButton.swift; sourceTree = "<group>"; };
 		FD748A86F5F7457567991A5B /* Pods_ARChemistry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARChemistry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -218,6 +242,7 @@
 		3BEB608120E5234F00A234FE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				403832FE20FFB7C1005E3940 /* video_background.mp4 */,
 				4045B5FC20E50F4000E225A5 /* Assets.xcassets */,
 			);
 			path = Images;
@@ -384,6 +409,7 @@
 			children = (
 				3BEB60B320E5279B00A234FE /* LoginVC */,
 				3BEB60B520E5279B00A234FE /* ResgisterVC */,
+				40BC88E720FF9FFB0049CC44 /* LoginRegisterVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -392,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				3BEB60B420E5279B00A234FE /* LoginVC.swift */,
+				40BC88E320FF9FAE0049CC44 /* LoginClvCell.swift */,
 			);
 			path = LoginVC;
 			sourceTree = "<group>";
@@ -400,6 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				3BEB60B620E5279B00A234FE /* ResgisterVC.swift */,
+				40BC88E520FF9FC20049CC44 /* RegisterClvCell.swift */,
 			);
 			path = ResgisterVC;
 			sourceTree = "<group>";
@@ -421,6 +449,7 @@
 				3BEB60BF20E5284100A234FE /* UIKit+IB.swift */,
 				3BEB60C020E5284100A234FE /* UIColor+Ext.swift */,
 				3BEB60C120E5284100A234FE /* UIView+Ext.swift */,
+				40BC88EB20FFA2F70049CC44 /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -469,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				3BEB60D720E52A3900A234FE /* NSAtribitedString+Ext.swift */,
+				40BC88E920FFA2330049CC44 /* Font.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -593,6 +623,9 @@
 		407089CD20F3115700B922D4 /* VIews */ = {
 			isa = PBXGroup;
 			children = (
+				40BC88EE20FFAA0C0049CC44 /* HButton */,
+				40BC88ED20FFAA050049CC44 /* HView */,
+				40BC88D920FF9F160049CC44 /* TabBarTopView */,
 				407089CE20F3116B00B922D4 /* Navigation */,
 			);
 			path = VIews;
@@ -605,6 +638,41 @@
 				407089D120F3120D00B922D4 /* CustomNavigation.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		40BC88D920FF9F160049CC44 /* TabBarTopView */ = {
+			isa = PBXGroup;
+			children = (
+				40BC88DA20FF9F160049CC44 /* Cell */,
+				40BC88DD20FF9F160049CC44 /* TabBarTopView.swift */,
+				40BC88DE20FF9F160049CC44 /* TabBarTopView.xib */,
+			);
+			path = TabBarTopView;
+			sourceTree = "<group>";
+		};
+		40BC88DA20FF9F160049CC44 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				40BC88DB20FF9F160049CC44 /* TabBarTopViewCell.swift */,
+				40BC88DC20FF9F160049CC44 /* TabBarTopViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		40BC88ED20FFAA050049CC44 /* HView */ = {
+			isa = PBXGroup;
+			children = (
+				40BC88EF20FFAA240049CC44 /* HView.swift */,
+			);
+			path = HView;
+			sourceTree = "<group>";
+		};
+		40BC88EE20FFAA0C0049CC44 /* HButton */ = {
+			isa = PBXGroup;
+			children = (
+				40BC88F120FFAA2E0049CC44 /* HButton.swift */,
+			);
+			path = HButton;
 			sourceTree = "<group>";
 		};
 		779C234AA47064025A4DCB08 /* Frameworks */ = {
@@ -721,9 +789,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				403832FF20FFB989005E3940 /* video_background.mp4 in Resources */,
+				40BC88E020FF9F160049CC44 /* TabBarTopViewCell.xib in Resources */,
 				3BEB60BA20E527CB00A234FE /* Login.storyboard in Resources */,
 				3BEB608620E5246700A234FE /* Main.storyboard in Resources */,
 				4040BF6820F32720000158A0 /* table.json in Resources */,
+				40BC88E220FF9F160049CC44 /* TabBarTopView.xib in Resources */,
 				4040BF5E20F315D8000158A0 /* Setting.storyboard in Resources */,
 				4040BF5C20F315CE000158A0 /* ARKit.storyboard in Resources */,
 				4045B60020E50F4000E225A5 /* LaunchScreen.storyboard in Resources */,
@@ -780,6 +851,7 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
+				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -789,6 +861,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -802,14 +875,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40BC88EA20FFA2330049CC44 /* Font.swift in Sources */,
 				407089CC20F30C9200B922D4 /* PeriodicTableVC.swift in Sources */,
 				3BEB60C620E5284100A234FE /* UIColor+Ext.swift in Sources */,
 				3BEB60A620E5254100A234FE /* BaseAPIError.swift in Sources */,
+				40BC88E420FF9FAE0049CC44 /* LoginClvCell.swift in Sources */,
 				3BEB60A320E5254100A234FE /* Configuration.swift in Sources */,
 				3BEB60A720E5254100A234FE /* MessageKeys.swift in Sources */,
 				3BEB60CE20E5291600A234FE /* MainVC.swift in Sources */,
 				3BEB60E720E52C2D00A234FE /* BaseNV.swift in Sources */,
 				3BEB60D120E5299900A234FE /* LoginDto.swift in Sources */,
+				40BC88E120FF9F160049CC44 /* TabBarTopView.swift in Sources */,
 				3BEB60C320E5284100A234FE /* ValidateUtils.swift in Sources */,
 				3BEB60D420E529B400A234FE /* RegisterDto.swift in Sources */,
 				3BEB60B020E526A600A234FE /* Constants.swift in Sources */,
@@ -819,10 +895,12 @@
 				407089D020F3119F00B922D4 /* Style+Navigation.swift in Sources */,
 				3BEB60DA20E52A3A00A234FE /* NSAtribitedString+Ext.swift in Sources */,
 				3BEB60AE20E5266500A234FE /* UserDto.swift in Sources */,
+				40BC88F220FFAA2E0049CC44 /* HButton.swift in Sources */,
 				3BEB60B820E5279B00A234FE /* ResgisterVC.swift in Sources */,
 				3BEB60C720E5284100A234FE /* UIView+Ext.swift in Sources */,
 				3BEB60E520E52ABC00A234FE /* BaseTbvCell.swift in Sources */,
 				4040BF6020F31601000158A0 /* SettingVC.swift in Sources */,
+				40BC88E820FF9FFB0049CC44 /* LoginRegisterVC.swift in Sources */,
 				407089D220F3120D00B922D4 /* CustomNavigation.swift in Sources */,
 				3BEB60A420E5254100A234FE /* LocationManager.swift in Sources */,
 				4045B5F620E50F3F00E225A5 /* AppDelegate.swift in Sources */,
@@ -830,13 +908,17 @@
 				3BEB60C820E5284100A234FE /* MoneyUtils.swift in Sources */,
 				3BEB60A920E5254100A234FE /* APIService.swift in Sources */,
 				4040BF6220F31776000158A0 /* ARKit.swift in Sources */,
+				40BC88F020FFAA240049CC44 /* HView.swift in Sources */,
+				40BC88DF20FF9F160049CC44 /* TabBarTopViewCell.swift in Sources */,
 				3BEB60CB20E5289E00A234FE /* BaseDto.swift in Sources */,
 				3BEB608B20E524BC00A234FE /* MenuCell.swift in Sources */,
 				3BEB609220E524ED00A234FE /* BaseVC.swift in Sources */,
+				40BC88EC20FFA2F70049CC44 /* String+Ext.swift in Sources */,
 				4040BF6420F31E96000158A0 /* PeriodicTable.swift in Sources */,
 				3BEB60C520E5284100A234FE /* UIKit+IB.swift in Sources */,
 				3BEB60AA20E5254100A234FE /* APIService+Profile.swift in Sources */,
 				3BEB60A520E5254100A234FE /* APIError.swift in Sources */,
+				40BC88E620FF9FC20049CC44 /* RegisterClvCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1003,11 +1085,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2UKZEPM7R9;
 				INFOPLIST_FILE = "ARChemistry/Suporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1021,11 +1102,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2UKZEPM7R9;
 				INFOPLIST_FILE = "ARChemistry/Suporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1040,11 +1120,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1060,11 +1136,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1079,11 +1151,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1098,11 +1166,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

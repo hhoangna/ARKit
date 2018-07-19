@@ -47,7 +47,7 @@ extension LoginVC {
     }
     
     @IBAction func onbtnClickSignIn(btn:UIButton) {
-        let vc:ResgisterVC = .loadSB(SB: .Login)
+        let vc:ResgisterVC = .load(SB: .Login)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

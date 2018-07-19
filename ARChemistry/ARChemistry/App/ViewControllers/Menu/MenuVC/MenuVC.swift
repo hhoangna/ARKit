@@ -110,8 +110,8 @@ extension MenuVC:UITableViewDataSource {
             
             cell.lblTitle?.text = (data[0] as! String);
             if curentFeature?.hashValue == row {
-                cell.lblTitle?.textColor = UIColor(rgb: 0x009DF7);
-                cell.imvIcon?.tintColor =  UIColor(rgb: 0x009DF7);
+                cell.lblTitle?.textColor = AppColor.mainColor
+                cell.imvIcon?.tintColor =  AppColor.mainColor
 
             }else {
                 cell.lblTitle?.textColor = .black;

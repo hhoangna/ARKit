@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wDT-Fs-a4n" customClass="TabBarTopViewCell" customModule="ARChemistry" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="125" height="85"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="125" height="85"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HzQ-vF-2Qt">
+                        <rect key="frame" x="0.0" y="0.0" width="125" height="85"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLe-w8-LAo">
+                                <rect key="frame" x="10" y="10" width="105" height="65"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="KLe-w8-LAo" secondAttribute="trailing" constant="10" id="COl-d1-taS"/>
+                            <constraint firstItem="KLe-w8-LAo" firstAttribute="top" secondItem="HzQ-vF-2Qt" secondAttribute="top" constant="10" id="PL7-sg-83k"/>
+                            <constraint firstAttribute="bottom" secondItem="KLe-w8-LAo" secondAttribute="bottom" constant="10" id="XgD-zQ-lZ7"/>
+                            <constraint firstItem="KLe-w8-LAo" firstAttribute="leading" secondItem="HzQ-vF-2Qt" secondAttribute="leading" constant="10" id="ZNE-N4-IOf"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="HzQ-vF-2Qt" firstAttribute="leading" secondItem="wDT-Fs-a4n" secondAttribute="leading" id="1vl-YV-BIb"/>
+                <constraint firstItem="HzQ-vF-2Qt" firstAttribute="top" secondItem="wDT-Fs-a4n" secondAttribute="top" id="ZI1-uA-vg6"/>
+                <constraint firstAttribute="trailing" secondItem="HzQ-vF-2Qt" secondAttribute="trailing" id="iIB-pV-Fl7"/>
+                <constraint firstAttribute="bottom" secondItem="HzQ-vF-2Qt" secondAttribute="bottom" id="ujC-7N-Dqs"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="qza-up-kdG"/>
+            <size key="customSize" width="125" height="85"/>
+            <connections>
+                <outlet property="lblTitle" destination="KLe-w8-LAo" id="4cC-Hg-0vc"/>
+            </connections>
+            <point key="canvasLocation" x="71.5" y="71.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

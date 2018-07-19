@@ -13,6 +13,7 @@ class ARKit: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(SWIDTH(), SHEIGHT())
         // Do any additional setup after loading the view.
     }
 

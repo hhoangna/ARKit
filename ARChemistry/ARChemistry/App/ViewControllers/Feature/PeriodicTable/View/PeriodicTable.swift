@@ -11,13 +11,16 @@ import Macaw
 
 class PeriodicTable: MacawView {
     
-    private static let elementSize = Size(w: 120, h: 160)
-    private static let elementSpace = Size(w: 20, h: 20)
-    private static let gaps = Size(w: 275, h: 240)
+    private static let height = (Int)(SWIDTH() - 50 - 9 * 5) / 10
+    private static let width = (Int)(SHEIGHT() - 17 * 5) / 18
+    
+    private static let elementSize = Size(w: Double(PeriodicTable.width), h: Double(PeriodicTable.height))
+    private static let elementSpace = Size(w: 5, h: 5)
+    private static let gaps = Size(w: 150, h: 100)
     
     private static let screen = UIScreen.main.bounds
-    private static let content = Size(w: 18 * elementSize.w + 17 * elementSpace.w, h: 10 * elementSize.h + 9 * elementSpace.h)
-    private static let scale = 1.0 / 3.0
+    private static let content = Size(w: 10 * elementSize.h + 9 * elementSpace.h, h: 18 * elementSize.w + 17 * elementSpace.w)
+    private static let scale = 1.0 / 1.1
     
     private let elements: [Node]
     
@@ -31,38 +34,161 @@ class PeriodicTable: MacawView {
         self.elements = PeriodicTable.fillElements()
         super.init(node: Group(contents: elements), coder: aDecoder)
         self.backgroundColor = UIColor.black
+        
+        print( PeriodicTable.height, PeriodicTable.width, PeriodicTable.content.h, PeriodicTable.content.w)
     }
     
     private static func fillElements() -> [Node] {
         var elements: [Node] = []
         for (i, element) in PeriodicTable.table.enumerated() {
             drand48()
-            let group = Group(contents: [
-                Shape(form: Rect(w: elementSize.w, h: elementSize.h),
-                      fill: Color.rgba(r: 0, g: 127, b: 127, a: getOpacity(element))
-                ),
-                Text(text: "\(i+1)",
-                    font: Font(name: "Helvetica", size: 12),
-                    fill: Color(val: 0xc1f7f7),
-                    align: .max,
-                    place: .move(dx: elementSize.w * 5 / 6, dy: elementSize.h / 8)),
-                Text(text: element.symbol,
-                     font: Font(name: "Helvetica Bold", size: 60),
-                     fill: Color(val: 0xc1f7f7),
-                     align: .mid,
-                     place: .move(dx: elementSize.w / 2, dy: elementSize.h / 4)),
-                Text(text: element.name,
-                     font: Font(name: "Helvetica", size: 12),
-                     fill: Color(val: 0xc1f7f7),
-                     align: .mid,
-                     place: .move(dx: elementSize.w / 2, dy: 121)),
-                Text(text: element.mass,
-                     font: Font(name: "Helvetica", size: 12),
-                     fill: Color(val: 0xc1f7f7),
-                     align: .mid,
-                     place: .move(dx: elementSize.w / 2, dy: 133))
-                ])
-            elements.append(group)
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                let group = Group(contents: [
+                    Shape(form: Rect(w: elementSize.w, h: elementSize.h),
+                          fill: Color.rgba(r: 0, g: 127, b: 127, a: getOpacity(element))
+                    ),
+                    Text(text: "\(i+1)",
+                        font: Font(name: "Helvetica", size: 12),
+                        fill: Color(val: 0xc1f7f7),
+                        align: .max,
+                        place: .move(dx: elementSize.w * 5 / 6, dy: elementSize.h / 9)),
+                    Text(text: element.symbol,
+                         font: Font(name: "Helvetica Bold", size: 38),
+                         fill: Color(val: 0xc1f7f7),
+                         align: .mid,
+                         place: .move(dx: elementSize.w / 2, dy: elementSize.h / 4)),
+                    Text(text: element.name,
+                         font: Font(name: "Helvetica", size: 10),
+                         fill: Color(val: 0xc1f7f7),
+                         align: .mid,
+                         place: .move(dx: elementSize.w / 2, dy: elementSize.h - elementSize.h / 3.5)),
+                    Text(text: element.mass,
+                         font: Font(name: "Helvetica", size: 10),
+                         fill: Color(val: 0xc1f7f7),
+                         align: .mid,
+                         place: .move(dx: elementSize.w / 2, dy: elementSize.h - elementSize.h / 7))
+                    ])
+                elements.append(group)
+            } else {
+                switch UIScreen.main.nativeBounds.height {
+                    //                case 1136:
+                    //                    print("iPhone 5 or 5S or 5C")
+                    //                    let group = Group(contents: [
+                    //                        Shape(form: Rect(w: elementSize.w, h: elementSize.h),
+                    //                              fill: Color.rgba(r: 0, g: 127, b: 127, a: getOpacity(element))
+                    //                        ),
+                    //                        Text(text: "\(i+1)",
+                    //                            font: Font(name: "Helvetica", size: 8),
+                    //                            fill: Color(val: 0xc1f7f7),
+                    //                            align: .max,
+                    //                            place: .move(dx: elementSize.w * 5 / 6, dy: elementSize.h / 8)),
+                    //                        Text(text: element.symbol,
+                    //                             font: Font(name: "Helvetica Bold", size: 16),
+                    //                             fill: Color(val: 0xc1f7f7),
+                    //                             align: .mid,
+                    //                             place: .move(dx: elementSize.w / 2, dy: elementSize.h / 4)),
+                    //                        Text(text: element.name,
+                    //                             font: Font(name: "Helvetica", size: 12),
+                    //                             fill: Color(val: 0xc1f7f7),
+                    //                             align: .mid,
+                    //                             place: .move(dx: elementSize.w / 2, dy: 121)),
+                    //                        Text(text: element.mass,
+                    //                             font: Font(name: "Helvetica", size: 12),
+                    //                             fill: Color(val: 0xc1f7f7),
+                    //                             align: .mid,
+                    //                             place: .move(dx: elementSize.w / 2, dy: 133))
+                    //                        ])
+                //                    elements.append(group)
+                case 1334:
+                    print("iPhone 6/6S/7/8")
+                    let group = Group(contents: [
+                        Shape(form: Rect(w: elementSize.w, h: elementSize.h),
+                              fill: Color.rgba(r: 0, g: 127, b: 127, a: getOpacity(element))
+                        ),
+                        Text(text: "\(i+1)",
+                            font: Font(name: "Helvetica", size: 6),
+                            fill: Color(val: 0xc1f7f7),
+                            align: .max,
+                            place: .move(dx: elementSize.w * 5 / 5.5, dy: elementSize.h / 11)),
+                        Text(text: element.symbol,
+                             font: Font(name: "Helvetica Bold", size: 13),
+                             fill: Color(val: 0xc1f7f7),
+                             align: .mid,
+                             place: .move(dx: elementSize.w / 2, dy: elementSize.h / 3.8)),
+                        Text(text: element.name,
+                             font: Font(name: "Helvetica", size: 4),
+                             fill: Color(val: 0xc1f7f7),
+                             align: .mid,
+                             place: .move(dx: elementSize.w / 2, dy: elementSize.h - elementSize.h / 3.5)),
+                        Text(text: element.mass,
+                             font: Font(name: "Helvetica", size: 4),
+                             fill: Color(val: 0xc1f7f7),
+                             align: .mid,
+                             place: .move(dx: elementSize.w / 2, dy: elementSize.h - elementSize.h / 5.5))
+                        ])
+                    elements.append(group)
+                case 1920, 2208:
+                    print("iPhone 6+/6S+/7+/8+")
+                    let group = Group(contents: [
+                        Shape(form: Rect(w: elementSize.w, h: elementSize.h),
+                              fill: Color.rgba(r: 0, g: 127, b: 127, a: getOpacity(element))
+                        ),
+                        Text(text: "\(i+1)",
+                            font: Font(name: "Helvetica", size: 6),
+                            fill: Color(val: 0xc1f7f7),
+                            align: .max,
+                            place: .move(dx: elementSize.w * 5 / 6, dy: elementSize.h / 10)),
+                        Text(text: element.symbol,
+                             font: Font(name: "Helvetica Bold", size: 14),
+                             fill: Color(val: 0xc1f7f7),
+                             align: .mid,
+                             place: .move(dx: elementSize.w / 2, dy: elementSize.h / 4.2)),
+                        Text(text: element.name,
+                             font: Font(name: "Helvetica", size: 5),
+                             fill: Color(val: 0xc1f7f7),
+                             align: .mid,
+                             place: .move(dx: elementSize.w / 2, dy: elementSize.h - elementSize.h / 3)),
+                        Text(text: element.mass,
+                             font: Font(name: "Helvetica", size: 5),
+                             fill: Color(val: 0xc1f7f7),
+                             align: .mid,
+                             place: .move(dx: elementSize.w / 2, dy: elementSize.h - elementSize.h / 5.5))
+                        ])
+                    elements.append(group)
+                    //                case 2436:
+                    //                    print("iPhone X")
+                    //                    let group = Group(contents: [
+                    //                        Shape(form: Rect(w: elementSize.w, h: elementSize.h),
+                    //                              fill: Color.rgba(r: 0, g: 127, b: 127, a: getOpacity(element))
+                    //                        ),
+                    //                        Text(text: "\(i+1)",
+                    //                            font: Font(name: "Helvetica", size: 8),
+                    //                            fill: Color(val: 0xc1f7f7),
+                    //                            align: .max,
+                    //                            place: .move(dx: elementSize.w * 5 / 6, dy: elementSize.h / 8)),
+                    //                        Text(text: element.symbol,
+                    //                             font: Font(name: "Helvetica Bold", size: 16),
+                    //                             fill: Color(val: 0xc1f7f7),
+                    //                             align: .mid,
+                    //                             place: .move(dx: elementSize.w / 2, dy: elementSize.h / 4)),
+                    //                        Text(text: element.name,
+                    //                             font: Font(name: "Helvetica", size: 12),
+                    //                             fill: Color(val: 0xc1f7f7),
+                    //                             align: .mid,
+                    //                             place: .move(dx: elementSize.w / 2, dy: 121)),
+                    //                        Text(text: element.mass,
+                    //                             font: Font(name: "Helvetica", size: 12),
+                    //                             fill: Color(val: 0xc1f7f7),
+                    //                             align: .mid,
+                    //                             place: .move(dx: elementSize.w / 2, dy: 133))
+                    //                        ])
+                //                    elements.append(group)
+                default:
+                    print("unknown")
+                }
+                
+            }
+            
         }
         let data = PeriodicTable.gridData()
         for (i, node) in elements.enumerated() {

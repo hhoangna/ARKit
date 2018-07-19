@@ -10,4 +10,10 @@ import UIKit
 
 class BaseClvCell: UICollectionViewCell {
     
+    var rootVC:BaseVC?
+    
+    @IBOutlet weak var imvIcon:UIImageView?
+    @IBOutlet weak var lblTitle:UILabel?
+    @IBOutlet weak var lineSelected:UIView?
+    
 }

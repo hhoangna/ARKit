@@ -65,7 +65,7 @@ class BaseVC: UIViewController {
     }
     
     func needLandscapeMode() -> Bool {
-        if self is ARKit{
+        if self is PeriodicTableVC {
             return true
         }
         

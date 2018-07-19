@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import CoreGraphics
 
 // MARK: Functions
 
@@ -61,11 +61,11 @@ func VCFromSB<T>(_ viewController:T, SB:SBName) -> T {
 }
 
 func SWIDTH() ->CGFloat {
-    return UIScreen.main.bounds.width;
+    return UIDevice.current.orientation.isPortrait ? UIScreen.main.bounds.width : UIScreen.main.bounds.height;
 }
 
 func SHEIGHT() ->CGFloat {
-    return UIScreen.main.bounds.height;
+    return UIDevice.current.orientation.isPortrait ? UIScreen.main.bounds.height : UIScreen.main.bounds.width;
 }
 
 func Config() -> Configuration {
@@ -92,6 +92,40 @@ func SERVER_FILE() -> String {
 
 func API() -> APIService {
     return APIService.shared()
+}
+
+func colorWithGradient(_ height: CGFloat,_ from: UIColor,_ to: UIColor) -> UIColor {
+    
+    let size = CGSize(width: 1, height: height)
+    UIGraphicsBeginImageContextWithOptions(size, false, 0)
+    let context = UIGraphicsGetCurrentContext()
+    let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors:[from.cgColor, to.cgColor] as CFArray, locations:[0.0, 1.0])!
+    context?.drawLinearGradient(gradient, start: CGPoint(x: 0, y: 0), end: CGPoint(x: 0, y: size.height), options: CGGradientDrawingOptions(rawValue: 0))
+    
+    let image = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    return UIColor(patternImage: image!)
+}
+
+struct AppColor {
+    static let mainColor            = UIColor(hex: "#009DF7")
+    static let grayColor            = UIColor(hex: "#8F99A4")
+    static let highLightColor       = UIColor(hex: "#b3e6ff")
+    static let white                = UIColor.white
+    static let black                = UIColor.black
+    static let purpleColor          = UIColor(hex: "#7E57C2")
+    static let greenColor           = UIColor(hex: "#4CAF50")
+    static let redColor             = UIColor(hex: "#FF5722")
+    static let yellowColor          = UIColor(hex: "#FFEB3B")
+    static let orangeColor          = UIColor(hex: "#F57C00")
+}
+
+struct ScreenSize {
+    static let SCREEN_WIDTH         = UIScreen.main.bounds.size.width
+    static let SCREEN_HEIGHT        = UIScreen.main.bounds.size.height
+    static let SCREEN_MAX_LENGTH    = max(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
+    static let SCREEN_MIN_LENGTH    = min(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
 }
 
 

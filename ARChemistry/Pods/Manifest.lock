@@ -8,6 +8,7 @@ PODS:
     - SDWebImage/Core (= 4.3.1)
   - SDWebImage/Core (4.3.1)
   - SWXMLHash (4.7.0)
+  - TransitionButton (0.4.0)
 
 DEPENDENCIES:
   - Alamofire (= 4.5.1)
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - MBProgressHUD
   - ObjectMapper (~> 3.1)
   - SDWebImage
+  - TransitionButton
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -24,6 +26,7 @@ SPEC REPOS:
     - ObjectMapper
     - SDWebImage
     - SWXMLHash
+    - TransitionButton
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
@@ -32,7 +35,8 @@ SPEC CHECKSUMS:
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   SDWebImage: 09808bac78357b39f8db4ea360c7b5534d785ef4
   SWXMLHash: f4522438189f72b41e39676d19469a8969d60dd1
+  TransitionButton: d271030914c84a00b54b4d983446944d2875e7ba
 
-PODFILE CHECKSUM: 35bd320d3c9af14864d400ac122919f6f481f749
+PODFILE CHECKSUM: 444a6cebe46493794fa2c84a7a292dab21a73bf2
 
 COCOAPODS: 1.5.0
