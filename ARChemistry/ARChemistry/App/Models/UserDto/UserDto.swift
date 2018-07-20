@@ -15,18 +15,18 @@ class UserDto: BaseDto {
     class User:BaseDto {
         var _id:String?
         var email:String?
-        var userId:String?
-        var createData:Date?
+        var name:String?
+        var picture:String?
         
         required convenience init?(map: Map) {
             self.init()
         }
         
         override func mapping(map: Map) {
-            _id <- map["_id"];
+            _id <- map["id"];
             email <- map["email"];
-            userId <- map["userId"];
-            createData <- (map["createData"] ,DateTransform());
+            name <- map["name"];
+            picture <- (map["picture"]);
         }
     }
     

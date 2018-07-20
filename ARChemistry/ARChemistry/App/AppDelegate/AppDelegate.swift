@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FBSDKCoreKit
+import MBProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,14 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var config:Configuration?
     public var rootNV:BaseNV?
     public var mainVC:MainVC?
+    private var hud = MBProgressHUD()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         config = Configuration()
         checkStatusLogin()
+        FirebaseApp.configure()
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -72,6 +82,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Config().setUser(nil)
     }
 
+    func hideHUDProgess(_ title: String, _ mess: String, _ imgName: String, _ mode: MBProgressHUDMode) {
+        
+        hud.mode = mode
+        hud.label.text = title
+        hud.detailsLabel.text = mess
+        hud.customView = UIImageView(image: UIImage(named: imgName)?.withRenderingMode(.alwaysTemplate))
+        hud.hide(animated: true, afterDelay: 2)
+        
+    }
+    
+    func showHUDProgess(_ view: UIView) {
+        hud = MBProgressHUD.showAdded(to: view, animated: true)
+    }
 
 }
 

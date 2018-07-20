@@ -644,6 +644,9 @@
                                                             <real key="value" value="22.5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="onBtnLoginWithFacebookWithBtn:" destination="8pD-ia-9WE" eventType="touchUpInside" id="kFV-XO-wP6"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>

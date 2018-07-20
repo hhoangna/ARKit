@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import CoreGraphics
+import MBProgressHUD
 
 // MARK: Functions
 
