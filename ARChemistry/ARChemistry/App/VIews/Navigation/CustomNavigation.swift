@@ -14,6 +14,7 @@ enum BarStyle {
     case BackDone;
     case CancelSave;
     case CanCelDone;
+    case BackEdit;
 }
 
 class CustomNavigation: BaseNV {
@@ -54,6 +55,8 @@ class CustomNavigation: BaseNV {
         case .CancelSave:
             break;
         case .CanCelDone:
+            break;
+        case .BackEdit:
             break;
         }
     }

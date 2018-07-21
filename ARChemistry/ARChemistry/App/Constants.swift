@@ -108,6 +108,35 @@ func colorWithGradient(_ height: CGFloat,_ from: UIColor,_ to: UIColor) -> UICol
     return UIColor(patternImage: image!)
 }
 
+func dateToString(_ from: Date, dateFormat format : String ) -> String {
+    if from != nil {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: from)
+    }
+    return ""
+}
+
+func stringToDate (_ from: String) -> Date {
+    if from != "" {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        
+        let date = dateFormatter.date(from: from)
+        return date!
+    }
+    
+    return Date()
+}
+
+func showAlert(on: UIViewController, style: UIAlertControllerStyle, title: String?, message: String?, actions: [UIAlertAction] = [UIAlertAction(title: "Ok", style: .default, handler: nil)], completion: (() -> Swift.Void)? = nil) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+    for action in actions {
+        alert.addAction(action)
+    }
+    on.present(alert, animated: true, completion: completion)
+}
+
 struct AppColor {
     static let mainColor            = UIColor(hex: "#009DF7")
     static let grayColor            = UIColor(hex: "#8F99A4")
@@ -135,6 +164,7 @@ public enum SBName : String {
     case PeriodicTable = "PeriodicTable";
     case ARKit = "ARKit";
     case Setting = "Setting";
+    case Profile = "Profile"
 
 }
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import ObjectMapper
+import FirebaseAuth
 
 class Configuration: NSObject {
     

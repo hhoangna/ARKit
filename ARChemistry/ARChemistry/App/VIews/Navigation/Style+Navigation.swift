@@ -88,6 +88,18 @@ extension UIBarButtonItem {
         return item
     }
     
+    class func editButton(target: Any, action: Selector) -> UIBarButtonItem {
+        let frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        let button = customButton(with: #imageLiteral(resourceName: "ic_Edit"),
+                                  frame: frame,
+                                  target: target,
+                                  action: action)
+        
+        let item = UIBarButtonItem(customView: button)
+        
+        return item
+    }
+    
     class func cancelButton(target: Any, action: Selector) -> UIBarButtonItem {
         let button = setUpButtonWithText(text: "Cancel", target: target, action: action)
         let item = UIBarButtonItem(customView: button)
@@ -146,6 +158,7 @@ extension UIBarButtonItem {
                                         action: Selector) -> UIButton {
         let button = UIButton(type: .custom)
         
+        button.contentMode = .scaleAspectFit
         button.setImage(image, for: .normal)
         button.setImage(highlightedImage, for: .highlighted)
         button.addTarget(target, action: action, for: .touchUpInside)

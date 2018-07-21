@@ -20,13 +20,13 @@ class BaseVC: UIViewController {
     fileprivate lazy var saveBarItem : UIBarButtonItem = UIBarButtonItem.SaveButton(target: self, action: #selector(onNavigationSaveDone(_:)))
     fileprivate lazy var doneBarItem : UIBarButtonItem = UIBarButtonItem.doneButton(target: self, action: #selector(onNavigationSaveDone(_:)))
     fileprivate lazy var cancelBarItem : UIBarButtonItem = UIBarButtonItem.cancelButton(target: self, action: #selector(onNavigationBack(_:)))
+    fileprivate lazy var editBarItem : UIBarButtonItem = UIBarButtonItem.editButton(target: self, action: #selector(onNavigationClickRightButton(_:)))
     
-    
+    weak var delegate:CustomNavigationDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -145,6 +145,15 @@ extension BaseVC {
     }
 }
 
+protocol CustomNavigationDelegate:class {
+    func didSelectedBackOrMenu() //Required
+    func didSelectedRightButton()
+}
+
+// Funtion is optional
+extension CustomNavigationDelegate {
+    func didSelectedRightButton() {}
+}
 
 // MARK: - Navigation
 extension BaseVC {
@@ -161,7 +170,7 @@ extension BaseVC {
             self.navigationItem.leftBarButtonItem = backBarItem
             break;
         case .BackDone:
-            self.navigationItem.leftBarButtonItem = backBarItem
+            self.navigationItem.leftBarButtonItem = menuBarItem
             self.navigationItem.rightBarButtonItem = doneBarItem
             break;
         case .CancelSave:
@@ -171,6 +180,9 @@ extension BaseVC {
             break;
         case .CanCelDone:
             break;
+        case .BackEdit:
+            self.navigationItem.leftBarButtonItem = menuBarItem
+            self.navigationItem.rightBarButtonItem = editBarItem
         }
     }
     
@@ -199,6 +211,11 @@ extension BaseVC {
     }
     
     @objc func onNavigationSaveDone(_ sender: UIBarButtonItem) {
+        delegate?.didSelectedRightButton()
+    }
+    
+    @objc func onNavigationClickRightButton(_ sender: UIBarButtonItem) {
+        delegate?.didSelectedRightButton()
     }
     
 }

@@ -16,12 +16,19 @@ protocol MenuCellDelegate: class{
 class MenuCell: BaseTbvCell {
     
     @IBOutlet weak var btnNoti:UIButton?
+    @IBOutlet weak var imvAvatar:UIImageView?
     
     weak var delegate: MenuCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
+    }
+    
+    override func draw(_ rect: CGRect) {
+        imvAvatar?.layer.cornerRadius = (imvAvatar?.frame.size.height)!/2
+        imvAvatar?.layer.borderColor = AppColor.white.cgColor
+        imvAvatar?.layer.borderWidth = 1
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

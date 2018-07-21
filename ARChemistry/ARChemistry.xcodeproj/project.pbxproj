@@ -38,6 +38,19 @@
 		3BEB60E520E52ABC00A234FE /* BaseTbvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60E420E52ABC00A234FE /* BaseTbvCell.swift */; };
 		3BEB60E720E52C2D00A234FE /* BaseNV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60E620E52C2D00A234FE /* BaseNV.swift */; };
 		401164EB21008973003C0180 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 401164EA21008973003C0180 /* GoogleService-Info.plist */; };
+		402FE27D2101BAC80068048C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 402FE27C2101BAC80068048C /* Profile.storyboard */; };
+		402FE2802101BFE10068048C /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FE27F2101BFE10068048C /* ProfileVC.swift */; };
+		402FE2832101C0010068048C /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FE2822101C0010068048C /* ProfileCell.swift */; };
+		402FE2872102D3A20068048C /* UIAlertViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FE2862102D3A20068048C /* UIAlertViewController + Ext.swift */; };
+		402FE28A2102D6580068048C /* HTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FE2892102D6580068048C /* HTextfield.swift */; };
+		402FE28C2102D7960068048C /* Common+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FE28B2102D7960068048C /* Common+Extensions.swift */; };
+		402FE2922102D9330068048C /* OneTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FE2902102D9330068048C /* OneTextFieldViewController.swift */; };
+		402FE2932102D9330068048C /* TwoTextFieldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FE2912102D9330068048C /* TwoTextFieldsViewController.swift */; };
+		402FE2952102DA910068048C /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FE2942102DA910068048C /* UITextField+Extensions.swift */; };
+		402FE2982102E28C0068048C /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FE2972102E28C0068048C /* DatePickerViewController.swift */; };
+		402FE29B2102E6C30068048C /* PickerViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FE29A2102E6C30068048C /* PickerViewViewController.swift */; };
+		402FE29E210313690068048C /* ChangePassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FE29D210313690068048C /* ChangePassVC.swift */; };
+		402FE2A0210334BA0068048C /* TransitionButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402FE29F210334BA0068048C /* TransitionButton.framework */; };
 		403832FF20FFB989005E3940 /* video_background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 403832FE20FFB7C1005E3940 /* video_background.mp4 */; };
 		4040BF5C20F315CE000158A0 /* ARKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4040BF5B20F315CE000158A0 /* ARKit.storyboard */; };
 		4040BF5E20F315D8000158A0 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4040BF5D20F315D8000158A0 /* Setting.storyboard */; };
@@ -119,6 +132,19 @@
 		3BEB60E420E52ABC00A234FE /* BaseTbvCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTbvCell.swift; sourceTree = "<group>"; };
 		3BEB60E620E52C2D00A234FE /* BaseNV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNV.swift; sourceTree = "<group>"; };
 		401164EA21008973003C0180 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		402FE27C2101BAC80068048C /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		402FE27F2101BFE10068048C /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		402FE2822101C0010068048C /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		402FE2862102D3A20068048C /* UIAlertViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertViewController + Ext.swift"; sourceTree = "<group>"; };
+		402FE2892102D6580068048C /* HTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTextfield.swift; sourceTree = "<group>"; };
+		402FE28B2102D7960068048C /* Common+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Common+Extensions.swift"; sourceTree = "<group>"; };
+		402FE2902102D9330068048C /* OneTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneTextFieldViewController.swift; sourceTree = "<group>"; };
+		402FE2912102D9330068048C /* TwoTextFieldsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoTextFieldsViewController.swift; sourceTree = "<group>"; };
+		402FE2942102DA910068048C /* UITextField+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		402FE2972102E28C0068048C /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		402FE29A2102E6C30068048C /* PickerViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewViewController.swift; sourceTree = "<group>"; };
+		402FE29D210313690068048C /* ChangePassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassVC.swift; sourceTree = "<group>"; };
+		402FE29F210334BA0068048C /* TransitionButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TransitionButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		403832FE20FFB7C1005E3940 /* video_background.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_background.mp4; sourceTree = "<group>"; };
 		4040BF5B20F315CE000158A0 /* ARKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARKit.storyboard; sourceTree = "<group>"; };
 		4040BF5D20F315D8000158A0 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
@@ -160,6 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				402FE2A0210334BA0068048C /* TransitionButton.framework in Frameworks */,
 				670CBD7411125318224EBACF /* Pods_ARChemistry.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +228,7 @@
 		3BEB607D20E5231A00A234FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				402FE27E2101BFC10068048C /* Profile */,
 				407089C720F30B5D00B922D4 /* Feature */,
 				3BEB60B220E5279B00A234FE /* Login */,
 				3BEB608D20E524ED00A234FE /* Base */,
@@ -237,6 +265,7 @@
 				407089C520F303CD00B922D4 /* PeriodicTable.storyboard */,
 				4040BF5B20F315CE000158A0 /* ARKit.storyboard */,
 				4040BF5D20F315D8000158A0 /* Setting.storyboard */,
+				402FE27C2101BAC80068048C /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -438,6 +467,7 @@
 		3BEB60BB20E5284100A234FE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				402FE28E2102D9230068048C /* Picker */,
 				3BEB60BC20E5284100A234FE /* ValidateUtils.swift */,
 				3BEB60BD20E5284100A234FE /* Extensions */,
 				3BEB60C220E5284100A234FE /* MoneyUtils.swift */,
@@ -449,10 +479,13 @@
 			isa = PBXGroup;
 			children = (
 				3BEB60BE20E5284100A234FE /* UIButton+Ext.swift */,
+				402FE28B2102D7960068048C /* Common+Extensions.swift */,
 				3BEB60BF20E5284100A234FE /* UIKit+IB.swift */,
 				3BEB60C020E5284100A234FE /* UIColor+Ext.swift */,
 				3BEB60C120E5284100A234FE /* UIView+Ext.swift */,
 				40BC88EB20FFA2F70049CC44 /* String+Ext.swift */,
+				402FE2942102DA910068048C /* UITextField+Extensions.swift */,
+				402FE2862102D3A20068048C /* UIAlertViewController + Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -520,6 +553,75 @@
 				3BEB60E420E52ABC00A234FE /* BaseTbvCell.swift */,
 			);
 			path = BaseTbvCell;
+			sourceTree = "<group>";
+		};
+		402FE27E2101BFC10068048C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				402FE29C2103134B0068048C /* ChangePassVC */,
+				402FE2812101BFE50068048C /* ProfileCell */,
+				402FE27F2101BFE10068048C /* ProfileVC.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		402FE2812101BFE50068048C /* ProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				402FE2822101C0010068048C /* ProfileCell.swift */,
+			);
+			path = ProfileCell;
+			sourceTree = "<group>";
+		};
+		402FE2882102D6400068048C /* HTextfiled */ = {
+			isa = PBXGroup;
+			children = (
+				402FE2892102D6580068048C /* HTextfield.swift */,
+			);
+			path = HTextfiled;
+			sourceTree = "<group>";
+		};
+		402FE28E2102D9230068048C /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				402FE2992102E6C30068048C /* PickerView */,
+				402FE2962102E28C0068048C /* Date */,
+				402FE28F2102D9330068048C /* TextFields */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		402FE28F2102D9330068048C /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				402FE2902102D9330068048C /* OneTextFieldViewController.swift */,
+				402FE2912102D9330068048C /* TwoTextFieldsViewController.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		402FE2962102E28C0068048C /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				402FE2972102E28C0068048C /* DatePickerViewController.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		402FE2992102E6C30068048C /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				402FE29A2102E6C30068048C /* PickerViewViewController.swift */,
+			);
+			path = PickerView;
+			sourceTree = "<group>";
+		};
+		402FE29C2103134B0068048C /* ChangePassVC */ = {
+			isa = PBXGroup;
+			children = (
+				402FE29D210313690068048C /* ChangePassVC.swift */,
+			);
+			path = ChangePassVC;
 			sourceTree = "<group>";
 		};
 		4040BF6520F31E9C000158A0 /* View */ = {
@@ -626,6 +728,7 @@
 		407089CD20F3115700B922D4 /* VIews */ = {
 			isa = PBXGroup;
 			children = (
+				402FE2882102D6400068048C /* HTextfiled */,
 				40BC88EE20FFAA0C0049CC44 /* HButton */,
 				40BC88ED20FFAA050049CC44 /* HView */,
 				40BC88D920FF9F160049CC44 /* TabBarTopView */,
@@ -681,6 +784,7 @@
 		779C234AA47064025A4DCB08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				402FE29F210334BA0068048C /* TransitionButton.framework */,
 				FD748A86F5F7457567991A5B /* Pods_ARChemistry.framework */,
 			);
 			name = Frameworks;
@@ -797,6 +901,7 @@
 				3BEB60BA20E527CB00A234FE /* Login.storyboard in Resources */,
 				3BEB608620E5246700A234FE /* Main.storyboard in Resources */,
 				4040BF6820F32720000158A0 /* table.json in Resources */,
+				402FE27D2101BAC80068048C /* Profile.storyboard in Resources */,
 				401164EB21008973003C0180 /* GoogleService-Info.plist in Resources */,
 				40BC88E220FF9F160049CC44 /* TabBarTopView.xib in Resources */,
 				4040BF5E20F315D8000158A0 /* Setting.storyboard in Resources */,
@@ -857,6 +962,7 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Macaw/Macaw.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -875,6 +981,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Macaw.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -898,6 +1005,7 @@
 				40BC88EA20FFA2330049CC44 /* Font.swift in Sources */,
 				407089CC20F30C9200B922D4 /* PeriodicTableVC.swift in Sources */,
 				3BEB60C620E5284100A234FE /* UIColor+Ext.swift in Sources */,
+				402FE2832101C0010068048C /* ProfileCell.swift in Sources */,
 				3BEB60A620E5254100A234FE /* BaseAPIError.swift in Sources */,
 				40BC88E420FF9FAE0049CC44 /* LoginClvCell.swift in Sources */,
 				3BEB60A320E5254100A234FE /* Configuration.swift in Sources */,
@@ -905,15 +1013,20 @@
 				3BEB60CE20E5291600A234FE /* MainVC.swift in Sources */,
 				3BEB60E720E52C2D00A234FE /* BaseNV.swift in Sources */,
 				3BEB60D120E5299900A234FE /* LoginDto.swift in Sources */,
+				402FE29B2102E6C30068048C /* PickerViewViewController.swift in Sources */,
 				40BC88E120FF9F160049CC44 /* TabBarTopView.swift in Sources */,
+				402FE2932102D9330068048C /* TwoTextFieldsViewController.swift in Sources */,
+				402FE2952102DA910068048C /* UITextField+Extensions.swift in Sources */,
 				3BEB60C320E5284100A234FE /* ValidateUtils.swift in Sources */,
 				3BEB60D420E529B400A234FE /* RegisterDto.swift in Sources */,
 				3BEB60B020E526A600A234FE /* Constants.swift in Sources */,
 				3BEB608C20E524BC00A234FE /* MenuVC.swift in Sources */,
+				402FE29E210313690068048C /* ChangePassVC.swift in Sources */,
 				3BEB60C420E5284100A234FE /* UIButton+Ext.swift in Sources */,
 				3BEB60E120E52A8B00A234FE /* BaseClvCell.swift in Sources */,
 				407089D020F3119F00B922D4 /* Style+Navigation.swift in Sources */,
 				3BEB60DA20E52A3A00A234FE /* NSAtribitedString+Ext.swift in Sources */,
+				402FE2872102D3A20068048C /* UIAlertViewController + Ext.swift in Sources */,
 				3BEB60AE20E5266500A234FE /* UserDto.swift in Sources */,
 				40BC88F220FFAA2E0049CC44 /* HButton.swift in Sources */,
 				3BEB60B820E5279B00A234FE /* ResgisterVC.swift in Sources */,
@@ -921,13 +1034,17 @@
 				3BEB60E520E52ABC00A234FE /* BaseTbvCell.swift in Sources */,
 				4040BF6020F31601000158A0 /* SettingVC.swift in Sources */,
 				40BC88E820FF9FFB0049CC44 /* LoginRegisterVC.swift in Sources */,
+				402FE2922102D9330068048C /* OneTextFieldViewController.swift in Sources */,
+				402FE28C2102D7960068048C /* Common+Extensions.swift in Sources */,
 				407089D220F3120D00B922D4 /* CustomNavigation.swift in Sources */,
 				3BEB60A420E5254100A234FE /* LocationManager.swift in Sources */,
 				4045B5F620E50F3F00E225A5 /* AppDelegate.swift in Sources */,
 				3BEB60B720E5279B00A234FE /* LoginVC.swift in Sources */,
+				402FE2802101BFE10068048C /* ProfileVC.swift in Sources */,
 				3BEB60C820E5284100A234FE /* MoneyUtils.swift in Sources */,
 				3BEB60A920E5254100A234FE /* APIService.swift in Sources */,
 				4040BF6220F31776000158A0 /* ARKit.swift in Sources */,
+				402FE2982102E28C0068048C /* DatePickerViewController.swift in Sources */,
 				40BC88F020FFAA240049CC44 /* HView.swift in Sources */,
 				40BC88DF20FF9F160049CC44 /* TabBarTopViewCell.swift in Sources */,
 				3BEB60CB20E5289E00A234FE /* BaseDto.swift in Sources */,
@@ -936,6 +1053,7 @@
 				40BC88EC20FFA2F70049CC44 /* String+Ext.swift in Sources */,
 				4040BF6420F31E96000158A0 /* PeriodicTable.swift in Sources */,
 				3BEB60C520E5284100A234FE /* UIKit+IB.swift in Sources */,
+				402FE28A2102D6580068048C /* HTextfield.swift in Sources */,
 				3BEB60AA20E5254100A234FE /* APIService+Profile.swift in Sources */,
 				3BEB60A520E5254100A234FE /* APIError.swift in Sources */,
 				40BC88E620FF9FC20049CC44 /* RegisterClvCell.swift in Sources */,
@@ -1108,7 +1226,10 @@
 				DEVELOPMENT_TEAM = 2UKZEPM7R9;
 				INFOPLIST_FILE = "ARChemistry/Suporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1125,7 +1246,10 @@
 				DEVELOPMENT_TEAM = 2UKZEPM7R9;
 				INFOPLIST_FILE = "ARChemistry/Suporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1140,7 +1264,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1156,7 +1284,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1171,7 +1303,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1186,7 +1322,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

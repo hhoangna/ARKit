@@ -13,6 +13,7 @@ class BaseTbvCell: UITableViewCell {
     @IBOutlet  weak var imvIcon: UIImageView?
     @IBOutlet  weak var lblTitle: UILabel?
     @IBOutlet  weak var lblSubTitle: UILabel?
+    @IBOutlet  weak var btnEdit: UIButton?
 
     override func awakeFromNib() {
         super.awakeFromNib()

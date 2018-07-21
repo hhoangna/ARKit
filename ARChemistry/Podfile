@@ -16,5 +16,6 @@ target 'ARChemistry' do
     pod 'Firebase/Auth'
     pod 'FacebookCore'
     pod 'FacebookLogin'
+    pod 'Kingfisher', '~> 4.0'
 
 end

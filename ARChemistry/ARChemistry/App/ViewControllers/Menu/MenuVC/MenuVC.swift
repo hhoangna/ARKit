@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Kingfisher
+import FirebaseDatabase
+import FirebaseAuth
+import ObjectMapper
 
 class MenuVC: BaseVC {
     
@@ -21,6 +25,7 @@ class MenuVC: BaseVC {
     
     var arrData:[Array<Any>]?
     var curentFeature:AR_Feature?
+    var userDto = UserDto.User()
     
     fileprivate static let MenuProfileIdentifierCell:String = "MenuProfileCell"
     fileprivate static let MenuLogoutIdentifierCell:String = "MenuLogoutCell"
@@ -29,7 +34,7 @@ class MenuVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        fetchUserData()
         setUpTableView()
         initVar()
     }
@@ -55,6 +60,24 @@ class MenuVC: BaseVC {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func fetchUserData() {
+        
+        if Auth.auth().currentUser != nil {
+            guard let uid = Auth.auth().currentUser?.uid else {
+                return
+            }
+            Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                guard let dictionary = snapshot.value as? [String : Any] else {
+                    return
+                }
+                self.userDto = Mapper<UserDto.User>().map(JSON: dictionary)!
+                
+            }, withCancel: { (err) in
+                //
+            })
+        }
     }
 
 }
@@ -85,18 +108,25 @@ extension MenuVC:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header:MenuCell = self.tbvContent?.dequeueReusableCell(withIdentifier: MenuVC.MenuProfileIdentifierCell) as! MenuCell;
+        if userDto.imageUrl != nil {
+            let url = URL(string: userDto.imageUrl!)
+            header.imvAvatar?.kf.setImage(with: url)
+        } else {
+            header.imvAvatar?.image = UIImage(named: "ic_user")
+        }
         
-        header.lblTitle?.text = "HHumorous";
-        header.lblSubTitle?.text = "Student";
+        header.lblTitle?.text = Config().user?.user?.name
+        header.lblSubTitle?.text = Config().user?.user?.email
+        
         header.delegate = self;
         return header;
     }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footer:MenuCell = self.tbvContent?.dequeueReusableCell(withIdentifier: MenuVC.MenuLogoutIdentifierCell) as! MenuCell;
-        footer.delegate = self;
-        return footer;
-    }
+//
+//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        let footer:MenuCell = self.tbvContent?.dequeueReusableCell(withIdentifier: MenuVC.MenuLogoutIdentifierCell) as! MenuCell;
+//        footer.delegate = self;
+//        return footer;
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:MenuCell = self.tbvContent?.dequeueReusableCell(withIdentifier: MenuVC.MenuRowIdentifierCell, for: indexPath) as! MenuCell;
@@ -170,7 +200,10 @@ extension MenuVC:MenuCellDelegate {
     }
     
     func didSelectedProfile(cell: MenuCell, btn: UIButton) {
-        //
+        let vc: ProfileVC = VCFromSB(ProfileVC(), SB: .Profile)
+        vc.user = self.userDto
+        App().mainVC?.rootNV?.setViewControllers([vc], animated: false)
+        App().mainVC?.showSlideMenu(isShow: false, animation: true)
     }
 }
 

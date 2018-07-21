@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class RegisterClvCell: BaseClvCell {
     @IBOutlet fileprivate weak var tfUsername: UITextField!
@@ -19,6 +21,10 @@ class RegisterClvCell: BaseClvCell {
     override func draw(_ rect: CGRect) {
         btnResgister?.applyGradient(withColours: [AppColor.redColor, AppColor.orangeColor, AppColor.white], gradientOrientation: .horizontal)
         btnResgister?.layer.cornerRadius = (btnResgister?.frame.size.height)!/2
+    }
+    
+    override func awakeFromNib() {
+        initUI()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -101,7 +107,7 @@ class RegisterClvCell: BaseClvCell {
     
     func checkEnableCreateProfile(){
         btnResgister?.isEnabled = isCheckEnableButtonRegister
-        btnResgister?.alpha = isCheckEnableButtonRegister ? 1 : 0
+        btnResgister?.alpha = isCheckEnableButtonRegister ? 1 : 0.5
     }
     
     func validateRegister()->Bool{
@@ -199,8 +205,42 @@ extension RegisterClvCell:UITextFieldDelegate {
 //MARK: - Action
 extension RegisterClvCell {
     @IBAction func onbtnClickRegister(btn:UIButton) {
-        register = RegisterDto(tfUsername.text, tfEmail.text, tfPassword.text)
         
-        ///s
+        App().showHUDProgess(self)
+        
+        Auth.auth().createUser(withEmail: tfEmail.text!, password: tfPassword.text!) { (user, err) in
+            if err != nil {
+                App().hideHUDProgess("Error", "Can't sign up", "ic_errorLogin", .customView)
+                return
+            }
+            Auth.auth().signIn(withEmail: self.tfEmail.text!, password: self.tfPassword.text!, completion: { (user, err) in
+                if err != nil {
+                    App().hideHUDProgess("Error", "Can't sign up", "ic_errorLogin", .customView)
+                    return
+                }
+                guard let uid = Auth.auth().currentUser?.uid else {
+                    App().hideHUDProgess("Error", "Can't sign up", "ic_errorLogin", .customView)
+                    return
+                }
+                let dictionaryValues = ["name": "",
+                                        "email": self.tfEmail.text!,
+                                        "imageUrl": "",
+                                        "gender": "",
+                                        "birthday": "",
+                                        "address": "",
+                                        "password": self.tfPassword.text!]
+                let values = [uid : dictionaryValues]
+                
+                Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
+                    if err != nil {
+                        App().hideHUDProgess("Error", "Can't sign up", "ic_errorLogin", .customView)
+                        return
+                    }
+                    print("Successfully saved user info into Firebase database")
+                    // after successfull save dismiss the welcome view controller
+                    App().hideHUDProgess("Success!", "", "ic_check", .customView)
+                })
+            })
+        }
     }
 }

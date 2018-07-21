@@ -150,7 +150,7 @@ extension LoginRegisterVC:UIScrollViewDelegate{
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        
+        view.endEditing(true)
     }
 }
 
@@ -158,6 +158,7 @@ extension LoginRegisterVC: TabBarTopViewDelegate {
     func didSelectedTabBarTopItem(tabBarTopItemView: TabBarTopView, indexBarItem: Int) {
         print("IndexTabBarItem:\(indexBarItem)")
         scrollToPageSelected(indexBarItem)
+        view.endEditing(true)
     }
     
     func scrollToPageSelected(_ indexPage:Int) {
@@ -165,5 +166,8 @@ extension LoginRegisterVC: TabBarTopViewDelegate {
         let pointX = CGFloat(indexPage) * width
         
         clvContent?.contentOffset =  CGPoint(x: pointX, y: (clvContent?.contentOffset.y)!);
+        UIView.animate(withDuration: 0.2) {
+            self.loadViewIfNeeded()
+        }
     }
 }

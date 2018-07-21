@@ -15,8 +15,13 @@ class UserDto: BaseDto {
     class User:BaseDto {
         var _id:String?
         var email:String?
+        var password:String?
         var name:String?
-        var picture:String?
+        var birthday: String?
+        var gender: Int?
+        var address: String?
+        var picture:Picture?
+        var imageUrl: String?
         
         required convenience init?(map: Map) {
             self.init()
@@ -26,7 +31,36 @@ class UserDto: BaseDto {
             _id <- map["id"];
             email <- map["email"];
             name <- map["name"];
-            picture <- (map["picture"]);
+            picture <- map["picture"];
+            gender <- map["gender"]
+            birthday <- map["birthday"]
+            address <- map["address"]
+            imageUrl <- map["imageUrl"]
+            password <- map["password"]
+        }
+        
+        class Picture: BaseDto {
+            var data: Data?
+            
+            required convenience init?(map: Map) {
+                self.init()
+            }
+            
+            override func mapping(map: Map) {
+                data <- map["data"]
+            }
+            
+            class Data: BaseDto {
+                var url: String?
+                
+                required convenience init?(map: Map) {
+                    self.init()
+                }
+                
+                override func mapping(map: Map) {
+                    url <- map["url"];
+                }
+            }
         }
     }
     

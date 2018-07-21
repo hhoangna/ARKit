@@ -12,6 +12,8 @@ import FacebookCore
 import FacebookLogin
 import MBProgressHUD
 import FirebaseAuth
+import ObjectMapper
+import FirebaseDatabase
 
 class LoginClvCell: BaseClvCell {
     
@@ -21,6 +23,8 @@ class LoginClvCell: BaseClvCell {
     @IBOutlet fileprivate weak var btnLogin: TransitionButton!
     @IBOutlet fileprivate weak var btnFacebook: HButton?
     @IBOutlet fileprivate weak var btnGoogle: HButton?
+    
+    var userDto = UserDto()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -59,7 +63,28 @@ class LoginClvCell: BaseClvCell {
             DispatchQueue.main.async(execute: { () -> Void in
                 
                 button.stopAnimation(animationStyle: .normal, completion: {
-                    App().loginSuccess()
+                    Auth.auth().signIn(withEmail: (self.tfUsername?.text!)!, password: (self.tfPassword?.text!)!, completion: { (user, err) in
+                        if err != nil {
+                            App().showHUDProgess(self)
+                            App().hideHUDProgess("Error", "", "ic_errorLogin", .customView)
+                        } else {
+                            let user = Auth.auth().currentUser
+                            Database.database().reference().child("users").child((user?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
+                                guard let dictionary = snapshot.value as? [String : Any] else {
+                                    return
+                                }
+                                let user = Mapper<UserDto.User>().map(JSON: dictionary)!
+                                
+                                self.userDto.user = user
+                                self.userDto.token = Auth.auth().currentUser?.uid
+                                Config().setUser(self.userDto)
+                                App().loginSuccess()
+                            }, withCancel: { (err) in
+                                //
+                            })
+                            
+                        }
+                    })
                 })
             })
         })
@@ -107,37 +132,32 @@ class LoginClvCell: BaseClvCell {
                     App().hideHUDProgess("Error", "Failed to fetch User", "", .text)
                     return
                 }
+                
+                print(responseDict)
+                
+                let user = Mapper<UserDto.User>().map(JSON: responseDict)
+                
+                self.userDto.user = user
+                self.userDto.token = Auth.auth().currentUser?.uid
+                
+                guard let url = URL(string: (user?.picture?.data?.url)!) else {
+                    App().hideHUDProgess("Error", "Failed to fetch User", "", .text)
+                    return
+                }
 
-//                let json = JSON(responseDict)
-//                self.name = json["name"].string
-//                self.email = json["email"].string
-//                guard let profilePictureUrl = json["picture"]["data"]["url"].string else {
-//                    App().hideHUDProgess("Error", "Failed to fetch User", "", .text)
-//                    return
-//                }
-//                guard let url = URL(string: profilePictureUrl) else {
-//                    App().hideHUDProgess("Error", "Failed to fetch User", "", .text)
-//                    return
-//                }
-//
-//                URLSession.shared.dataTask(with: url) { (data, response, err) in
-//                    if err != nil {
-//                        guard let err = err else {
-//                            App().hideHUDProgess("Error", "Failed to fetch User", "", .text)
-//                            return
-//
-//                        }
-//                        App().hideHUDProgess("Fetch error", err.localizedDescription, "", .text)
-//                        return
-//                    }
-//                    guard let data = data else {
-//                        App().hideHUDProgess("Error", "Failed to fetch User", "", .text)
-//                        return
-//                    }
-//                    self.profileImage = UIImage(data: data)
-//                    self.saveUserIntoFirebaseDatabase()
-//
-//                    }.resume()
+                URLSession.shared.dataTask(with: url) { (data, response, err) in
+                    if err != nil {
+                        guard let err = err else {
+                            App().hideHUDProgess("Error", "Failed to fetch User", "", .text)
+                            return
+
+                        }
+                        App().hideHUDProgess("Fetch error", err.localizedDescription, "", .text)
+                        return
+                    }
+                    self.saveUserIntoFirebaseDatabase()
+
+                    }.resume()
 
                 break
             case .failed(let err):
@@ -146,8 +166,38 @@ class LoginClvCell: BaseClvCell {
             }
         })
         graphRequestConnection.start()
+    }
+    
+    fileprivate func saveUserIntoFirebaseDatabase() {
+        
+        guard let uid = Auth.auth().currentUser?.uid,
+            let name = self.userDto.user?.name,
+            let email = self.userDto.user?.email,
+            let imageUrl = self.userDto.user?.picture?.data?.url else {
+                App().hideHUDProgess("Error", "Failed to save user", "", .text)
+                return
+        }
 
-
+        let dictionaryValues = ["name": name,
+                                "email": email,
+                                "imageUrl": imageUrl,
+                                "gender": "",
+                                "birthday": "",
+                                "address": "",
+                                "password": ""]
+        let values = [uid : dictionaryValues]
+        
+        Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
+            if let err = err {
+                App().hideHUDProgess("Error", "Failed to save user info with error: \(err)", "", .text)
+                return
+            }
+            print("Successfully saved user info into Firebase database")
+            // after successfull save dismiss the welcome view controller
+            App().hideHUDProgess("Success!", "", "ic_check", .customView)
+            Config().setUser(self.userDto)
+            App().loginSuccess()
+        })
     }
     
     func dismissKeyboard() {
