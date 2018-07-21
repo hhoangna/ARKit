@@ -120,10 +120,6 @@ class ProfileVC: BaseVC {
     
 }
 
-extension ProfileVC: UITableViewDelegate {
-    
-}
-
 extension ProfileVC: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return Section.count
@@ -219,70 +215,88 @@ extension ProfileVC: UITableViewDataSource {
     }
 }
 
+extension ProfileVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sectionScreen:Section = Section(rawValue: indexPath.section)!
+        if sectionScreen == .ChangePassword {
+            let vc: ChangePassVC = VCFromSB(SB: .Profile)
+            vc.user = self.user
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+}
+
 extension ProfileVC: ProfileCellDelegate {
     func didSelectRightButton(cell: ProfileCell, btn: UIButton) {
         let indexPath = tbvContent.indexPath(for: cell)
         
         let row: RowInSectionInfo = RowInSectionInfo(rawValue: indexPath!.row)!
         let sectionScreen:Section = Section(rawValue: indexPath!.section)!
-        
-        if row == .Address {
+        if sectionScreen == .Avatar {
             
-            let alert = UIAlertController(style: .actionSheet, title: row.title, message: "Change your \(row.title)")
-            
-            let textField: TextField.Config = { textField in
-                textField.left(image: #imageLiteral(resourceName: "pen"), color: .black)
-                textField.leftViewPadding = 12
-                textField.becomeFirstResponder()
-                textField.borderWidth = 1
-                textField.cornerRadius = 8
-                textField.borderColor = UIColor.lightGray.withAlphaComponent(0.5)
-                textField.backgroundColor = nil
-                textField.textColor = .black
-                textField.placeholder = self.strAddress
-                textField.keyboardAppearance = .default
-                textField.keyboardType = .default
-                //textField.isSecureTextEntry = true
-                textField.returnKeyType = .done
-                textField.action { textField in
-                    Log("textField = \(String(describing: textField.text))")
-                    self.strAddress = textField.text!
+        } else if sectionScreen == .ChangePassword {
+            let vc: ChangePassVC = VCFromSB(SB: .Profile)
+            vc.user = self.user
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else if sectionScreen == .Info {
+            if row == .Address {
+                
+                let alert = UIAlertController(style: .actionSheet, title: row.title, message: "Change your \(row.title)")
+                
+                let textField: TextField.Config = { textField in
+                    textField.left(image: #imageLiteral(resourceName: "pen"), color: .black)
+                    textField.leftViewPadding = 12
+                    textField.becomeFirstResponder()
+                    textField.borderWidth = 1
+                    textField.cornerRadius = 8
+                    textField.borderColor = UIColor.lightGray.withAlphaComponent(0.5)
+                    textField.backgroundColor = nil
+                    textField.textColor = .black
+                    textField.placeholder = self.strAddress
+                    textField.keyboardAppearance = .default
+                    textField.keyboardType = .default
+                    //textField.isSecureTextEntry = true
+                    textField.returnKeyType = .done
+                    textField.action { textField in
+                        Log("textField = \(String(describing: textField.text))")
+                        self.strAddress = textField.text!
+                    }
                 }
+                
+                alert.addOneTextField(configuration: textField)
+                
+                alert.addAction(image: nil, title: "Done", color: AppColor.mainColor, style: .cancel, isEnabled: true) { (UIAlertAction) in
+                    cell.lblSubTitle?.text = self.strAddress
+                }
+                alert.show()
+                
+            } else if row == .Birthday {
+                
+                let alert = UIAlertController(style: .actionSheet, title: row.title, message: "Select your \(row.title)")
+                alert.addDatePicker(mode: .date, date: stringToDate(self.strDate!), minimumDate: nil, maximumDate: nil) { date in
+                    self.strDate = dateToString(date, dateFormat: "dd-MM-yyyy")
+                }
+                alert.addAction(image: nil, title: "Done", color: AppColor.mainColor, style: .cancel, isEnabled: true) { (UIAlertAction) in
+                    cell.lblSubTitle?.text = self.strDate
+                }
+                alert.show()
+                
+            } else if row == .Gender {
+                
+                let alert = UIAlertController(style: .actionSheet, title: row.title, message: "Select your \(row.title)")
+                
+                //            let arrGender: [String] = ["Male", "Female"]
+                let pickerViewValues: [String] = ["Male", "Female"]
+                let pickerViewSelectedValue: PickerViewViewController.Index = (column: 0, row: 0)
+                
+                alert.addPickerView(values: [pickerViewValues], initialSelection: pickerViewSelectedValue) { vc, picker, index, values in
+                    self.strGender = index.row
+                }
+                alert.addAction(image: nil, title: "Done", color: AppColor.mainColor, style: .cancel, isEnabled: true) { (UIAlertAction) in
+                    cell.lblSubTitle?.text = self.strGender == 0 ? "Male" : (self.strGender == 1 ? "Female" : "Please choose")
+                }
+                alert.show()
             }
-            
-            alert.addOneTextField(configuration: textField)
-            
-            alert.addAction(image: nil, title: "Done", color: AppColor.mainColor, style: .cancel, isEnabled: true) { (UIAlertAction) in
-                cell.lblSubTitle?.text = self.strAddress
-            }
-            alert.show()
-            
-        } else if row == .Birthday {
-            
-            let alert = UIAlertController(style: .actionSheet, title: row.title, message: "Select your \(row.title)")
-            alert.addDatePicker(mode: .date, date: stringToDate(self.strDate!), minimumDate: nil, maximumDate: nil) { date in
-                self.strDate = dateToString(date, dateFormat: "dd-MM-yyyy")
-            }
-            alert.addAction(image: nil, title: "Done", color: AppColor.mainColor, style: .cancel, isEnabled: true) { (UIAlertAction) in
-                cell.lblSubTitle?.text = self.strDate
-            }
-            alert.show()
-            
-        } else if row == .Gender {
-            
-            let alert = UIAlertController(style: .actionSheet, title: row.title, message: "Select your \(row.title)")
-
-//            let arrGender: [String] = ["Male", "Female"]
-            let pickerViewValues: [String] = ["Male", "Female"]
-            let pickerViewSelectedValue: PickerViewViewController.Index = (column: 0, row: 0)
-
-            alert.addPickerView(values: [pickerViewValues], initialSelection: pickerViewSelectedValue) { vc, picker, index, values in
-                self.strGender = index.row
-            }
-            alert.addAction(image: nil, title: "Done", color: AppColor.mainColor, style: .cancel, isEnabled: true) { (UIAlertAction) in
-                cell.lblSubTitle?.text = self.strGender == 0 ? "Male" : (self.strGender == 1 ? "Female" : "Please choose")
-            }
-            alert.show()
         }
     }
     

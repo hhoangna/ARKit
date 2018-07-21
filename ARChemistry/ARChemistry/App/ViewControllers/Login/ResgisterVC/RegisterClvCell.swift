@@ -222,7 +222,7 @@ extension RegisterClvCell {
                     App().hideHUDProgess("Error", "Can't sign up", "ic_errorLogin", .customView)
                     return
                 }
-                let dictionaryValues = ["name": "",
+                let dictionaryValues = ["name": self.tfUsername.text!,
                                         "email": self.tfEmail.text!,
                                         "imageUrl": "",
                                         "gender": "",
