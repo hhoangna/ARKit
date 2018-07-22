@@ -8,8 +8,9 @@
 
 import UIKit
 import AVFoundation
+import GoogleSignIn
 
-class LoginRegisterVC: BaseVC {
+class LoginRegisterVC: BaseVC,  GIDSignInUIDelegate{
     
     var avPlayer: AVPlayer!
     var avPlayerLayer: AVPlayerLayer!
@@ -23,6 +24,8 @@ class LoginRegisterVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
         
         initUI()
         setupTabBarItemView()
@@ -122,6 +125,7 @@ extension LoginRegisterVC: UICollectionViewDataSource {
             let cell: LoginClvCell = collectionView.dequeueReusableCell(withReuseIdentifier: "LoginClvCell", for: indexPath) as! LoginClvCell
             
             cell.rootVC = self
+            cell.delegate = self
             //        cell.updateData()
             
             return cell;
@@ -137,7 +141,11 @@ extension LoginRegisterVC: UICollectionViewDataSource {
     }
 }
 
-
+extension LoginRegisterVC: LoginCellDelegate {
+    func didSelectButton(cell: LoginClvCell, btn: UIButton) {
+        GIDSignIn.sharedInstance().signIn()
+    }
+}
 
 //MARK: - UIScrollViewDelegate
 extension LoginRegisterVC:UIScrollViewDelegate{

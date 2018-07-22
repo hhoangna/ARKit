@@ -281,6 +281,14 @@
                                     <action selector="onbtnClickRegisterWithBtn:" destination="F4S-mn-mdt" eventType="touchUpInside" id="QTF-nf-Gsx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBv-5u-U7v">
+                                <rect key="frame" x="171" y="368" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Google"/>
+                                <connections>
+                                    <action selector="testWithBtn:" destination="F4S-mn-mdt" eventType="touchUpInside" id="iNU-0h-2xF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>

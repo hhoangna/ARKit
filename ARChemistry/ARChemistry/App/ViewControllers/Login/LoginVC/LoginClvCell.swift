@@ -14,8 +14,13 @@ import MBProgressHUD
 import FirebaseAuth
 import ObjectMapper
 import FirebaseDatabase
+import GoogleSignIn
 
-class LoginClvCell: BaseClvCell {
+protocol LoginCellDelegate:class {
+    func didSelectButton(cell:LoginClvCell, btn: UIButton);
+}
+
+class LoginClvCell: BaseClvCell, GIDSignInUIDelegate {
     
     @IBOutlet fileprivate weak var tfUsername: UITextField?
     @IBOutlet fileprivate weak var tfPassword: UITextField?
@@ -23,6 +28,8 @@ class LoginClvCell: BaseClvCell {
     @IBOutlet fileprivate weak var btnLogin: TransitionButton!
     @IBOutlet fileprivate weak var btnFacebook: HButton?
     @IBOutlet fileprivate weak var btnGoogle: HButton?
+    
+    weak var delegate: LoginCellDelegate?
     
     var userDto = UserDto()
     
@@ -198,6 +205,10 @@ class LoginClvCell: BaseClvCell {
             Config().setUser(self.userDto)
             App().loginSuccess()
         })
+    }
+    
+    @IBAction func onBtnLoginWithGoogle(btn: HButton) {
+        delegate?.didSelectButton(cell: self, btn: btn)
     }
     
     func dismissKeyboard() {

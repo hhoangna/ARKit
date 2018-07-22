@@ -10,15 +10,17 @@ import UIKit
 import Firebase
 import FBSDKCoreKit
 import MBProgressHUD
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
     var config:Configuration?
     public var rootNV:BaseNV?
     public var mainVC:MainVC?
     private var hud = MBProgressHUD()
+    var user = UserDto.User()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -27,12 +29,67 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         checkStatusLogin()
         FirebaseApp.configure()
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
         
         return true
     }
     
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+              withError error: Error!) {
+        if let error = error {
+            print("\(error.localizedDescription)")
+        } else {
+            // Perform any operations on signed in user here.
+            self.user.name = user.profile.name
+            self.user.email = user.profile.email
+            guard let authentication = user.authentication else { return }
+            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                           accessToken: authentication.accessToken)
+            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+                if let error = error {
+                    // ...
+                    return
+                } else {
+                    guard let uid = Auth.auth().currentUser?.uid else {
+                        App().hideHUDProgess("Error", "Can't sign up", "ic_errorLogin", .customView)
+                        return
+                    }
+                    let dictionaryValues = ["name": self.user.name,
+                                            "email": self.user.email,
+                                            "imageUrl": "",
+                                            "gender": "",
+                                            "birthday": "",
+                                            "address": "",
+                                            "password": ""]
+                    let values = [uid : dictionaryValues]
+                    
+                    Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
+                        if err != nil {
+                            //
+                            return
+                        }
+                        print("Successfully saved user info into Firebase database")
+                        Config().user?.token = uid
+                        Config().user?.user = self.user
+                        Config().user?.user?.name = self.user.name
+                        Config().user?.user?.email = self.user.email
+                        App().loginSuccess()
+                    })
+                    
+                }
+            }
+        }
+    }
+    
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url as URL?,
+                                                 sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                 annotation: options[UIApplicationOpenURLOptionsKey.annotation])
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

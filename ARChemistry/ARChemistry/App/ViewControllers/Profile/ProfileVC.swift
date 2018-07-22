@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 import ObjectMapper
 
 enum ModeScreen {
@@ -64,6 +65,8 @@ class ProfileVC: BaseVC {
     var strAddress: String?
     var strDate: String?
     var strGender: Int? = 0
+    var strImage: UIImage?
+    var strImageUrl: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,6 +100,7 @@ class ProfileVC: BaseVC {
         strDate = user.birthday
         strAddress = user.address
         strGender = user.gender
+        strImageUrl = user.imageUrl
     }
     
     func saveNewUserDataToFirebase() {
@@ -105,11 +109,13 @@ class ProfileVC: BaseVC {
         user.address = strAddress
         user.birthday = strDate
         user.gender = strGender
+        user.imageUrl = strImageUrl
         
         let ref = Database.database().reference().child("users/\((Config().user?.token)!)")
         ref.updateChildValues(["address": user.address!,
                                "birthday": user.birthday!,
-                               "gender": user.gender!]) { (err, ref: DatabaseReference) in
+                               "gender": user.gender!,
+                               "imageUrl": user.imageUrl!]) { (err, ref: DatabaseReference) in
                                 if let err = err {
                                     App().hideHUDProgess("Error", "Failed to update with error \(err)", "", .text)
                                 } else {
@@ -172,6 +178,7 @@ extension ProfileVC: UITableViewDataSource {
             case .modeEdit:
                 cell.btnChange?.isHidden = false
             }
+            cell.delegate = self
             
             return cell
         case .Info:
@@ -209,6 +216,8 @@ extension ProfileVC: UITableViewDataSource {
         case .ChangePassword:
             let cell: ProfileCell = tableView.dequeueReusableCell(withIdentifier: "PChangePasswordCell", for: indexPath) as! ProfileCell
             
+            cell.delegate = self
+            
             return cell
         }
         
@@ -234,10 +243,17 @@ extension ProfileVC: ProfileCellDelegate {
         let sectionScreen:Section = Section(rawValue: indexPath!.section)!
         if sectionScreen == .Avatar {
             
+            tapToImageView()
+            App().showHUDProgess(self.tbvContent)
+            cell.imvIcon?.kf.setImage(with: URL(string: (self.strImageUrl)!))
+            App().hideHUDProgess("Success", "", "ic_check", .customView)
+            
         } else if sectionScreen == .ChangePassword {
-            let vc: ChangePassVC = VCFromSB(SB: .Profile)
-            vc.user = self.user
-            self.navigationController?.pushViewController(vc, animated: true)
+            if indexPath?.row == 0 {
+                let vc: ChangePassVC = VCFromSB(SB: .Profile)
+                vc.user = self.user
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         } else if sectionScreen == .Info {
             if row == .Address {
                 
@@ -332,5 +348,52 @@ extension ProfileVC: CustomNavigationDelegate {
             updateUI()
             saveNewUserDataToFirebase()
         }
+    }
+}
+
+extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    @objc func tapToImageView() {
+        let picker = UIImagePickerController()
+        
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        var selectedImage: UIImage?
+        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+
+            selectedImage = editedImage
+            print("editedImage's size = \(editedImage.size)")
+            
+        } else if let originImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            selectedImage = originImage
+            print("originImage's size = \(originImage.size)")
+        }
+        self.strImage = selectedImage
+        if selectedImage != nil {
+            let randomString = UUID().uuidString
+            let storageRef = Storage.storage().reference().child("\(randomString).png")
+            //Image uploaded to Firebase must be Data, not UIImage
+            if let uploadImage = UIImagePNGRepresentation(self.strImage!) {
+                storageRef.putData(uploadImage, metadata: nil, completion: { (metadata, error) in
+                    if error != nil {
+                        return
+                    }
+                    storageRef.downloadURL(completion: { (url, err) in
+                        if err == nil {
+                            if url != nil {
+                                self.strImageUrl = url?.absoluteString
+                            }
+                        }
+                    })
+                })
+            }
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
 }

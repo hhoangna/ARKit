@@ -11,6 +11,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class ChangePassVC: BaseVC {
+    
 
     @IBOutlet fileprivate weak var tfOldPass: UITextField!
     @IBOutlet fileprivate weak var tfPassword: UITextField!
@@ -18,6 +19,24 @@ class ChangePassVC: BaseVC {
     @IBOutlet fileprivate weak var btnSave: UIButton?
     
     var user = UserDto.User()
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
+        if let touch = touches.first {
+            if touch.view != self.tfOldPass {
+                self.tfOldPass?.resignFirstResponder()
+            }
+            
+            if touch.view != self.tfRePassword {
+                self.tfRePassword?.resignFirstResponder()
+            }
+            
+            if touch.view != self.tfPassword {
+                self.tfPassword?.resignFirstResponder()
+            }
+        }
+    }
     
     struct ValidateRegister {
         var isValidateEmail:Bool = false
@@ -119,7 +138,8 @@ class ChangePassVC: BaseVC {
     
 }
 
-extension ChangePassVC {
+extension ChangePassVC{
+    
     @IBAction func onbtnClickRegister(btn:UIButton) {
         let pass = tfPassword.text!
         let currentUser = Auth.auth().currentUser
