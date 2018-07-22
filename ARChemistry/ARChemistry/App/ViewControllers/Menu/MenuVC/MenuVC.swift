@@ -11,10 +11,12 @@ import Kingfisher
 import FirebaseDatabase
 import FirebaseAuth
 import ObjectMapper
+import ColorMatchTabs
 
 class MenuVC: BaseVC {
     
     enum AR_Feature {
+        case AR_Element;
         case AR_PredicTable;
         case AR_Camera;
         case AR_Setting
@@ -40,12 +42,13 @@ class MenuVC: BaseVC {
     }
     
     func initVar() {
-        curentFeature = .AR_PredicTable
+        curentFeature = .AR_Element
         initArrData()
     }
     
     func initArrData() {
         arrData = Array()
+        arrData?.append(["Chemical Element",AR_Feature.AR_Element,"ic_table"])
         arrData?.append(["Periodic Table",AR_Feature.AR_PredicTable,"ic_table"])
         arrData?.append(["View in AR",AR_Feature.AR_Camera,"ic_arkit"])
         arrData?.append(["Setting",AR_Feature.AR_Setting,"ic_setting"])
@@ -101,11 +104,6 @@ extension MenuVC:UITableViewDataSource {
         return 100;
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        
-        return 60
-    }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header:MenuCell = self.tbvContent?.dequeueReusableCell(withIdentifier: MenuVC.MenuProfileIdentifierCell) as! MenuCell;
         if userDto.imageUrl != nil {
@@ -121,12 +119,6 @@ extension MenuVC:UITableViewDataSource {
         header.delegate = self;
         return header;
     }
-//
-//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        let footer:MenuCell = self.tbvContent?.dequeueReusableCell(withIdentifier: MenuVC.MenuLogoutIdentifierCell) as! MenuCell;
-//        footer.delegate = self;
-//        return footer;
-//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:MenuCell = self.tbvContent?.dequeueReusableCell(withIdentifier: MenuVC.MenuRowIdentifierCell, for: indexPath) as! MenuCell;
@@ -168,6 +160,13 @@ extension MenuVC:UITableViewDelegate {
         var vc:BaseVC?;
         
         switch feature {
+        case .AR_Element:
+            let vcMain: ColorMatchTabsViewController = VCFromSB(ElementListVC(), SB: .Element)
+            App().mainVC?.rootNV?.setViewControllers([vcMain], animated: false)
+            curentFeature = feature;
+            
+            tableView.reloadData()
+            break
         case .AR_PredicTable:
             vc = VCFromSB(PeriodicTableVC(), SB: .PeriodicTable)
             break

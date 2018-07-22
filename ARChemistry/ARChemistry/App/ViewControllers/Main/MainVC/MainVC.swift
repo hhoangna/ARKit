@@ -61,7 +61,8 @@ class MainVC: BaseVC {
     
     func pushWorkingListToMain() {
         //Push vào màn hình chính
-        let vc:PeriodicTableVC = .load(SB: SBName.PeriodicTable);
+        let vc:ElementListVC = .load(SB: SBName.Element);
+        vc.navigationController?.addTitleToNavigationBarItem(title: "ABISNDOL")
         rootNV?.setViewControllers([vc], animated: false);
     }
     

@@ -6,6 +6,7 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
+  - ColorMatchTabs (2.0.2)
   - FacebookCore (0.3.1):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.33)
@@ -91,6 +92,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (= 4.5.1)
+  - ColorMatchTabs (~> 2.0.2)
   - FacebookCore
   - FacebookLogin
   - Firebase/Auth
@@ -106,9 +108,10 @@ DEPENDENCIES:
   - TransitionButton
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - Bolts
+    - ColorMatchTabs
     - FacebookCore
     - FacebookLogin
     - FBSDKCoreKit
@@ -137,6 +140,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  ColorMatchTabs: bc7cb42ba063a08ab214bd827acb9fac7e1a3c35
   FacebookCore: 33078ef1d7d76b73f7e8c990dca7d3ea6db8d22f
   FacebookLogin: 6f15bf4fefd7a8865abbfa8fcd7f3dfd87aa275f
   FBSDKCoreKit: 0ff57f093b85c8c9d5aba697d3edf68a8960ce78
@@ -162,6 +166,6 @@ SPEC CHECKSUMS:
   SWXMLHash: f4522438189f72b41e39676d19469a8969d60dd1
   TransitionButton: d271030914c84a00b54b4d983446944d2875e7ba
 
-PODFILE CHECKSUM: 58a763df89ac72f95169f047cfc0bfa244ea2b88
+PODFILE CHECKSUM: ccbae65548a299e4f96e2ba2bf7c6561ea224caf
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

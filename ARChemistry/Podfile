@@ -18,5 +18,6 @@ target 'ARChemistry' do
     pod 'Firebase/Auth'
     pod 'Firebase/Storage'
     pod 'GoogleSignIn'
-
+    pod 'ColorMatchTabs', '~> 2.0.2'
+    
 end

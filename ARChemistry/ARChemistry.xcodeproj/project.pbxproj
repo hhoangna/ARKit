@@ -78,6 +78,11 @@
 		40BC88EC20FFA2F70049CC44 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88EB20FFA2F70049CC44 /* String+Ext.swift */; };
 		40BC88F020FFAA240049CC44 /* HView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88EF20FFAA240049CC44 /* HView.swift */; };
 		40BC88F220FFAA2E0049CC44 /* HButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88F120FFAA2E0049CC44 /* HButton.swift */; };
+		40F67264210416B200784D09 /* Elements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40F67263210416B200784D09 /* Elements.storyboard */; };
+		40F6726721041B5000784D09 /* ElementListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F6726621041B5000784D09 /* ElementListVC.swift */; };
+		40F6727221042C1300784D09 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F6727121042C1300784D09 /* DataController.swift */; };
+		40F6727421042C4B00784D09 /* SubCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F6727321042C4B00784D09 /* SubCollectionVC.swift */; };
+		40F6727621042C5900784D09 /* SubTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F6727521042C5900784D09 /* SubTableVC.swift */; };
 		670CBD7411125318224EBACF /* Pods_ARChemistry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD748A86F5F7457567991A5B /* Pods_ARChemistry.framework */; };
 /* End PBXBuildFile section */
 
@@ -178,6 +183,11 @@
 		40BC88EB20FFA2F70049CC44 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		40BC88EF20FFAA240049CC44 /* HView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HView.swift; sourceTree = "<group>"; };
 		40BC88F120FFAA2E0049CC44 /* HButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HButton.swift; sourceTree = "<group>"; };
+		40F67263210416B200784D09 /* Elements.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Elements.storyboard; sourceTree = "<group>"; };
+		40F6726621041B5000784D09 /* ElementListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementListVC.swift; sourceTree = "<group>"; };
+		40F6727121042C1300784D09 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		40F6727321042C4B00784D09 /* SubCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCollectionVC.swift; sourceTree = "<group>"; };
+		40F6727521042C5900784D09 /* SubTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTableVC.swift; sourceTree = "<group>"; };
 		FD748A86F5F7457567991A5B /* Pods_ARChemistry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARChemistry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -228,6 +238,7 @@
 		3BEB607D20E5231A00A234FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				40F6726521041B2D00784D09 /* Element */,
 				402FE27E2101BFC10068048C /* Profile */,
 				407089C720F30B5D00B922D4 /* Feature */,
 				3BEB60B220E5279B00A234FE /* Login */,
@@ -266,6 +277,7 @@
 				4040BF5B20F315CE000158A0 /* ARKit.storyboard */,
 				4040BF5D20F315D8000158A0 /* Setting.storyboard */,
 				402FE27C2101BAC80068048C /* Profile.storyboard */,
+				40F67263210416B200784D09 /* Elements.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -624,6 +636,15 @@
 			path = ChangePassVC;
 			sourceTree = "<group>";
 		};
+		403A28E82104EB1000BF0099 /* SubVC */ = {
+			isa = PBXGroup;
+			children = (
+				40F6727521042C5900784D09 /* SubTableVC.swift */,
+				40F6727321042C4B00784D09 /* SubCollectionVC.swift */,
+			);
+			path = SubVC;
+			sourceTree = "<group>";
+		};
 		4040BF6520F31E9C000158A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -781,6 +802,24 @@
 			path = HButton;
 			sourceTree = "<group>";
 		};
+		40F6726521041B2D00784D09 /* Element */ = {
+			isa = PBXGroup;
+			children = (
+				403A28E82104EB1000BF0099 /* SubVC */,
+				40F6727021042BFF00784D09 /* Data */,
+				40F6726621041B5000784D09 /* ElementListVC.swift */,
+			);
+			path = Element;
+			sourceTree = "<group>";
+		};
+		40F6727021042BFF00784D09 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				40F6727121042C1300784D09 /* DataController.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		779C234AA47064025A4DCB08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -802,6 +841,7 @@
 				4045B5EF20E50F3F00E225A5 /* Frameworks */,
 				4045B5F020E50F3F00E225A5 /* Resources */,
 				E2BD36533E9EE80D1BA64A3A /* [CP] Embed Pods Frameworks */,
+				084E02EFD770A517256671AD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -897,6 +937,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				403832FF20FFB989005E3940 /* video_background.mp4 in Resources */,
+				40F67264210416B200784D09 /* Elements.storyboard in Resources */,
 				40BC88E020FF9F160049CC44 /* TabBarTopViewCell.xib in Resources */,
 				3BEB60BA20E527CB00A234FE /* Login.storyboard in Resources */,
 				3BEB608620E5246700A234FE /* Main.storyboard in Resources */,
@@ -929,6 +970,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		084E02EFD770A517256671AD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ARChemistry/Pods-ARChemistry-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARChemistry/Pods-ARChemistry-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D24491DF42B97273B455E458 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -956,10 +1015,12 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ARChemistry/Pods-ARChemistry-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/ColorMatchTabs/ColorMatchTabs.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -976,10 +1037,12 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ColorMatchTabs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -1006,6 +1069,7 @@
 			files = (
 				40BC88EA20FFA2330049CC44 /* Font.swift in Sources */,
 				407089CC20F30C9200B922D4 /* PeriodicTableVC.swift in Sources */,
+				40F6727621042C5900784D09 /* SubTableVC.swift in Sources */,
 				3BEB60C620E5284100A234FE /* UIColor+Ext.swift in Sources */,
 				402FE2832101C0010068048C /* ProfileCell.swift in Sources */,
 				3BEB60A620E5254100A234FE /* BaseAPIError.swift in Sources */,
@@ -1017,6 +1081,8 @@
 				3BEB60D120E5299900A234FE /* LoginDto.swift in Sources */,
 				402FE29B2102E6C30068048C /* PickerViewViewController.swift in Sources */,
 				40BC88E120FF9F160049CC44 /* TabBarTopView.swift in Sources */,
+				40F6727221042C1300784D09 /* DataController.swift in Sources */,
+				40F6726721041B5000784D09 /* ElementListVC.swift in Sources */,
 				402FE2932102D9330068048C /* TwoTextFieldsViewController.swift in Sources */,
 				402FE2952102DA910068048C /* UITextField+Extensions.swift in Sources */,
 				3BEB60C320E5284100A234FE /* ValidateUtils.swift in Sources */,
@@ -1042,6 +1108,7 @@
 				3BEB60A420E5254100A234FE /* LocationManager.swift in Sources */,
 				4045B5F620E50F3F00E225A5 /* AppDelegate.swift in Sources */,
 				3BEB60B720E5279B00A234FE /* LoginVC.swift in Sources */,
+				40F6727421042C4B00784D09 /* SubCollectionVC.swift in Sources */,
 				402FE2802101BFE10068048C /* ProfileVC.swift in Sources */,
 				3BEB60C820E5284100A234FE /* MoneyUtils.swift in Sources */,
 				3BEB60A920E5254100A234FE /* APIService.swift in Sources */,

@@ -164,7 +164,8 @@ public enum SBName : String {
     case PeriodicTable = "PeriodicTable";
     case ARKit = "ARKit";
     case Setting = "Setting";
-    case Profile = "Profile"
+    case Profile = "Profile";
+    case Element = "Elements"
 
 }
 
