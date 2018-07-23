@@ -17,6 +17,9 @@
 import UIKit
 import ColorMatchTabs
 
+private let collectionViewCellHeightCoefficient: CGFloat = 0.55
+private let collectionViewCellWidthCoefficient: CGFloat = 0.60 
+
 struct TabItem {
     
     let title: String
@@ -49,9 +52,9 @@ class TabItemsProvider {
 class SubViewControllersProvider {
     
     static let viewControllers: [UIViewController] = {
-        let tableVC = SubTableVC()
+        let tableVC = SubTableVC(collectionViewLayout: SubTableVCFowLayout())
         
-        let collectionVC = SubCollectionVC()
+        let collectionVC = SubCollectionVC(collectionViewLayout: SubCollectionVCFlowLayout(with: CGSize(width: SWIDTH() * collectionViewCellWidthCoefficient, height: SHEIGHT() * collectionViewCellHeightCoefficient)))
         
         return [tableVC, collectionVC]
     }()

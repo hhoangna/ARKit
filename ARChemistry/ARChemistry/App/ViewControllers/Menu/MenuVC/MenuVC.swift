@@ -48,7 +48,7 @@ class MenuVC: BaseVC {
     
     func initArrData() {
         arrData = Array()
-        arrData?.append(["Chemical Element",AR_Feature.AR_Element,"ic_table"])
+        arrData?.append(["Chemical Element",AR_Feature.AR_Element,"ic_element"])
         arrData?.append(["Periodic Table",AR_Feature.AR_PredicTable,"ic_table"])
         arrData?.append(["View in AR",AR_Feature.AR_Camera,"ic_arkit"])
         arrData?.append(["Setting",AR_Feature.AR_Setting,"ic_setting"])

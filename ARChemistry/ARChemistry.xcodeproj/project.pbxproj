@@ -38,6 +38,9 @@
 		3BEB60E520E52ABC00A234FE /* BaseTbvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60E420E52ABC00A234FE /* BaseTbvCell.swift */; };
 		3BEB60E720E52C2D00A234FE /* BaseNV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60E620E52C2D00A234FE /* BaseNV.swift */; };
 		401164EB21008973003C0180 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 401164EA21008973003C0180 /* GoogleService-Info.plist */; };
+		4011BEBC2105759E00A928C4 /* SubCollectionVCFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011BEBB2105759E00A928C4 /* SubCollectionVCFlowLayout.swift */; };
+		4011BEBF2105764900A928C4 /* ElementCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011BEBD2105764900A928C4 /* ElementCollectionCell.swift */; };
+		4011BEC02105764900A928C4 /* ElementCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4011BEBE2105764900A928C4 /* ElementCollectionCell.xib */; };
 		402FE27D2101BAC80068048C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 402FE27C2101BAC80068048C /* Profile.storyboard */; };
 		402FE2802101BFE10068048C /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FE27F2101BFE10068048C /* ProfileVC.swift */; };
 		402FE2832101C0010068048C /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FE2822101C0010068048C /* ProfileCell.swift */; };
@@ -52,6 +55,13 @@
 		402FE29E210313690068048C /* ChangePassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FE29D210313690068048C /* ChangePassVC.swift */; };
 		402FE2A0210334BA0068048C /* TransitionButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402FE29F210334BA0068048C /* TransitionButton.framework */; };
 		403832FF20FFB989005E3940 /* video_background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 403832FE20FFB7C1005E3940 /* video_background.mp4 */; };
+		403A28EB2105064100BF0099 /* SubTableVCFowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403A28EA2105064100BF0099 /* SubTableVCFowLayout.swift */; };
+		403A28EE2105092800BF0099 /* ElementTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403A28ED2105092800BF0099 /* ElementTableCell.swift */; };
+		403A28F02105098C00BF0099 /* ElementTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 403A28EF2105098C00BF0099 /* ElementTableCell.xib */; };
+		403A28FE210519AB00BF0099 /* SharesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403A28FA210519AB00BF0099 /* SharesHelper.swift */; };
+		403A28FF210519AB00BF0099 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403A28FB210519AB00BF0099 /* Share.swift */; };
+		403A2900210519AB00BF0099 /* ShareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403A28FC210519AB00BF0099 /* ShareCell.swift */; };
+		403A2901210519AB00BF0099 /* ShareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 403A28FD210519AB00BF0099 /* ShareCell.xib */; };
 		4040BF5C20F315CE000158A0 /* ARKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4040BF5B20F315CE000158A0 /* ARKit.storyboard */; };
 		4040BF5E20F315D8000158A0 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4040BF5D20F315D8000158A0 /* Setting.storyboard */; };
 		4040BF6020F31601000158A0 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040BF5F20F31601000158A0 /* SettingVC.swift */; };
@@ -137,6 +147,9 @@
 		3BEB60E420E52ABC00A234FE /* BaseTbvCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTbvCell.swift; sourceTree = "<group>"; };
 		3BEB60E620E52C2D00A234FE /* BaseNV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNV.swift; sourceTree = "<group>"; };
 		401164EA21008973003C0180 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4011BEBB2105759E00A928C4 /* SubCollectionVCFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCollectionVCFlowLayout.swift; sourceTree = "<group>"; };
+		4011BEBD2105764900A928C4 /* ElementCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCollectionCell.swift; sourceTree = "<group>"; };
+		4011BEBE2105764900A928C4 /* ElementCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ElementCollectionCell.xib; sourceTree = "<group>"; };
 		402FE27C2101BAC80068048C /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		402FE27F2101BFE10068048C /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		402FE2822101C0010068048C /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
@@ -151,6 +164,13 @@
 		402FE29D210313690068048C /* ChangePassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassVC.swift; sourceTree = "<group>"; };
 		402FE29F210334BA0068048C /* TransitionButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TransitionButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		403832FE20FFB7C1005E3940 /* video_background.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_background.mp4; sourceTree = "<group>"; };
+		403A28EA2105064100BF0099 /* SubTableVCFowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTableVCFowLayout.swift; sourceTree = "<group>"; };
+		403A28ED2105092800BF0099 /* ElementTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTableCell.swift; sourceTree = "<group>"; };
+		403A28EF2105098C00BF0099 /* ElementTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ElementTableCell.xib; sourceTree = "<group>"; };
+		403A28FA210519AB00BF0099 /* SharesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharesHelper.swift; sourceTree = "<group>"; };
+		403A28FB210519AB00BF0099 /* Share.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
+		403A28FC210519AB00BF0099 /* ShareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareCell.swift; sourceTree = "<group>"; };
+		403A28FD210519AB00BF0099 /* ShareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareCell.xib; sourceTree = "<group>"; };
 		4040BF5B20F315CE000158A0 /* ARKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARKit.storyboard; sourceTree = "<group>"; };
 		4040BF5D20F315D8000158A0 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		4040BF5F20F31601000158A0 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
@@ -567,6 +587,16 @@
 			path = BaseTbvCell;
 			sourceTree = "<group>";
 		};
+		4011BEBA2105757B00A928C4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4011BEBB2105759E00A928C4 /* SubCollectionVCFlowLayout.swift */,
+				4011BEBD2105764900A928C4 /* ElementCollectionCell.swift */,
+				4011BEBE2105764900A928C4 /* ElementCollectionCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		402FE27E2101BFC10068048C /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -639,10 +669,38 @@
 		403A28E82104EB1000BF0099 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
-				40F6727521042C5900784D09 /* SubTableVC.swift */,
-				40F6727321042C4B00784D09 /* SubCollectionVC.swift */,
+				403A28F121050DFA00BF0099 /* SubCollectionVC */,
+				403A28E92105060400BF0099 /* SubTableVC */,
 			);
 			path = SubVC;
+			sourceTree = "<group>";
+		};
+		403A28E92105060400BF0099 /* SubTableVC */ = {
+			isa = PBXGroup;
+			children = (
+				403A28EC2105091900BF0099 /* Cell */,
+				40F6727521042C5900784D09 /* SubTableVC.swift */,
+			);
+			path = SubTableVC;
+			sourceTree = "<group>";
+		};
+		403A28EC2105091900BF0099 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				403A28EA2105064100BF0099 /* SubTableVCFowLayout.swift */,
+				403A28ED2105092800BF0099 /* ElementTableCell.swift */,
+				403A28EF2105098C00BF0099 /* ElementTableCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		403A28F121050DFA00BF0099 /* SubCollectionVC */ = {
+			isa = PBXGroup;
+			children = (
+				4011BEBA2105757B00A928C4 /* Cell */,
+				40F6727321042C4B00784D09 /* SubCollectionVC.swift */,
+			);
+			path = SubCollectionVC;
 			sourceTree = "<group>";
 		};
 		4040BF6520F31E9C000158A0 /* View */ = {
@@ -714,6 +772,10 @@
 		407089C720F30B5D00B922D4 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				403A28FB210519AB00BF0099 /* Share.swift */,
+				403A28FC210519AB00BF0099 /* ShareCell.swift */,
+				403A28FD210519AB00BF0099 /* ShareCell.xib */,
+				403A28FA210519AB00BF0099 /* SharesHelper.swift */,
 				407089C820F30B6A00B922D4 /* PeriodicTable */,
 				407089C920F30B7800B922D4 /* ARKit */,
 				407089CA20F30B8900B922D4 /* Setting */,
@@ -936,7 +998,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4011BEC02105764900A928C4 /* ElementCollectionCell.xib in Resources */,
 				403832FF20FFB989005E3940 /* video_background.mp4 in Resources */,
+				403A2901210519AB00BF0099 /* ShareCell.xib in Resources */,
 				40F67264210416B200784D09 /* Elements.storyboard in Resources */,
 				40BC88E020FF9F160049CC44 /* TabBarTopViewCell.xib in Resources */,
 				3BEB60BA20E527CB00A234FE /* Login.storyboard in Resources */,
@@ -945,6 +1009,7 @@
 				402FE27D2101BAC80068048C /* Profile.storyboard in Resources */,
 				401164EB21008973003C0180 /* GoogleService-Info.plist in Resources */,
 				40BC88E220FF9F160049CC44 /* TabBarTopView.xib in Resources */,
+				403A28F02105098C00BF0099 /* ElementTableCell.xib in Resources */,
 				4040BF5E20F315D8000158A0 /* Setting.storyboard in Resources */,
 				4040BF5C20F315CE000158A0 /* ARKit.storyboard in Resources */,
 				4045B60020E50F4000E225A5 /* LaunchScreen.storyboard in Resources */,
@@ -1072,6 +1137,7 @@
 				40F6727621042C5900784D09 /* SubTableVC.swift in Sources */,
 				3BEB60C620E5284100A234FE /* UIColor+Ext.swift in Sources */,
 				402FE2832101C0010068048C /* ProfileCell.swift in Sources */,
+				403A28EB2105064100BF0099 /* SubTableVCFowLayout.swift in Sources */,
 				3BEB60A620E5254100A234FE /* BaseAPIError.swift in Sources */,
 				40BC88E420FF9FAE0049CC44 /* LoginClvCell.swift in Sources */,
 				3BEB60A320E5254100A234FE /* Configuration.swift in Sources */,
@@ -1082,6 +1148,7 @@
 				402FE29B2102E6C30068048C /* PickerViewViewController.swift in Sources */,
 				40BC88E120FF9F160049CC44 /* TabBarTopView.swift in Sources */,
 				40F6727221042C1300784D09 /* DataController.swift in Sources */,
+				4011BEBC2105759E00A928C4 /* SubCollectionVCFlowLayout.swift in Sources */,
 				40F6726721041B5000784D09 /* ElementListVC.swift in Sources */,
 				402FE2932102D9330068048C /* TwoTextFieldsViewController.swift in Sources */,
 				402FE2952102DA910068048C /* UITextField+Extensions.swift in Sources */,
@@ -1091,8 +1158,11 @@
 				3BEB608C20E524BC00A234FE /* MenuVC.swift in Sources */,
 				402FE29E210313690068048C /* ChangePassVC.swift in Sources */,
 				3BEB60C420E5284100A234FE /* UIButton+Ext.swift in Sources */,
+				403A28FE210519AB00BF0099 /* SharesHelper.swift in Sources */,
 				3BEB60E120E52A8B00A234FE /* BaseClvCell.swift in Sources */,
+				403A28EE2105092800BF0099 /* ElementTableCell.swift in Sources */,
 				407089D020F3119F00B922D4 /* Style+Navigation.swift in Sources */,
+				403A2900210519AB00BF0099 /* ShareCell.swift in Sources */,
 				3BEB60DA20E52A3A00A234FE /* NSAtribitedString+Ext.swift in Sources */,
 				402FE2872102D3A20068048C /* UIAlertViewController + Ext.swift in Sources */,
 				3BEB60AE20E5266500A234FE /* UserDto.swift in Sources */,
@@ -1118,10 +1188,12 @@
 				40BC88DF20FF9F160049CC44 /* TabBarTopViewCell.swift in Sources */,
 				3BEB60CB20E5289E00A234FE /* BaseDto.swift in Sources */,
 				3BEB608B20E524BC00A234FE /* MenuCell.swift in Sources */,
+				4011BEBF2105764900A928C4 /* ElementCollectionCell.swift in Sources */,
 				3BEB609220E524ED00A234FE /* BaseVC.swift in Sources */,
 				40BC88EC20FFA2F70049CC44 /* String+Ext.swift in Sources */,
 				4040BF6420F31E96000158A0 /* PeriodicTable.swift in Sources */,
 				3BEB60C520E5284100A234FE /* UIKit+IB.swift in Sources */,
+				403A28FF210519AB00BF0099 /* Share.swift in Sources */,
 				402FE28A2102D6580068048C /* HTextfield.swift in Sources */,
 				3BEB60AA20E5254100A234FE /* APIService+Profile.swift in Sources */,
 				3BEB60A520E5254100A234FE /* APIError.swift in Sources */,

@@ -65,13 +65,6 @@ extension ElementListVC: ColorMatchTabsViewControllerDataSource {
     
 }
 
-extension ElementListVC: PopoverViewControllerDelegate {
-    
-    func popoverViewController(_ popoverViewController: PopoverViewController, didSelectItemAt index: Int) {
-        selectItem(at: index)
-    }
-}
-
 extension ElementListVC: CustomNavigationDelegate {
     @objc func didSelectedBackOrMenu() {
         App().mainVC?.showSlideMenu(isShow: true, animation: true)

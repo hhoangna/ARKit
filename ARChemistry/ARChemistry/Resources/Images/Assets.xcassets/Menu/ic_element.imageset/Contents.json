@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icons8-data-sheet-30.png",
+      "filename" : "icons8-periodic-table-of-elements-30.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icons8-data-sheet-60.png",
+      "filename" : "icons8-periodic-table-of-elements-60.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icons8-data-sheet-90.png",
+      "filename" : "icons8-periodic-table-of-elements-90.png",
       "scale" : "3x"
     }
   ],
