@@ -14,6 +14,7 @@ class ElementTableCell: UICollectionViewCell {
     @IBOutlet private weak var lblName: UILabel!
     @IBOutlet private weak var lblType: UILabel!
     @IBOutlet private weak var lblMass: UILabel!
+    @IBOutlet private weak var imvImage: UILabel!
     
     override func draw(_ rect: CGRect) {
         lblMass.translatesAutoresizingMaskIntoConstraints = false

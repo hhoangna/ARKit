@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="250" height="450"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9RH-9D-BGS">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Collection" translatesAutoresizingMaskIntoConstraints="NO" id="9RH-9D-BGS">
                         <rect key="frame" x="25" y="50" width="200" height="200"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="200" id="0gr-RY-6jd"/>
@@ -40,7 +40,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZ6-zG-fqQ">
-                        <rect key="frame" x="110" y="379" width="30.5" height="21"/>
+                        <rect key="frame" x="110" y="409" width="30.5" height="21"/>
                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -74,4 +74,7 @@
             <point key="canvasLocation" x="402" y="167"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="ic_Collection" width="74" height="40"/>
+    </resources>
 </document>
