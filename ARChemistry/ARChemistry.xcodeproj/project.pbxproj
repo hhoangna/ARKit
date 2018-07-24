@@ -18,10 +18,7 @@
 		3BEB60A720E5254100A234FE /* MessageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB609E20E5254100A234FE /* MessageKeys.swift */; };
 		3BEB60A920E5254100A234FE /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60A120E5254100A234FE /* APIService.swift */; };
 		3BEB60AA20E5254100A234FE /* APIService+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60A220E5254100A234FE /* APIService+Profile.swift */; };
-		3BEB60AE20E5266500A234FE /* UserDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60AD20E5266500A234FE /* UserDto.swift */; };
 		3BEB60B020E526A600A234FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60AF20E526A500A234FE /* Constants.swift */; };
-		3BEB60B720E5279B00A234FE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60B420E5279B00A234FE /* LoginVC.swift */; };
-		3BEB60B820E5279B00A234FE /* ResgisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60B620E5279B00A234FE /* ResgisterVC.swift */; };
 		3BEB60BA20E527CB00A234FE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BEB60B920E527CB00A234FE /* Login.storyboard */; };
 		3BEB60C320E5284100A234FE /* ValidateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60BC20E5284100A234FE /* ValidateUtils.swift */; };
 		3BEB60C420E5284100A234FE /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB60BE20E5284100A234FE /* UIButton+Ext.swift */; };
@@ -58,10 +55,6 @@
 		403A28EB2105064100BF0099 /* SubTableVCFowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403A28EA2105064100BF0099 /* SubTableVCFowLayout.swift */; };
 		403A28EE2105092800BF0099 /* ElementTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403A28ED2105092800BF0099 /* ElementTableCell.swift */; };
 		403A28F02105098C00BF0099 /* ElementTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 403A28EF2105098C00BF0099 /* ElementTableCell.xib */; };
-		403A28FE210519AB00BF0099 /* SharesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403A28FA210519AB00BF0099 /* SharesHelper.swift */; };
-		403A28FF210519AB00BF0099 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403A28FB210519AB00BF0099 /* Share.swift */; };
-		403A2900210519AB00BF0099 /* ShareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403A28FC210519AB00BF0099 /* ShareCell.swift */; };
-		403A2901210519AB00BF0099 /* ShareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 403A28FD210519AB00BF0099 /* ShareCell.xib */; };
 		4040BF5C20F315CE000158A0 /* ARKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4040BF5B20F315CE000158A0 /* ARKit.storyboard */; };
 		4040BF5E20F315D8000158A0 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4040BF5D20F315D8000158A0 /* Setting.storyboard */; };
 		4040BF6020F31601000158A0 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040BF5F20F31601000158A0 /* SettingVC.swift */; };
@@ -88,6 +81,7 @@
 		40BC88EC20FFA2F70049CC44 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88EB20FFA2F70049CC44 /* String+Ext.swift */; };
 		40BC88F020FFAA240049CC44 /* HView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88EF20FFAA240049CC44 /* HView.swift */; };
 		40BC88F220FFAA2E0049CC44 /* HButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88F120FFAA2E0049CC44 /* HButton.swift */; };
+		40E113C02106317200290F9F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E113BF2106317200290F9F /* User.swift */; };
 		40F67264210416B200784D09 /* Elements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40F67263210416B200784D09 /* Elements.storyboard */; };
 		40F6726721041B5000784D09 /* ElementListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F6726621041B5000784D09 /* ElementListVC.swift */; };
 		40F6727221042C1300784D09 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F6727121042C1300784D09 /* DataController.swift */; };
@@ -127,10 +121,7 @@
 		3BEB609E20E5254100A234FE /* MessageKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageKeys.swift; sourceTree = "<group>"; };
 		3BEB60A120E5254100A234FE /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		3BEB60A220E5254100A234FE /* APIService+Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIService+Profile.swift"; sourceTree = "<group>"; };
-		3BEB60AD20E5266500A234FE /* UserDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDto.swift; sourceTree = "<group>"; };
 		3BEB60AF20E526A500A234FE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		3BEB60B420E5279B00A234FE /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		3BEB60B620E5279B00A234FE /* ResgisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResgisterVC.swift; sourceTree = "<group>"; };
 		3BEB60B920E527CB00A234FE /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3BEB60BC20E5284100A234FE /* ValidateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateUtils.swift; sourceTree = "<group>"; };
 		3BEB60BE20E5284100A234FE /* UIButton+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
@@ -167,10 +158,6 @@
 		403A28EA2105064100BF0099 /* SubTableVCFowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTableVCFowLayout.swift; sourceTree = "<group>"; };
 		403A28ED2105092800BF0099 /* ElementTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTableCell.swift; sourceTree = "<group>"; };
 		403A28EF2105098C00BF0099 /* ElementTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ElementTableCell.xib; sourceTree = "<group>"; };
-		403A28FA210519AB00BF0099 /* SharesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharesHelper.swift; sourceTree = "<group>"; };
-		403A28FB210519AB00BF0099 /* Share.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
-		403A28FC210519AB00BF0099 /* ShareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareCell.swift; sourceTree = "<group>"; };
-		403A28FD210519AB00BF0099 /* ShareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareCell.xib; sourceTree = "<group>"; };
 		4040BF5B20F315CE000158A0 /* ARKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARKit.storyboard; sourceTree = "<group>"; };
 		4040BF5D20F315D8000158A0 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		4040BF5F20F31601000158A0 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
@@ -203,6 +190,7 @@
 		40BC88EB20FFA2F70049CC44 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		40BC88EF20FFAA240049CC44 /* HView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HView.swift; sourceTree = "<group>"; };
 		40BC88F120FFAA2E0049CC44 /* HButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HButton.swift; sourceTree = "<group>"; };
+		40E113BF2106317200290F9F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		40F67263210416B200784D09 /* Elements.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Elements.storyboard; sourceTree = "<group>"; };
 		40F6726621041B5000784D09 /* ElementListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementListVC.swift; sourceTree = "<group>"; };
 		40F6727121042C1300784D09 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -448,7 +436,7 @@
 		3BEB60AC20E5266500A234FE /* UserDto */ = {
 			isa = PBXGroup;
 			children = (
-				3BEB60AD20E5266500A234FE /* UserDto.swift */,
+				40E113BF2106317200290F9F /* User.swift */,
 			);
 			path = UserDto;
 			sourceTree = "<group>";
@@ -481,7 +469,6 @@
 		3BEB60B320E5279B00A234FE /* LoginVC */ = {
 			isa = PBXGroup;
 			children = (
-				3BEB60B420E5279B00A234FE /* LoginVC.swift */,
 				40BC88E320FF9FAE0049CC44 /* LoginClvCell.swift */,
 			);
 			path = LoginVC;
@@ -490,7 +477,6 @@
 		3BEB60B520E5279B00A234FE /* ResgisterVC */ = {
 			isa = PBXGroup;
 			children = (
-				3BEB60B620E5279B00A234FE /* ResgisterVC.swift */,
 				40BC88E520FF9FC20049CC44 /* RegisterClvCell.swift */,
 			);
 			path = ResgisterVC;
@@ -772,10 +758,6 @@
 		407089C720F30B5D00B922D4 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				403A28FB210519AB00BF0099 /* Share.swift */,
-				403A28FC210519AB00BF0099 /* ShareCell.swift */,
-				403A28FD210519AB00BF0099 /* ShareCell.xib */,
-				403A28FA210519AB00BF0099 /* SharesHelper.swift */,
 				407089C820F30B6A00B922D4 /* PeriodicTable */,
 				407089C920F30B7800B922D4 /* ARKit */,
 				407089CA20F30B8900B922D4 /* Setting */,
@@ -1000,7 +982,6 @@
 			files = (
 				4011BEC02105764900A928C4 /* ElementCollectionCell.xib in Resources */,
 				403832FF20FFB989005E3940 /* video_background.mp4 in Resources */,
-				403A2901210519AB00BF0099 /* ShareCell.xib in Resources */,
 				40F67264210416B200784D09 /* Elements.storyboard in Resources */,
 				40BC88E020FF9F160049CC44 /* TabBarTopViewCell.xib in Resources */,
 				3BEB60BA20E527CB00A234FE /* Login.storyboard in Resources */,
@@ -1080,6 +1061,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ARChemistry/Pods-ARChemistry-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/ColorMatchTabs/ColorMatchTabs.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -1092,9 +1074,14 @@
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Macaw/Macaw.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -1102,6 +1089,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ColorMatchTabs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -1114,9 +1102,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Macaw.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -1158,16 +1151,12 @@
 				3BEB608C20E524BC00A234FE /* MenuVC.swift in Sources */,
 				402FE29E210313690068048C /* ChangePassVC.swift in Sources */,
 				3BEB60C420E5284100A234FE /* UIButton+Ext.swift in Sources */,
-				403A28FE210519AB00BF0099 /* SharesHelper.swift in Sources */,
 				3BEB60E120E52A8B00A234FE /* BaseClvCell.swift in Sources */,
 				403A28EE2105092800BF0099 /* ElementTableCell.swift in Sources */,
 				407089D020F3119F00B922D4 /* Style+Navigation.swift in Sources */,
-				403A2900210519AB00BF0099 /* ShareCell.swift in Sources */,
 				3BEB60DA20E52A3A00A234FE /* NSAtribitedString+Ext.swift in Sources */,
 				402FE2872102D3A20068048C /* UIAlertViewController + Ext.swift in Sources */,
-				3BEB60AE20E5266500A234FE /* UserDto.swift in Sources */,
 				40BC88F220FFAA2E0049CC44 /* HButton.swift in Sources */,
-				3BEB60B820E5279B00A234FE /* ResgisterVC.swift in Sources */,
 				3BEB60C720E5284100A234FE /* UIView+Ext.swift in Sources */,
 				3BEB60E520E52ABC00A234FE /* BaseTbvCell.swift in Sources */,
 				4040BF6020F31601000158A0 /* SettingVC.swift in Sources */,
@@ -1177,7 +1166,7 @@
 				407089D220F3120D00B922D4 /* CustomNavigation.swift in Sources */,
 				3BEB60A420E5254100A234FE /* LocationManager.swift in Sources */,
 				4045B5F620E50F3F00E225A5 /* AppDelegate.swift in Sources */,
-				3BEB60B720E5279B00A234FE /* LoginVC.swift in Sources */,
+				40E113C02106317200290F9F /* User.swift in Sources */,
 				40F6727421042C4B00784D09 /* SubCollectionVC.swift in Sources */,
 				402FE2802101BFE10068048C /* ProfileVC.swift in Sources */,
 				3BEB60C820E5284100A234FE /* MoneyUtils.swift in Sources */,
@@ -1193,7 +1182,6 @@
 				40BC88EC20FFA2F70049CC44 /* String+Ext.swift in Sources */,
 				4040BF6420F31E96000158A0 /* PeriodicTable.swift in Sources */,
 				3BEB60C520E5284100A234FE /* UIKit+IB.swift in Sources */,
-				403A28FF210519AB00BF0099 /* Share.swift in Sources */,
 				402FE28A2102D6580068048C /* HTextfield.swift in Sources */,
 				3BEB60AA20E5254100A234FE /* APIService+Profile.swift in Sources */,
 				3BEB60A520E5254100A234FE /* APIError.swift in Sources */,

@@ -9,15 +9,20 @@
 import UIKit
 import Firebase
 import FirebaseAuth
-import FirebaseDatabase
+import FirebaseFirestore
 
 class RegisterClvCell: BaseClvCell {
+    
     @IBOutlet fileprivate weak var tfUsername: UITextField!
     @IBOutlet fileprivate weak var tfEmail: UITextField!
     @IBOutlet fileprivate weak var tfPassword: UITextField!
     @IBOutlet fileprivate weak var tfRePassword: UITextField!
     @IBOutlet fileprivate weak var viewResgister: UIView?
     @IBOutlet fileprivate weak var btnResgister: HButton?
+    
+    private var documents: [DocumentSnapshot] = []
+    public var usersDto: [User] = []
+    private var listener : ListenerRegistration!
     
     override func draw(_ rect: CGRect) {
         btnResgister?.applyGradient(withColours: [AppColor.redColor, AppColor.orangeColor, AppColor.white], gradientOrientation: .horizontal)
@@ -26,6 +31,21 @@ class RegisterClvCell: BaseClvCell {
     
     override func awakeFromNib() {
         initUI()
+        
+        self.query = baseQuery()
+        
+    }
+    
+    fileprivate func baseQuery() -> Query {
+        return Firestore.firestore().collection("Users").limit(to: 50)
+    }
+    
+    fileprivate var query: Query? {
+        didSet {
+            if let listener = listener {
+                listener.remove()
+            }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -219,28 +239,55 @@ extension RegisterClvCell {
                     App().hideHUDProgess("Error", "Can't sign up", "ic_errorLogin", .customView)
                     return
                 }
-                guard let uid = Auth.auth().currentUser?.uid else {
-                    App().hideHUDProgess("Error", "Can't sign up", "ic_errorLogin", .customView)
-                    return
+                if let uid = Auth.auth().currentUser?.uid,
+                        let name = self.tfUsername.text,
+                        let pass = self.tfPassword.text,
+                        let email = self.tfEmail.text {
+                    
+                    let newUser: [String: Any] = [
+                        "token": uid,
+                        "type": 0,
+                        "user": [
+                            "id": uid,
+                            "name": name,
+                            "email": email,
+                            "gender": 0,
+                            "birthday": Date(),
+                            "address": "",
+                            "pass": pass,
+                            "imageUrl": ""]]
+                    
+                    let db = Firestore.firestore()
+                    db.collection("Users").document(uid).setData(newUser, merge: true, completion: { (err) in
+                        if let err = err {
+                            print("Error adding document: \(err)")
+                            App().hideHUDProgess("Error", "Can't sign up", "ic_errorLogin", .customView)
+                            return
+                        } else {
+                            print("Document added")
+                            App().hideHUDProgess("Success!", "", "ic_check", .customView)
+                        }
+                    })
                 }
-                let dictionaryValues = ["name": self.tfUsername.text!,
-                                        "email": self.tfEmail.text!,
-                                        "imageUrl": "",
-                                        "gender": "",
-                                        "birthday": "",
-                                        "address": "",
-                                        "password": self.tfPassword.text!]
-                let values = [uid : dictionaryValues]
-                
-                Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
-                    if err != nil {
-                        App().hideHUDProgess("Error", "Can't sign up", "ic_errorLogin", .customView)
-                        return
-                    }
-                    print("Successfully saved user info into Firebase database")
-                    // after successfull save dismiss the welcome view controller
-                    App().hideHUDProgess("Success!", "", "ic_check", .customView)
-                })
+
+//                let dictionaryValues = ["name": self.tfUsername.text!,
+//                                        "email": self.tfEmail.text!,
+//                                        "imageUrl": "",
+//                                        "gender": "",
+//                                        "birthday": "",
+//                                        "address": "",
+//                                        "password": self.tfPassword.text!]
+//                let values = [uid : dictionaryValues]
+//
+//                Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
+//                    if err != nil {
+//                        App().hideHUDProgess("Error", "Can't sign up", "ic_errorLogin", .customView)
+//                        return
+//                    }
+//                    print("Successfully saved user info into Firebase database")
+//                    // after successfull save dismiss the welcome view controller
+//                    App().hideHUDProgess("Success!", "", "ic_check", .customView)
+//                })
             })
         }
     }

@@ -8,9 +8,9 @@
 
 import UIKit
 import FirebaseAuth
-import FirebaseDatabase
 import FirebaseStorage
 import ObjectMapper
+import FirebaseFirestore
 
 enum ModeScreen {
     case modeView;
@@ -61,9 +61,9 @@ class ProfileVC: BaseVC {
     @IBOutlet weak var tbvContent: UITableView!
     
     var mode: ModeScreen = .modeView
-    var user = UserDto.User()
+    var userDetail = UserDetail()
     var strAddress: String?
-    var strDate: String?
+    var strDate: Date?
     var strGender: Int? = 0
     var strImage: UIImage?
     var strImageUrl: String?
@@ -71,14 +71,14 @@ class ProfileVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        fetchUserData()
         self.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+    
         updateUI()
-        initData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,31 +96,58 @@ class ProfileVC: BaseVC {
         tbvContent?.reloadData()
     }
     
-    func initData() {
+    func updateData(_ user: UserDetail) {
         strDate = user.birthday
         strAddress = user.address
-        strGender = user.gender
+        strGender = user.gender as? Int
         strImageUrl = user.imageUrl
+    }
+    
+    func fetchUserData() {
+        
+        if Auth.auth().currentUser != nil {
+            guard let uid = Auth.auth().currentUser?.uid else {
+                return
+            }
+            let db = Firestore.firestore()
+            db.collection("Users").document(uid).getDocument(completion: { (document, err) in
+                if let user = document.flatMap({
+                    $0.data().flatMap({ (data) in
+                        return Mapper<User>().map(JSON: data)
+                    })
+                }) {
+                    self.userDetail = user.user!
+                    self.updateData(user.user!)
+                    self.tbvContent.reloadData()
+                    Config().setUser(user)
+                    Config().user?.user?.imageUrl = self.userDetail.imageUrl
+                } else {
+                    print("Failed to fetch data")
+                }
+            })
+        }
     }
     
     func saveNewUserDataToFirebase() {
         App().showHUDProgess(self.tbvContent)
         
-        user.address = strAddress
-        user.birthday = strDate
-        user.gender = strGender
-        user.imageUrl = strImageUrl
+        userDetail.address = strAddress
+        userDetail.birthday = strDate
+        userDetail.gender = strGender! as NSNumber
+        userDetail.imageUrl = strImageUrl
         
-        let ref = Database.database().reference().child("users/\((Config().user?.token)!)")
-        ref.updateChildValues(["address": user.address!,
-                               "birthday": user.birthday!,
-                               "gender": user.gender!,
-                               "imageUrl": user.imageUrl!]) { (err, ref: DatabaseReference) in
-                                if let err = err {
-                                    App().hideHUDProgess("Error", "Failed to update with error \(err)", "", .text)
-                                } else {
-                                    App().hideHUDProgess("Success", "", "", .text)
-                                }
+        if let uid = Auth.auth().currentUser?.uid {
+            let db = Firestore.firestore()
+            db.collection("Users").document(uid).updateData(["user.address": strAddress!,
+                                                             "user.birthday": strDate!,
+                                                             "user.gender": strGender!,
+                                                             "user.imageUrl": strImageUrl!]) { (err) in
+                if let err = err {
+                    App().hideHUDProgess("Error", "Failed to update with error \(err)", "", .text)
+                } else {
+                    App().hideHUDProgess("Success", "", "", .text)
+                }
+            }
         }
     }
     
@@ -155,6 +182,16 @@ extension ProfileVC: UITableViewDataSource {
         case .Logout:
             return 60
         case .ChangePassword:
+            if let type = Config().user?.type as! Int? {
+                switch type {
+                case 0:
+                    return 50
+                case 1:
+                    return 0
+                default:
+                    return 50
+                }
+            }
             return 50
         }
     }
@@ -166,11 +203,16 @@ extension ProfileVC: UITableViewDataSource {
         switch sectionScreen {
         case .Avatar:
             let cell: ProfileCell = tableView.dequeueReusableCell(withIdentifier: "PAvatarCell", for: indexPath) as! ProfileCell
-            let url = URL(string: (user.imageUrl)!)
-
+            if userDetail.imageUrl != nil {
+                let url = URL(string: (userDetail.imageUrl)!)
+                cell.imvIcon?.kf.setImage(with: url)
+            } else {
+                cell.imvIcon?.image = UIImage(named: "ic_user")
+            }
+            
             cell.imvIcon?.layer.cornerRadius = (cell.imvIcon?.frame.size.height)!/2
-            cell.imvIcon?.kf.setImage(with: url)
-            cell.lblTitle?.text = user.name
+            
+            cell.lblTitle?.text = userDetail.name
             
             switch mode {
             case .modeView:
@@ -187,14 +229,17 @@ extension ProfileVC: UITableViewDataSource {
             
             switch row {
             case .Address:
-                cell.configura(.edit, row.title, user.address)
+                cell.configura(.edit, row.title, userDetail.address)
             case .Email:
-                cell.configura(nil, row.title, user.email)
+                cell.configura(nil, row.title, userDetail.email)
             case .Birthday:
-                cell.configura(.calendar, row.title, user.address)
-                cell.configura(.calendar, row.title, user.birthday)
+                if userDetail.birthday == nil {
+                    cell.configura(.calendar, row.title, dateToString(Date(), dateFormat: "dd-MM-yyyy"))
+                } else {
+                    cell.configura(.calendar, row.title, dateToString(userDetail.birthday!, dateFormat: "dd-MM-yyyy"))
+                }
             case .Gender:
-                cell.configura(.arrowDown, row.title, user.gender == 0 ? "Male" : (user.gender == 1 ? "Female" : "Please choose"))
+                cell.configura(.arrowDown, row.title, userDetail.gender == 0 ? "Male" : (userDetail.gender == 1 ? "Female" : "Please choose"))
             }
             
             switch mode {
@@ -229,7 +274,7 @@ extension ProfileVC: UITableViewDelegate {
         let sectionScreen:Section = Section(rawValue: indexPath.section)!
         if sectionScreen == .ChangePassword {
             let vc: ChangePassVC = VCFromSB(SB: .Profile)
-            vc.user = self.user
+            vc.user = self.userDetail
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -244,14 +289,13 @@ extension ProfileVC: ProfileCellDelegate {
         if sectionScreen == .Avatar {
             
             tapToImageView()
-            App().showHUDProgess(self.tbvContent)
             cell.imvIcon?.kf.setImage(with: URL(string: (self.strImageUrl)!))
-            App().hideHUDProgess("Success", "", "ic_check", .customView)
+            
             
         } else if sectionScreen == .ChangePassword {
             if indexPath?.row == 0 {
                 let vc: ChangePassVC = VCFromSB(SB: .Profile)
-                vc.user = self.user
+                vc.user = self.userDetail
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         } else if sectionScreen == .Info {
@@ -289,19 +333,19 @@ extension ProfileVC: ProfileCellDelegate {
             } else if row == .Birthday {
                 
                 let alert = UIAlertController(style: .actionSheet, title: row.title, message: "Select your \(row.title)")
-                alert.addDatePicker(mode: .date, date: stringToDate(self.strDate!), minimumDate: nil, maximumDate: nil) { date in
-                    self.strDate = dateToString(date, dateFormat: "dd-MM-yyyy")
+                
+                alert.addDatePicker(mode: .date, date: self.strDate!, minimumDate: nil, maximumDate: nil) { date in
+                    self.strDate = date
                 }
                 alert.addAction(image: nil, title: "Done", color: AppColor.mainColor, style: .cancel, isEnabled: true) { (UIAlertAction) in
-                    cell.lblSubTitle?.text = self.strDate
+                    cell.lblSubTitle?.text = dateToString(self.strDate!, dateFormat: "dd-MM-yyyy")
                 }
                 alert.show()
                 
             } else if row == .Gender {
                 
                 let alert = UIAlertController(style: .actionSheet, title: row.title, message: "Select your \(row.title)")
-                
-                //            let arrGender: [String] = ["Male", "Female"]
+
                 let pickerViewValues: [String] = ["Male", "Female"]
                 let pickerViewSelectedValue: PickerViewViewController.Index = (column: 0, row: 0)
                 
@@ -373,6 +417,7 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
         }
         self.strImage = selectedImage
         if selectedImage != nil {
+            App().showHUDProgess(self.tbvContent)
             let randomString = UUID().uuidString
             let storageRef = Storage.storage().reference().child("\(randomString).png")
             //Image uploaded to Firebase must be Data, not UIImage
@@ -385,6 +430,7 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
                         if err == nil {
                             if url != nil {
                                 self.strImageUrl = url?.absoluteString
+                                App().hideHUDProgess("Success", "", "ic_check", .customView)
                             }
                         }
                     })

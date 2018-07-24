@@ -11,6 +11,7 @@ import Firebase
 import FBSDKCoreKit
 import MBProgressHUD
 import GoogleSignIn
+import FirebaseFirestore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -20,15 +21,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     public var rootNV:BaseNV?
     public var mainVC:MainVC?
     private var hud = MBProgressHUD()
-    var user = UserDto.User()
+    var user = UserDetail()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         config = Configuration()
         checkStatusLogin()
+        
         FirebaseApp.configure()
+        
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
@@ -37,49 +41,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
               withError error: Error!) {
-        if let error = error {
-            print("\(error.localizedDescription)")
-        } else {
-            // Perform any operations on signed in user here.
-            self.user.name = user.profile.name
-            self.user.email = user.profile.email
-            guard let authentication = user.authentication else { return }
-            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                           accessToken: authentication.accessToken)
-            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-                if let error = error {
-                    // ...
-                    return
-                } else {
-                    guard let uid = Auth.auth().currentUser?.uid else {
-                        App().hideHUDProgess("Error", "Can't sign up", "ic_errorLogin", .customView)
-                        return
-                    }
-                    let dictionaryValues = ["name": self.user.name,
-                                            "email": self.user.email,
-                                            "imageUrl": "",
-                                            "gender": "",
-                                            "birthday": "",
-                                            "address": "",
-                                            "password": ""]
-                    let values = [uid : dictionaryValues]
-                    
-                    Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
-                        if err != nil {
-                            //
-                            return
-                        }
-                        print("Successfully saved user info into Firebase database")
-                        Config().user?.token = uid
-                        Config().user?.user = self.user
-                        Config().user?.user?.name = self.user.name
-                        Config().user?.user?.email = self.user.email
-                        App().loginSuccess()
-                    })
-                    
-                }
-            }
-        }
+//        if let error = error {
+//            print("\(error.localizedDescription)")
+//        } else {
+//            // Perform any operations on signed in user here.
+//            self.user.name = user.profile.name
+//            self.user.email = user.profile.email
+//            guard let authentication = user.authentication else { return }
+//            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+//                                                           accessToken: authentication.accessToken)
+//            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+//                if let error = error {
+//                    print(error)
+//                    return
+//                } else {
+//                    guard let uid = Auth.auth().currentUser?.uid else {
+//                        App().hideHUDProgess("Error", "Can't sign up", "ic_errorLogin", .customView)
+//                        return
+//                    }
+//                    let dictionaryValues = ["name": self.user.name,
+//                                            "email": self.user.email,
+//                                            "imageUrl": "",
+//                                            "gender": "",
+//                                            "birthday": "",
+//                                            "address": "",
+//                                            "password": ""]
+//                    let values = [uid : dictionaryValues]
+//
+//                    Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
+//                        if err != nil {
+//                            //
+//                            return
+//                        }
+//                        print("Successfully saved user info into Firebase database")
+//                        Config().user?.token = uid
+////                        Config().user?.user = self.user
+//                        Config().user?.user?.name = self.user.name
+//                        Config().user?.user?.email = self.user.email
+//                        App().loginSuccess()
+//                    })
+//
+//                }
+//            }
+//        }
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {

@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseAuth
-import FirebaseDatabase
+import FirebaseFirestore
 
 class ChangePassVC: BaseVC {
     
@@ -18,7 +18,7 @@ class ChangePassVC: BaseVC {
     @IBOutlet fileprivate weak var tfRePassword: UITextField!
     @IBOutlet fileprivate weak var btnSave: UIButton?
     
-    var user = UserDto.User()
+    var user = UserDetail()
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -147,13 +147,15 @@ extension ChangePassVC{
         App().showHUDProgess(self.view)
         currentUser?.updatePassword(to: pass, completion: { (err) in
             if err == nil {
-                let ref = Database.database().reference().child("users/\((Config().user?.token)!)")
-                ref.updateChildValues(["password": pass]) { (err, ref: DatabaseReference) in
-                                        if let err = err {
-                                            App().hideHUDProgess("Error", "Failed to update with error \(err)", "", .text)
-                                        } else {
-                                            App().hideHUDProgess("Success", "", "", .text)
-                                        }
+                if let uid = Auth.auth().currentUser?.uid {
+                    let db = Firestore.firestore()
+                    db.collection("Users").document(uid).updateData(["user.pass": pass]) { (err) in
+                                                                        if let err = err {
+                                                                            App().hideHUDProgess("Error", "Failed to update with error \(err)", "", .text)
+                                                                        } else {
+                                                                            App().hideHUDProgess("Success", "", "", .text)
+                                                                        }
+                    }
                 }
             } else {
                 App().hideHUDProgess("Error", "Password not correct", "", .text)

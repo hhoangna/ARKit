@@ -14,9 +14,9 @@ target 'ARChemistry' do
     pod 'FacebookLogin'
     pod 'Kingfisher', '~> 4.0'
     pod 'Firebase/Core'
-    pod 'Firebase/Database'
     pod 'Firebase/Auth'
     pod 'Firebase/Storage'
+    pod 'Firebase/Firestore'
     pod 'GoogleSignIn'
     pod 'ColorMatchTabs', '~> 2.0.2'
     

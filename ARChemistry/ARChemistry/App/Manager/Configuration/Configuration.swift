@@ -13,7 +13,7 @@ import FirebaseAuth
 class Configuration: NSObject {
     
    fileprivate var userDefaults:UserDefaults?
-    var user:UserDto?{
+    var user:User?{
         get {
             return getUser()
         }
@@ -31,7 +31,7 @@ class Configuration: NSObject {
     
     
     
-    func setUser(_ userDto:UserDto?) {
+    func setUser(_ userDto:User?) {
         if(userDto != nil) {
             let data = userDto?.getJSONString()
             if (data != nil) {
@@ -48,15 +48,15 @@ class Configuration: NSObject {
         userDefaults?.synchronize()
     }
     
-  private  func getUser() -> UserDto? {
+  private  func getUser() -> User? {
         
-        var user:UserDto?
+        var user:User?
         if(user !=  nil) {
             user = self.user
         }else {
             let data = userDefaults?.object(forKey: CF_UserData)
             if(data != nil) {
-                user =  UserDto(JSON: data as! [String:Any])
+                user =  User(JSON: data as! [String:Any])
             }
         }
         

@@ -36,8 +36,8 @@ class LoginRegisterVC: BaseVC,  GIDSignInUIDelegate{
         topItemView = TabBarTopView.load()
         topItemView?.delegate = self
         
-        let tabLogin = TabBarItem.init("LOGIN")
-        let tabRegister = TabBarItem.init("REGISTER")
+        let tabLogin = TabBarItem.init("Login")
+        let tabRegister = TabBarItem.init("Register")
         
         topItemView?.tabBarTopItems = [tabLogin,tabRegister]
         if let tabBarItem = topItemView {
@@ -126,14 +126,12 @@ extension LoginRegisterVC: UICollectionViewDataSource {
             
             cell.rootVC = self
             cell.delegate = self
-            //        cell.updateData()
             
             return cell;
         } else {
             let cell: RegisterClvCell = collectionView.dequeueReusableCell(withReuseIdentifier: "RegisterClvCell", for: indexPath) as! RegisterClvCell
             
             cell.rootVC = self
-            //        cell.updateData()
             
             return cell;
         }

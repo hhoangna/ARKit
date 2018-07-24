@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import MBProgressHUD
+import FirebaseFirestore
 
 // MARK: Functions
 
@@ -127,6 +128,17 @@ func stringToDate (_ from: String) -> Date {
     }
     
     return Date()
+}
+
+func timestampToDate(_ from: Timestamp) -> Date {
+    return Date(timeIntervalSince1970: TimeInterval(from.seconds))
+}
+
+func timestampToString(_ from: Timestamp, _ format: String) -> String {
+    let date = timestampToDate(from)
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = format
+    return dateFormatter.string(from: date)
 }
 
 func showAlert(on: UIViewController, style: UIAlertControllerStyle, title: String?, message: String?, actions: [UIAlertAction] = [UIAlertAction(title: "Ok", style: .default, handler: nil)], completion: (() -> Swift.Void)? = nil) {

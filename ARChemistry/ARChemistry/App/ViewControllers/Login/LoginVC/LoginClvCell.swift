@@ -13,8 +13,8 @@ import FacebookLogin
 import MBProgressHUD
 import FirebaseAuth
 import ObjectMapper
-import FirebaseDatabase
 import GoogleSignIn
+import FirebaseFirestore
 
 protocol LoginCellDelegate:class {
     func didSelectButton(cell:LoginClvCell, btn: UIButton);
@@ -31,11 +31,11 @@ class LoginClvCell: BaseClvCell, GIDSignInUIDelegate {
     
     weak var delegate: LoginCellDelegate?
     
-    var userDto = UserDto()
+    public var users = User()
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
     }
     
     override func draw(_ rect: CGRect) {
@@ -70,26 +70,29 @@ class LoginClvCell: BaseClvCell, GIDSignInUIDelegate {
             DispatchQueue.main.async(execute: { () -> Void in
                 
                 button.stopAnimation(animationStyle: .normal, completion: {
+                    App().showHUDProgess(self)
                     Auth.auth().signIn(withEmail: (self.tfUsername?.text!)!, password: (self.tfPassword?.text!)!, completion: { (user, err) in
                         if err != nil {
-                            App().showHUDProgess(self)
                             App().hideHUDProgess("Error", "", "ic_errorLogin", .customView)
                         } else {
-                            let user = Auth.auth().currentUser
-                            Database.database().reference().child("users").child((user?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
-                                guard let dictionary = snapshot.value as? [String : Any] else {
-                                    return
-                                }
-                                let user = Mapper<UserDto.User>().map(JSON: dictionary)!
+                            if let uid = Auth.auth().currentUser?.uid {
                                 
-                                self.userDto.user = user
-                                self.userDto.token = Auth.auth().currentUser?.uid
-                                Config().setUser(self.userDto)
-                                App().loginSuccess()
-                            }, withCancel: { (err) in
-                                //
-                            })
-                            
+                                let db = Firestore.firestore()
+                                db.collection("Users").document(uid).getDocument(completion: { (document, err) in
+                                    if let user = document.flatMap({
+                                        $0.data().flatMap({ (data) in
+                                            return Mapper<User>().map(JSON: data)
+                                        })
+                                    }) {
+                                        self.users = user
+                                        Config().setUser(self.users)
+                                        App().hideHUDProgess("", "", "ic_check", .customView)
+                                        App().loginSuccess()
+                                    } else {
+                                        App().hideHUDProgess("Error", "", "ic_errorLogin", .customView)
+                                    }
+                                })
+                            }
                         }
                     })
                 })
@@ -142,10 +145,9 @@ class LoginClvCell: BaseClvCell, GIDSignInUIDelegate {
                 
                 print(responseDict)
                 
-                let user = Mapper<UserDto.User>().map(JSON: responseDict)
+                let user = Mapper<UserDetail>().map(JSON: responseDict)
                 
-                self.userDto.user = user
-                self.userDto.token = Auth.auth().currentUser?.uid
+                self.users.user = user!
                 
                 guard let url = URL(string: (user?.picture?.data?.url)!) else {
                     App().hideHUDProgess("Error", "Failed to fetch User", "", .text)
@@ -178,32 +180,38 @@ class LoginClvCell: BaseClvCell, GIDSignInUIDelegate {
     fileprivate func saveUserIntoFirebaseDatabase() {
         
         guard let uid = Auth.auth().currentUser?.uid,
-            let name = self.userDto.user?.name,
-            let email = self.userDto.user?.email,
-            let imageUrl = self.userDto.user?.picture?.data?.url else {
+            let name = self.users.user?.name,
+            let email = self.users.user?.email,
+            let imageUrl = self.users.user?.picture?.data?.url else {
                 App().hideHUDProgess("Error", "Failed to save user", "", .text)
                 return
         }
 
-        let dictionaryValues = ["name": name,
-                                "email": email,
-                                "imageUrl": imageUrl,
-                                "gender": "",
-                                "birthday": "",
-                                "address": "",
-                                "password": ""]
-        let values = [uid : dictionaryValues]
+        let newUser: [String: Any] = [
+            "token": uid,
+            "type": 1,
+            "user": [
+                "id": uid,
+                "name": name,
+                "email": email,
+                "gender": 0,
+                "birthday": Date(),
+                "address": "",
+                "pass": "",
+                "imageUrl": imageUrl]]
         
-        Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
+        let db = Firestore.firestore()
+        db.collection("Users").document(uid).setData(newUser, merge: true, completion: { (err) in
             if let err = err {
-                App().hideHUDProgess("Error", "Failed to save user info with error: \(err)", "", .text)
+                print("Error adding document: \(err)")
+                App().hideHUDProgess("Error", "Can't sign up", "ic_errorLogin", .customView)
                 return
+            } else {
+                print("Document added")
+                App().hideHUDProgess("Success!", "", "ic_check", .customView)
+                Config().setUser(self.users)
+                App().loginSuccess()
             }
-            print("Successfully saved user info into Firebase database")
-            // after successfull save dismiss the welcome view controller
-            App().hideHUDProgess("Success!", "", "ic_check", .customView)
-            Config().setUser(self.userDto)
-            App().loginSuccess()
         })
     }
     

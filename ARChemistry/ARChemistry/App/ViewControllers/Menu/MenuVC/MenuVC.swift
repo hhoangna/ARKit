@@ -8,10 +8,10 @@
 
 import UIKit
 import Kingfisher
-import FirebaseDatabase
 import FirebaseAuth
 import ObjectMapper
 import ColorMatchTabs
+import FirebaseFirestore
 
 class MenuVC: BaseVC {
     
@@ -24,10 +24,9 @@ class MenuVC: BaseVC {
     
     @IBOutlet weak var tbvContent:UITableView?
 
-    
     var arrData:[Array<Any>]?
     var curentFeature:AR_Feature?
-    var userDto = UserDto.User()
+    var userDetail: UserDetail = (Config().user?.user)!
     
     fileprivate static let MenuProfileIdentifierCell:String = "MenuProfileCell"
     fileprivate static let MenuLogoutIdentifierCell:String = "MenuLogoutCell"
@@ -36,7 +35,6 @@ class MenuVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchUserData()
         setUpTableView()
         initVar()
     }
@@ -64,27 +62,7 @@ class MenuVC: BaseVC {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func fetchUserData() {
-        
-        if Auth.auth().currentUser != nil {
-            guard let uid = Auth.auth().currentUser?.uid else {
-                return
-            }
-            Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-                guard let dictionary = snapshot.value as? [String : Any] else {
-                    return
-                }
-                self.userDto = Mapper<UserDto.User>().map(JSON: dictionary)!
-                
-            }, withCancel: { (err) in
-                //
-            })
-        }
-    }
-
 }
-
 
 //MARK: - UITableViewDataSource
 extension MenuVC:UITableViewDataSource {
@@ -106,8 +84,8 @@ extension MenuVC:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header:MenuCell = self.tbvContent?.dequeueReusableCell(withIdentifier: MenuVC.MenuProfileIdentifierCell) as! MenuCell;
-        if userDto.imageUrl != nil {
-            let url = URL(string: userDto.imageUrl!)
+        if Config().user?.user?.imageUrl != nil {
+            let url = URL(string: (Config().user?.user?.imageUrl)!)
             header.imvAvatar?.kf.setImage(with: url)
         } else {
             header.imvAvatar?.image = UIImage(named: "ic_user")
@@ -200,7 +178,6 @@ extension MenuVC:MenuCellDelegate {
     
     func didSelectedProfile(cell: MenuCell, btn: UIButton) {
         let vc: ProfileVC = VCFromSB(ProfileVC(), SB: .Profile)
-        vc.user = self.userDto
         App().mainVC?.rootNV?.setViewControllers([vc], animated: false)
         App().mainVC?.showSlideMenu(isShow: false, animation: true)
     }
