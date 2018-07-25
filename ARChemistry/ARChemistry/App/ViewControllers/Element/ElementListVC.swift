@@ -8,11 +8,16 @@
 
 import UIKit
 import ColorMatchTabs
+import FirebaseFirestore
 
 class ElementListVC: ColorMatchTabsViewController {
+    
+    var element = [ElementDto]()
+    var db: Firestore!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        db = Firestore.firestore()
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.menu(target: self, action: #selector(didSelectedBackOrMenu))
         
@@ -33,8 +38,19 @@ class ElementListVC: ColorMatchTabsViewController {
         super.viewWillAppear(animated)
         
         UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+        
+//        db.collection("Elements").getDocuments { (snapshot, err) in
+//            if let err = err {
+//                print("\(err.localizedDescription)")
+//            }else{
+//                self.element = snapshot!.documents.compactMap({ElementDto(dictionary: $0.data())})
+//                DispatchQueue.main.async {
+////                    self.tableView.reloadData()
+//                    print(self.element)
+//                }
+//            }
+//        }
     }
-    
 }
 
 extension ElementListVC: ColorMatchTabsViewControllerDataSource {

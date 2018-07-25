@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 //with itemSize: CGSize
 
@@ -15,20 +16,36 @@ private let collectionViewCellHeightCoefficient: CGFloat = 0.65
 private let collectionViewCellWidthCoefficient: CGFloat = 0.45
 
 class SubCollectionVC: UICollectionViewController {
+    
+    var element = [ElementDto]()
+    var db: Firestore!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        db = Firestore.firestore()
+        loadElement()
         
         setupTableView()
 //        configureCollectionViewLayout()
     }
     
     private func configureCollectionViewLayout() {
-//        guard let layout = collectionView?.collectionViewLayout as? SubCollectionVCFlowLayout else { return }
-
-//        layout.itemSize = CGSize(width: (collectionView?.frame.size.height)! * collectionViewCellWidthCoefficient, height: (collectionView?.frame.size.height)! * collectionViewCellHeightCoefficient)
-
         collectionView?.collectionViewLayout.invalidateLayout()
 
+    }
+    
+    func loadElement() {
+        db.collection("Elements").order(by: "atom", descending: false).getDocuments { (snapshot, err) in
+            if let err = err {
+                print("\(err.localizedDescription)")
+            }else{
+                DispatchQueue.main.async {
+                    self.element = snapshot!.documents.compactMap({ElementDto(dictionary: $0.data())})
+                    self.collectionView?.reloadData()
+                }
+            }
+        }
     }
     
     fileprivate func setupTableView() {
@@ -46,22 +63,14 @@ class SubCollectionVC: UICollectionViewController {
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ElementCollectionCell", for: indexPath) as! ElementCollectionCell
         
+        let elementDetail = element[indexPath.row]
+        cell.configureWith(elementDetail)
+        
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return element.count
     }
-    
-//    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let locationFirst = CGPoint(x: (collectionView?.center.x)! + scrollView.contentOffset.x, y: (collectionView?.center.y)! + scrollView.contentOffset.y)
-//        let locationSecond = CGPoint(x: (collectionView?.center.x)! + scrollView.contentOffset.x + 20, y: (collectionView?.center.y)! + scrollView.contentOffset.y)
-//        let locationThird = CGPoint(x: (collectionView?.center.x)! + scrollView.contentOffset.x - 20, y: (collectionView?.center.y)! + scrollView.contentOffset.y)
-//
-//        if let indexPathFirst = collectionView.indexPathForItem(at: locationFirst), let indexPathSecond = collectionView.indexPathForItem(at: locationSecond), let indexPathThird = collectionView.indexPathForItem(at: locationThird), indexPathFirst.row == indexPathSecond.row && indexPathSecond.row == indexPathThird.row && indexPathFirst.row != pageControl.currentPage {
-//            pageControl.currentPage = indexPathFirst.row % images.count
-//            self.animateChangingTitle(for: indexPathFirst)
-//        }
-//    }
 }
 

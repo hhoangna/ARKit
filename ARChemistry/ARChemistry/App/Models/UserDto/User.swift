@@ -43,7 +43,6 @@ class UserDetail: BaseDto {
 class User: BaseDto {
     var token: String?
     var type: NSNumber?
-    
     var user: UserDetail?
     
     required convenience init?(map: Map) {

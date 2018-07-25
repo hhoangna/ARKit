@@ -14,7 +14,7 @@ class ElementTableCell: UICollectionViewCell {
     @IBOutlet private weak var lblName: UILabel!
     @IBOutlet private weak var lblType: UILabel!
     @IBOutlet private weak var lblMass: UILabel!
-    @IBOutlet private weak var imvImage: UILabel!
+    @IBOutlet private weak var imvImage: UIImageView!
     
     override func draw(_ rect: CGRect) {
         lblMass.translatesAutoresizingMaskIntoConstraints = false
@@ -25,7 +25,6 @@ class ElementTableCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        layer.backgroundColor = AppColor.white.cgColor
         layer.cornerRadius = 14
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.3
@@ -33,21 +32,39 @@ class ElementTableCell: UICollectionViewCell {
         layer.masksToBounds = false
     }
     
-//    func configureWith(_ share: Share) {
-//        companyLabel.text = share.company
-//        categoryLabel.text = share.category
-//        priceLabel.text = "$ \(twoDigitsFormatted(share.price))"
-//        tendencyLabel.text = " \(twoDigitsFormatted(share.score)) (\(twoDigitsFormatted((share.percent)))) %"
-//        if share.isClosed {
-//            priceLabel.textColor = UIColor.vegaGray
-//            tendencyLabel.textColor = UIColor.vegaGray
-//            tendencyIcon.image = nil
-//        } else {
-//            tendencyLabel.textColor = share.isGrowing ? UIColor.vegaGreen : UIColor.vegaRed
-//            priceLabel.textColor = UIColor.vegaBlack
-//            tendencyIcon.image = share.isGrowing ? #imageLiteral(resourceName: "ic_up") : #imageLiteral(resourceName: "ic_down")
-//        }
-//    }
+    func configureWith(_ element: ElementDto) {
+        
+        lblMass.text = element.atom.stringValue
+        lblName.text = element.name
+        lblType.text = element.type
+        lblSymbol.text = element.symbol
+        imvImage.kf.setImage(with: URL(string: element.image))
+        
+        switch element.type {
+        case "Á kim":
+            layer.backgroundColor = AppColor.semi.cgColor
+        case "Kim loại chuyển tiếp":
+            layer.backgroundColor = AppColor.transition.cgColor
+        case "Phi kim":
+            layer.backgroundColor = AppColor.nonmetal.cgColor
+        case "Halogen":
+            layer.backgroundColor = AppColor.halogen.cgColor
+        case "Kim loại kiềm":
+            layer.backgroundColor = AppColor.alkali.cgColor
+        case "Kim loại kiềm thổ":
+            layer.backgroundColor = AppColor.alkaline.cgColor
+        case "Khí hiếm":
+            layer.backgroundColor = AppColor.noblegas.cgColor
+        case "Nhóm lantan":
+            layer.backgroundColor = AppColor.lantan.cgColor
+        case "Nhóm actinide":
+            layer.backgroundColor = AppColor.actinide.cgColor
+        case "Kim loại":
+            layer.backgroundColor = AppColor.metal.cgColor
+        default:
+            layer.backgroundColor = AppColor.white.cgColor
+        }
+    }
     
     private func twoDigitsFormatted(_ val: Double) -> String {
         return String(format: "%.0.2f", val)

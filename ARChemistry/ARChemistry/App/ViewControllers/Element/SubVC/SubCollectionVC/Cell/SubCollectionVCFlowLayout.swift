@@ -13,7 +13,7 @@ open class SubCollectionVCFlowLayout: UICollectionViewFlowLayout {
     
     let lineSpacingArgument: CGFloat = -2.5
     private var lastCollectionViewSize: CGSize = CGSize.zero
-    private var period: CGFloat { return (collectionView?.bounds.width ?? 0) * 0.86 }
+    private var period: CGFloat { return (collectionView?.bounds.width ?? 0) * 0.9 }
     
     public init(with itemSize: CGSize) {
         super.init()
@@ -31,7 +31,7 @@ open class SubCollectionVCFlowLayout: UICollectionViewFlowLayout {
         self.lastCollectionViewSize = collectionViewSize
         self.scrollDirection = scrollDirection
         switch scrollDirection {
-        case .horizontal: sectionInset = UIEdgeInsets(top: 0.0, left: collectionViewSize.width / 2 - itemSize.width / 2, bottom: 0.0, right: collectionViewSize.width / 2 - itemSize.width / 2)
+        case .horizontal: sectionInset = UIEdgeInsets(top: 0.0, left: collectionViewSize.width / 2 - itemSize.width / 2, bottom: -100, right: collectionViewSize.width / 2 - itemSize.width / 2)
         case .vertical: break
         }
     }

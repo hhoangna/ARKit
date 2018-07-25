@@ -77,8 +77,22 @@ class ProfileVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
-        updateUI()
+        
+        if let type = Config().user?.type as! Int? {
+            switch type {
+            case 0:
+                switch mode {
+                case .modeView:
+                    self.updateNavigationBar(.BackEdit, "Profile");
+                case .modeEdit:
+                    self.updateNavigationBar(.BackDone, "Profile");
+                }
+            case 1:
+                self.updateNavigationBar(.Menu, "Profile");
+            default:
+                self.updateNavigationBar(.Menu, "Profile");
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -174,11 +188,30 @@ extension ProfileVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let sectionScreen:Section = Section(rawValue: indexPath.section)!
+        let row: RowInSectionInfo = RowInSectionInfo(rawValue: indexPath.row)!
+        
         switch sectionScreen {
         case .Avatar:
             return 250
         case .Info:
-            return 50
+            switch row {
+            case .Address, .Birthday, .Gender: do {
+                if let type = Config().user?.type as! Int? {
+                    switch type {
+                    case 0:
+                        return 50
+                    case 1:
+                        return 0
+                    default:
+                        return 50
+                    }
+                }
+                return 50
+                }
+            case .Email:
+                return 50
+            }
+            
         case .Logout:
             return 60
         case .ChangePassword:

@@ -7,20 +7,41 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import ObjectMapper
 
 // MARK: - Configurable constants
 private let itemHeight: CGFloat = 84
 private let lineSpacing: CGFloat = 20
 private let xInset: CGFloat = 20
-private let topInset: CGFloat = 10
+private let topInset: CGFloat = 20
 
 class SubTableVC: UICollectionViewController {
-
+    
+    var element = [ElementDto]()
+    var db: Firestore!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        db = Firestore.firestore()
+        loadElement()
+        
         setupTableView()
         configureCollectionViewLayout()
+    }
+    
+    func loadElement() {
+        db.collection("Elements").order(by: "atom", descending: false).getDocuments { (snapshot, err) in
+            if let err = err {
+                print("\(err.localizedDescription)")
+            }else{
+                DispatchQueue.main.async {
+                    self.element = snapshot!.documents.compactMap({ElementDto(dictionary: $0.data())})
+                    self.collectionView?.reloadData()
+                }
+            }
+        }
     }
 
     private func configureCollectionViewLayout() {
@@ -47,10 +68,13 @@ class SubTableVC: UICollectionViewController {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ElementTableCell", for: indexPath) as! ElementTableCell
         
+        let elementDetail = element[indexPath.row]
+        cell.configureWith(elementDetail)
+        
         return cell
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return element.count
     } 
 }

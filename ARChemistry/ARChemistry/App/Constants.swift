@@ -160,6 +160,16 @@ struct AppColor {
     static let redColor             = UIColor(hex: "#FF5722")
     static let yellowColor          = UIColor(hex: "#FFEB3B")
     static let orangeColor          = UIColor(hex: "#F57C00")
+    static let metal                = UIColor(hex: "#CCCCCC")
+    static let nonmetal             = UIColor(hex: "#76FFC3")
+    static let halogen              = UIColor(hex: "#D6FF8A")
+    static let semi                 = UIColor(hex: "#C7D597")
+    static let alkali               = UIColor(hex: "#FF425C")
+    static let alkaline             = UIColor(hex: "#FFE3A9")
+    static let noblegas             = UIColor(hex: "#B1FFFF")
+    static let lantan               = UIColor(hex: "#FFA6FF")
+    static let actinide             = UIColor(hex: "#FF7BCB")
+    static let transition           = UIColor(hex: "#FFB9BE")
 }
 
 struct ScreenSize {

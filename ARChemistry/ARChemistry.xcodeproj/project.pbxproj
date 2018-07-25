@@ -66,6 +66,7 @@
 		4045B60020E50F4000E225A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4045B5FE20E50F4000E225A5 /* LaunchScreen.storyboard */; };
 		4045B60B20E50F4000E225A5 /* ARChemistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4045B60A20E50F4000E225A5 /* ARChemistryTests.swift */; };
 		4045B61620E50F4100E225A5 /* ARChemistryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4045B61520E50F4100E225A5 /* ARChemistryUITests.swift */; };
+		4054786E21076FE1002646B0 /* ElementDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4054786D21076FE1002646B0 /* ElementDto.swift */; };
 		407089C620F303CD00B922D4 /* PeriodicTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407089C520F303CD00B922D4 /* PeriodicTable.storyboard */; };
 		407089CC20F30C9200B922D4 /* PeriodicTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407089CB20F30C9200B922D4 /* PeriodicTableVC.swift */; };
 		407089D020F3119F00B922D4 /* Style+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407089CF20F3119F00B922D4 /* Style+Navigation.swift */; };
@@ -175,6 +176,7 @@
 		4045B61120E50F4100E225A5 /* ARChemistryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARChemistryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4045B61520E50F4100E225A5 /* ARChemistryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARChemistryUITests.swift; sourceTree = "<group>"; };
 		4045B61720E50F4100E225A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4054786D21076FE1002646B0 /* ElementDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDto.swift; sourceTree = "<group>"; };
 		407089C520F303CD00B922D4 /* PeriodicTable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PeriodicTable.storyboard; sourceTree = "<group>"; };
 		407089CB20F30C9200B922D4 /* PeriodicTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableVC.swift; sourceTree = "<group>"; };
 		407089CF20F3119F00B922D4 /* Style+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Style+Navigation.swift"; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				3BEB60D220E529B400A234FE /* RegisterDto */,
 				3BEB60CF20E5299900A234FE /* LoginDto */,
 				3BEB60C920E5289D00A234FE /* BaseDto */,
+				4054786A21076C2C002646B0 /* ElementDto */,
 				3BEB60AC20E5266500A234FE /* UserDto */,
 			);
 			path = Models;
@@ -755,6 +758,14 @@
 			path = ARChemistryUITests;
 			sourceTree = "<group>";
 		};
+		4054786A21076C2C002646B0 /* ElementDto */ = {
+			isa = PBXGroup;
+			children = (
+				4054786D21076FE1002646B0 /* ElementDto.swift */,
+			);
+			path = ElementDto;
+			sourceTree = "<group>";
+		};
 		407089C720F30B5D00B922D4 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
@@ -1075,7 +1086,6 @@
 				"${BUILT_PRODUCTS_DIR}/Macaw/Macaw.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
@@ -1103,7 +1113,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Macaw.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
@@ -1183,6 +1192,7 @@
 				4040BF6420F31E96000158A0 /* PeriodicTable.swift in Sources */,
 				3BEB60C520E5284100A234FE /* UIKit+IB.swift in Sources */,
 				402FE28A2102D6580068048C /* HTextfield.swift in Sources */,
+				4054786E21076FE1002646B0 /* ElementDto.swift in Sources */,
 				3BEB60AA20E5254100A234FE /* APIService+Profile.swift in Sources */,
 				3BEB60A520E5254100A234FE /* APIError.swift in Sources */,
 				40BC88E620FF9FC20049CC44 /* RegisterClvCell.swift in Sources */,
@@ -1355,10 +1365,7 @@
 				DEVELOPMENT_TEAM = 2UKZEPM7R9;
 				INFOPLIST_FILE = "ARChemistry/Suporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1375,10 +1382,7 @@
 				DEVELOPMENT_TEAM = 2UKZEPM7R9;
 				INFOPLIST_FILE = "ARChemistry/Suporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1393,11 +1397,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1413,11 +1413,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1432,11 +1428,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1451,11 +1443,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
