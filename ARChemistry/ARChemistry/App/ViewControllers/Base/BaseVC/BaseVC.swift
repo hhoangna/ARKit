@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ARKit
+import SceneKit
 
 class BaseVC: UIViewController {
     
@@ -66,7 +68,7 @@ class BaseVC: UIViewController {
     
     func needLandscapeMode() -> Bool {
         
-        if self is PeriodicTableVC {
+        if self is PeriodicTableVC || self is SettingVC{
             return true
         }
         

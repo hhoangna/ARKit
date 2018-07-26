@@ -14,12 +14,13 @@ class ElementTableCell: UICollectionViewCell {
     @IBOutlet private weak var lblName: UILabel!
     @IBOutlet private weak var lblType: UILabel!
     @IBOutlet private weak var lblMass: UILabel!
+    @IBOutlet private weak var lblAtom: UILabel!
     @IBOutlet private weak var imvImage: UIImageView!
     
     override func draw(_ rect: CGRect) {
-        lblMass.translatesAutoresizingMaskIntoConstraints = false
-        lblMass.bottomAnchor.constraint(equalTo: lblSymbol.topAnchor, constant: 5).isActive = true
-        lblMass.leftAnchor.constraint(equalTo: lblSymbol.rightAnchor, constant: 5).isActive = true
+        lblAtom.translatesAutoresizingMaskIntoConstraints = false
+        lblAtom.bottomAnchor.constraint(equalTo: lblSymbol.topAnchor, constant: 5).isActive = true
+        lblAtom.leftAnchor.constraint(equalTo: lblSymbol.rightAnchor, constant: 5).isActive = true
     }
     
     override func awakeFromNib() {
@@ -34,7 +35,8 @@ class ElementTableCell: UICollectionViewCell {
     
     func configureWith(_ element: ElementDto) {
         
-        lblMass.text = element.atom.stringValue
+        lblAtom.text = element.atom.stringValue
+        lblMass.text = "[\(element.mass)]"
         lblName.text = element.name
         lblType.text = element.type
         lblSymbol.text = element.symbol
@@ -55,12 +57,14 @@ class ElementTableCell: UICollectionViewCell {
             layer.backgroundColor = AppColor.alkaline.cgColor
         case "Khí hiếm":
             layer.backgroundColor = AppColor.noblegas.cgColor
-        case "Nhóm lantan":
+        case "Nhóm Lantan":
             layer.backgroundColor = AppColor.lantan.cgColor
-        case "Nhóm actinide":
+        case "Nhóm Actini", "Actini":
             layer.backgroundColor = AppColor.actinide.cgColor
-        case "Kim loại":
+        case "Kim loại", "Kim loại mềm":
             layer.backgroundColor = AppColor.metal.cgColor
+        case "Không rõ":
+            layer.backgroundColor = AppColor.unknown.cgColor
         default:
             layer.backgroundColor = AppColor.white.cgColor
         }

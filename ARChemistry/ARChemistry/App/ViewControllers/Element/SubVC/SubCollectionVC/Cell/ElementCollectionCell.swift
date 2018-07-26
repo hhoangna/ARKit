@@ -67,12 +67,14 @@ class ElementCollectionCell: UICollectionViewCell {
             layer.backgroundColor = AppColor.alkaline.cgColor
         case "Khí hiếm":
             layer.backgroundColor = AppColor.noblegas.cgColor
-        case "Nhóm lantan":
+        case "Nhóm Lantan":
             layer.backgroundColor = AppColor.lantan.cgColor
-        case "Nhóm actinide":
+        case "Nhóm Actini", "Actini":
             layer.backgroundColor = AppColor.actinide.cgColor
-        case "Kim loại":
+        case "Kim loại", "Kim loại mềm":
             layer.backgroundColor = AppColor.metal.cgColor
+        case "Không rõ":
+            layer.backgroundColor = AppColor.unknown.cgColor
         default:
             layer.backgroundColor = AppColor.white.cgColor
         }

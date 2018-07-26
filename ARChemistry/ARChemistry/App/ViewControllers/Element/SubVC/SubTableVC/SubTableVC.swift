@@ -76,5 +76,13 @@ class SubTableVC: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return element.count
-    } 
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let elementDetail = element[indexPath.row]
+        
+        let link = convertStringToNeededLink(elementDetail.name)
+        
+        WebVC.showWebViewWithUrl(URL(string: link)!)
+    }
 }

@@ -38,6 +38,13 @@
 		4011BEBC2105759E00A928C4 /* SubCollectionVCFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011BEBB2105759E00A928C4 /* SubCollectionVCFlowLayout.swift */; };
 		4011BEBF2105764900A928C4 /* ElementCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011BEBD2105764900A928C4 /* ElementCollectionCell.swift */; };
 		4011BEC02105764900A928C4 /* ElementCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4011BEBE2105764900A928C4 /* ElementCollectionCell.xib */; };
+		402AEEF62108711900F3690C /* PeriodicCellFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AEEF52108711900F3690C /* PeriodicCellFlow.swift */; };
+		402AEEFA2108715F00F3690C /* PeriodicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AEEF82108715F00F3690C /* PeriodicCell.swift */; };
+		402AEEFB2108715F00F3690C /* PeriodicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 402AEEF92108715F00F3690C /* PeriodicCell.xib */; };
+		402AEF0021088B6E00F3690C /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AEEFE21088B6E00F3690C /* ItemCell.swift */; };
+		402AEF0421088B8D00F3690C /* PickerItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AEF0221088B8C00F3690C /* PickerItemVC.swift */; };
+		402AEF0821088BB100F3690C /* Common.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 402AEF0721088BB100F3690C /* Common.storyboard */; };
+		402AEF0B2108D78A00F3690C /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AEF0A2108D78A00F3690C /* WebVC.swift */; };
 		402FE27D2101BAC80068048C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 402FE27C2101BAC80068048C /* Profile.storyboard */; };
 		402FE2802101BFE10068048C /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FE27F2101BFE10068048C /* ProfileVC.swift */; };
 		402FE2832101C0010068048C /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FE2822101C0010068048C /* ProfileCell.swift */; };
@@ -55,7 +62,6 @@
 		403A28EB2105064100BF0099 /* SubTableVCFowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403A28EA2105064100BF0099 /* SubTableVCFowLayout.swift */; };
 		403A28EE2105092800BF0099 /* ElementTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403A28ED2105092800BF0099 /* ElementTableCell.swift */; };
 		403A28F02105098C00BF0099 /* ElementTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 403A28EF2105098C00BF0099 /* ElementTableCell.xib */; };
-		4040BF5C20F315CE000158A0 /* ARKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4040BF5B20F315CE000158A0 /* ARKit.storyboard */; };
 		4040BF5E20F315D8000158A0 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4040BF5D20F315D8000158A0 /* Setting.storyboard */; };
 		4040BF6020F31601000158A0 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040BF5F20F31601000158A0 /* SettingVC.swift */; };
 		4040BF6220F31776000158A0 /* ARKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040BF6120F31776000158A0 /* ARKit.swift */; };
@@ -66,6 +72,23 @@
 		4045B60020E50F4000E225A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4045B5FE20E50F4000E225A5 /* LaunchScreen.storyboard */; };
 		4045B60B20E50F4000E225A5 /* ARChemistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4045B60A20E50F4000E225A5 /* ARChemistryTests.swift */; };
 		4045B61620E50F4100E225A5 /* ARChemistryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4045B61520E50F4100E225A5 /* ARChemistryUITests.swift */; };
+		404CF4F6210953EF00B21C96 /* ScrollMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CF4F5210953EF00B21C96 /* ScrollMenu.swift */; };
+		404CF4FA2109D7A200B21C96 /* PickerItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CF4F92109D7A200B21C96 /* PickerItemCell.swift */; };
+		404CF4FE210A4BB200B21C96 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CF4FC210A4BB200B21C96 /* StatusViewController.swift */; };
+		404CF4FF210A4BB200B21C96 /* VirtualObjectSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CF4FD210A4BB200B21C96 /* VirtualObjectSelection.swift */; };
+		404CF503210A4BBE00B21C96 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CF501210A4BBE00B21C96 /* FocusSquare.swift */; };
+		404CF504210A4BBE00B21C96 /* FocusSquareSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CF502210A4BBE00B21C96 /* FocusSquareSegment.swift */; };
+		404CF507210A4BCE00B21C96 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CF506210A4BCE00B21C96 /* Utilities.swift */; };
+		404CF50B210A4BD400B21C96 /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CF509210A4BD400B21C96 /* VirtualObject.swift */; };
+		404CF50C210A4BD400B21C96 /* VirtualObjectLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CF50A210A4BD400B21C96 /* VirtualObjectLoader.swift */; };
+		404CF515210A4BFB00B21C96 /* ViewController+ObjectSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CF50E210A4BF500B21C96 /* ViewController+ObjectSelection.swift */; };
+		404CF516210A4BFB00B21C96 /* VirtualObjectARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CF50F210A4BF600B21C96 /* VirtualObjectARView.swift */; };
+		404CF517210A4BFB00B21C96 /* VirtualObjectInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CF510210A4BF700B21C96 /* VirtualObjectInteraction.swift */; };
+		404CF518210A4BFB00B21C96 /* ThresholdPanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CF511210A4BF800B21C96 /* ThresholdPanGesture.swift */; };
+		404CF519210A4BFB00B21C96 /* ViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CF512210A4BFA00B21C96 /* ViewController+Actions.swift */; };
+		404CF51A210A4BFB00B21C96 /* ViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CF513210A4BFB00B21C96 /* ViewController+ARSCNViewDelegate.swift */; };
+		404CF51D210A4C3F00B21C96 /* ARKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 404CF51B210A4C3F00B21C96 /* ARKit.storyboard */; };
+		404CF521210A50B400B21C96 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 404CF520210A50B400B21C96 /* Models.scnassets */; };
 		4054786E21076FE1002646B0 /* ElementDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4054786D21076FE1002646B0 /* ElementDto.swift */; };
 		407089C620F303CD00B922D4 /* PeriodicTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407089C520F303CD00B922D4 /* PeriodicTable.storyboard */; };
 		407089CC20F30C9200B922D4 /* PeriodicTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407089CB20F30C9200B922D4 /* PeriodicTableVC.swift */; };
@@ -142,6 +165,13 @@
 		4011BEBB2105759E00A928C4 /* SubCollectionVCFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCollectionVCFlowLayout.swift; sourceTree = "<group>"; };
 		4011BEBD2105764900A928C4 /* ElementCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCollectionCell.swift; sourceTree = "<group>"; };
 		4011BEBE2105764900A928C4 /* ElementCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ElementCollectionCell.xib; sourceTree = "<group>"; };
+		402AEEF52108711900F3690C /* PeriodicCellFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicCellFlow.swift; sourceTree = "<group>"; };
+		402AEEF82108715F00F3690C /* PeriodicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicCell.swift; sourceTree = "<group>"; };
+		402AEEF92108715F00F3690C /* PeriodicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeriodicCell.xib; sourceTree = "<group>"; };
+		402AEEFE21088B6E00F3690C /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		402AEF0221088B8C00F3690C /* PickerItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerItemVC.swift; sourceTree = "<group>"; };
+		402AEF0721088BB100F3690C /* Common.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Common.storyboard; sourceTree = "<group>"; };
+		402AEF0A2108D78A00F3690C /* WebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
 		402FE27C2101BAC80068048C /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		402FE27F2101BFE10068048C /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		402FE2822101C0010068048C /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
@@ -159,7 +189,6 @@
 		403A28EA2105064100BF0099 /* SubTableVCFowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTableVCFowLayout.swift; sourceTree = "<group>"; };
 		403A28ED2105092800BF0099 /* ElementTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTableCell.swift; sourceTree = "<group>"; };
 		403A28EF2105098C00BF0099 /* ElementTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ElementTableCell.xib; sourceTree = "<group>"; };
-		4040BF5B20F315CE000158A0 /* ARKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARKit.storyboard; sourceTree = "<group>"; };
 		4040BF5D20F315D8000158A0 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		4040BF5F20F31601000158A0 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		4040BF6120F31776000158A0 /* ARKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKit.swift; sourceTree = "<group>"; };
@@ -176,6 +205,23 @@
 		4045B61120E50F4100E225A5 /* ARChemistryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARChemistryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4045B61520E50F4100E225A5 /* ARChemistryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARChemistryUITests.swift; sourceTree = "<group>"; };
 		4045B61720E50F4100E225A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		404CF4F5210953EF00B21C96 /* ScrollMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollMenu.swift; sourceTree = "<group>"; };
+		404CF4F92109D7A200B21C96 /* PickerItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerItemCell.swift; sourceTree = "<group>"; };
+		404CF4FC210A4BB200B21C96 /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		404CF4FD210A4BB200B21C96 /* VirtualObjectSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectSelection.swift; sourceTree = "<group>"; };
+		404CF501210A4BBE00B21C96 /* FocusSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
+		404CF502210A4BBE00B21C96 /* FocusSquareSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquareSegment.swift; sourceTree = "<group>"; };
+		404CF506210A4BCE00B21C96 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		404CF509210A4BD400B21C96 /* VirtualObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
+		404CF50A210A4BD400B21C96 /* VirtualObjectLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectLoader.swift; sourceTree = "<group>"; };
+		404CF50E210A4BF500B21C96 /* ViewController+ObjectSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ObjectSelection.swift"; sourceTree = "<group>"; };
+		404CF50F210A4BF600B21C96 /* VirtualObjectARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectARView.swift; sourceTree = "<group>"; };
+		404CF510210A4BF700B21C96 /* VirtualObjectInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectInteraction.swift; sourceTree = "<group>"; };
+		404CF511210A4BF800B21C96 /* ThresholdPanGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPanGesture.swift; sourceTree = "<group>"; };
+		404CF512210A4BFA00B21C96 /* ViewController+Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Actions.swift"; sourceTree = "<group>"; };
+		404CF513210A4BFB00B21C96 /* ViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
+		404CF51C210A4C3F00B21C96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../../../../Downloads/Handling3DInteractionAndUIControlsInAugmentedReality/ARKitInteraction/Base.lproj/ARKit.storyboard; sourceTree = "<group>"; };
+		404CF520210A50B400B21C96 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
 		4054786D21076FE1002646B0 /* ElementDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDto.swift; sourceTree = "<group>"; };
 		407089C520F303CD00B922D4 /* PeriodicTable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PeriodicTable.storyboard; sourceTree = "<group>"; };
 		407089CB20F30C9200B922D4 /* PeriodicTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableVC.swift; sourceTree = "<group>"; };
@@ -284,10 +330,11 @@
 				3BEB608520E5246700A234FE /* Main.storyboard */,
 				4045B5FE20E50F4000E225A5 /* LaunchScreen.storyboard */,
 				407089C520F303CD00B922D4 /* PeriodicTable.storyboard */,
-				4040BF5B20F315CE000158A0 /* ARKit.storyboard */,
+				404CF51B210A4C3F00B21C96 /* ARKit.storyboard */,
 				4040BF5D20F315D8000158A0 /* Setting.storyboard */,
 				402FE27C2101BAC80068048C /* Profile.storyboard */,
 				40F67263210416B200784D09 /* Elements.storyboard */,
+				402AEF0721088BB100F3690C /* Common.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -296,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				403832FE20FFB7C1005E3940 /* video_background.mp4 */,
+				404CF520210A50B400B21C96 /* Models.scnassets */,
 				4045B5FC20E50F4000E225A5 /* Assets.xcassets */,
 			);
 			path = Images;
@@ -448,7 +496,6 @@
 			isa = PBXGroup;
 			children = (
 				3BEB60AF20E526A500A234FE /* Constants.swift */,
-				3BEB60D520E52A3900A234FE /* Common */,
 				3BEB607C20E5230800A234FE /* AppDelegate */,
 				3BEB60BB20E5284100A234FE /* Utils */,
 				3BEB60AB20E5263300A234FE /* Models */,
@@ -488,9 +535,9 @@
 		3BEB60BB20E5284100A234FE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3BEB60BD20E5284100A234FE /* Extensions */,
 				402FE28E2102D9230068048C /* Picker */,
 				3BEB60BC20E5284100A234FE /* ValidateUtils.swift */,
-				3BEB60BD20E5284100A234FE /* Extensions */,
 				3BEB60C220E5284100A234FE /* MoneyUtils.swift */,
 			);
 			path = Utils;
@@ -499,6 +546,8 @@
 		3BEB60BD20E5284100A234FE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				40BC88E920FFA2330049CC44 /* Font.swift */,
+				3BEB60D720E52A3900A234FE /* NSAtribitedString+Ext.swift */,
 				3BEB60BE20E5284100A234FE /* UIButton+Ext.swift */,
 				402FE28B2102D7960068048C /* Common+Extensions.swift */,
 				3BEB60BF20E5284100A234FE /* UIKit+IB.swift */,
@@ -543,23 +592,6 @@
 			path = RegisterDto;
 			sourceTree = "<group>";
 		};
-		3BEB60D520E52A3900A234FE /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				3BEB60D620E52A3900A234FE /* Style */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		3BEB60D620E52A3900A234FE /* Style */ = {
-			isa = PBXGroup;
-			children = (
-				3BEB60D720E52A3900A234FE /* NSAtribitedString+Ext.swift */,
-				40BC88E920FFA2330049CC44 /* Font.swift */,
-			);
-			path = Style;
-			sourceTree = "<group>";
-		};
 		3BEB60DD20E52A8A00A234FE /* BaseClvCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -584,6 +616,51 @@
 				4011BEBE2105764900A928C4 /* ElementCollectionCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		402AEEF72108712B00F3690C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				402AEEF52108711900F3690C /* PeriodicCellFlow.swift */,
+				402AEEF82108715F00F3690C /* PeriodicCell.swift */,
+				402AEEF92108715F00F3690C /* PeriodicCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		402AEEFC21088ACE00F3690C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				402AEF092108D77000F3690C /* WebVC */,
+				402AEEFD21088B3700F3690C /* PickerItemVC */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		402AEEFD21088B3700F3690C /* PickerItemVC */ = {
+			isa = PBXGroup;
+			children = (
+				404CF4F82109D77600B21C96 /* Cell */,
+				404CF4F22109522000B21C96 /* ScrollMenu */,
+				402AEF0221088B8C00F3690C /* PickerItemVC.swift */,
+			);
+			path = PickerItemVC;
+			sourceTree = "<group>";
+		};
+		402AEF0621088B9900F3690C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				402AEEFE21088B6E00F3690C /* ItemCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		402AEF092108D77000F3690C /* WebVC */ = {
+			isa = PBXGroup;
+			children = (
+				402AEF0A2108D78A00F3690C /* WebVC.swift */,
+			);
+			path = WebVC;
 			sourceTree = "<group>";
 		};
 		402FE27E2101BFC10068048C /* Profile */ = {
@@ -758,6 +835,58 @@
 			path = ARChemistryUITests;
 			sourceTree = "<group>";
 		};
+		404CF4F22109522000B21C96 /* ScrollMenu */ = {
+			isa = PBXGroup;
+			children = (
+				402AEF0621088B9900F3690C /* Cell */,
+				404CF4F5210953EF00B21C96 /* ScrollMenu.swift */,
+			);
+			path = ScrollMenu;
+			sourceTree = "<group>";
+		};
+		404CF4F82109D77600B21C96 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				404CF4F92109D7A200B21C96 /* PickerItemCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		404CF4FB210A4BB200B21C96 /* Additional View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				404CF4FC210A4BB200B21C96 /* StatusViewController.swift */,
+				404CF4FD210A4BB200B21C96 /* VirtualObjectSelection.swift */,
+			);
+			path = "Additional View Controllers";
+			sourceTree = "<group>";
+		};
+		404CF500210A4BBE00B21C96 /* Focus Square */ = {
+			isa = PBXGroup;
+			children = (
+				404CF501210A4BBE00B21C96 /* FocusSquare.swift */,
+				404CF502210A4BBE00B21C96 /* FocusSquareSegment.swift */,
+			);
+			path = "Focus Square";
+			sourceTree = "<group>";
+		};
+		404CF505210A4BCE00B21C96 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				404CF506210A4BCE00B21C96 /* Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		404CF508210A4BD400B21C96 /* Virtual Objects */ = {
+			isa = PBXGroup;
+			children = (
+				404CF509210A4BD400B21C96 /* VirtualObject.swift */,
+				404CF50A210A4BD400B21C96 /* VirtualObjectLoader.swift */,
+			);
+			path = "Virtual Objects";
+			sourceTree = "<group>";
+		};
 		4054786A21076C2C002646B0 /* ElementDto */ = {
 			isa = PBXGroup;
 			children = (
@@ -779,6 +908,7 @@
 		407089C820F30B6A00B922D4 /* PeriodicTable */ = {
 			isa = PBXGroup;
 			children = (
+				402AEEF72108712B00F3690C /* Cell */,
 				4040BF6520F31E9C000158A0 /* View */,
 				407089CB20F30C9200B922D4 /* PeriodicTableVC.swift */,
 			);
@@ -788,7 +918,17 @@
 		407089C920F30B7800B922D4 /* ARKit */ = {
 			isa = PBXGroup;
 			children = (
+				404CF508210A4BD400B21C96 /* Virtual Objects */,
+				404CF505210A4BCE00B21C96 /* Utilities */,
+				404CF500210A4BBE00B21C96 /* Focus Square */,
+				404CF4FB210A4BB200B21C96 /* Additional View Controllers */,
 				4040BF6120F31776000158A0 /* ARKit.swift */,
+				404CF511210A4BF800B21C96 /* ThresholdPanGesture.swift */,
+				404CF512210A4BFA00B21C96 /* ViewController+Actions.swift */,
+				404CF513210A4BFB00B21C96 /* ViewController+ARSCNViewDelegate.swift */,
+				404CF50E210A4BF500B21C96 /* ViewController+ObjectSelection.swift */,
+				404CF50F210A4BF600B21C96 /* VirtualObjectARView.swift */,
+				404CF510210A4BF700B21C96 /* VirtualObjectInteraction.swift */,
 			);
 			path = ARKit;
 			sourceTree = "<group>";
@@ -804,6 +944,7 @@
 		407089CD20F3115700B922D4 /* VIews */ = {
 			isa = PBXGroup;
 			children = (
+				402AEEFC21088ACE00F3690C /* Common */,
 				402FE2882102D6400068048C /* HTextfiled */,
 				40BC88EE20FFAA0C0049CC44 /* HButton */,
 				40BC88ED20FFAA050049CC44 /* HView */,
@@ -995,7 +1136,10 @@
 				403832FF20FFB989005E3940 /* video_background.mp4 in Resources */,
 				40F67264210416B200784D09 /* Elements.storyboard in Resources */,
 				40BC88E020FF9F160049CC44 /* TabBarTopViewCell.xib in Resources */,
+				404CF521210A50B400B21C96 /* Models.scnassets in Resources */,
+				402AEEFB2108715F00F3690C /* PeriodicCell.xib in Resources */,
 				3BEB60BA20E527CB00A234FE /* Login.storyboard in Resources */,
+				402AEF0821088BB100F3690C /* Common.storyboard in Resources */,
 				3BEB608620E5246700A234FE /* Main.storyboard in Resources */,
 				4040BF6820F32720000158A0 /* table.json in Resources */,
 				402FE27D2101BAC80068048C /* Profile.storyboard in Resources */,
@@ -1003,9 +1147,9 @@
 				40BC88E220FF9F160049CC44 /* TabBarTopView.xib in Resources */,
 				403A28F02105098C00BF0099 /* ElementTableCell.xib in Resources */,
 				4040BF5E20F315D8000158A0 /* Setting.storyboard in Resources */,
-				4040BF5C20F315CE000158A0 /* ARKit.storyboard in Resources */,
 				4045B60020E50F4000E225A5 /* LaunchScreen.storyboard in Resources */,
 				4045B5FD20E50F4000E225A5 /* Assets.xcassets in Resources */,
+				404CF51D210A4C3F00B21C96 /* ARKit.storyboard in Resources */,
 				407089C620F303CD00B922D4 /* PeriodicTable.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1135,9 +1279,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				40BC88EA20FFA2330049CC44 /* Font.swift in Sources */,
+				404CF516210A4BFB00B21C96 /* VirtualObjectARView.swift in Sources */,
+				404CF504210A4BBE00B21C96 /* FocusSquareSegment.swift in Sources */,
 				407089CC20F30C9200B922D4 /* PeriodicTableVC.swift in Sources */,
 				40F6727621042C5900784D09 /* SubTableVC.swift in Sources */,
 				3BEB60C620E5284100A234FE /* UIColor+Ext.swift in Sources */,
+				404CF50B210A4BD400B21C96 /* VirtualObject.swift in Sources */,
 				402FE2832101C0010068048C /* ProfileCell.swift in Sources */,
 				403A28EB2105064100BF0099 /* SubTableVCFowLayout.swift in Sources */,
 				3BEB60A620E5254100A234FE /* BaseAPIError.swift in Sources */,
@@ -1147,45 +1294,61 @@
 				3BEB60CE20E5291600A234FE /* MainVC.swift in Sources */,
 				3BEB60E720E52C2D00A234FE /* BaseNV.swift in Sources */,
 				3BEB60D120E5299900A234FE /* LoginDto.swift in Sources */,
+				404CF503210A4BBE00B21C96 /* FocusSquare.swift in Sources */,
 				402FE29B2102E6C30068048C /* PickerViewViewController.swift in Sources */,
+				404CF507210A4BCE00B21C96 /* Utilities.swift in Sources */,
+				404CF4FE210A4BB200B21C96 /* StatusViewController.swift in Sources */,
 				40BC88E120FF9F160049CC44 /* TabBarTopView.swift in Sources */,
 				40F6727221042C1300784D09 /* DataController.swift in Sources */,
+				404CF517210A4BFB00B21C96 /* VirtualObjectInteraction.swift in Sources */,
 				4011BEBC2105759E00A928C4 /* SubCollectionVCFlowLayout.swift in Sources */,
 				40F6726721041B5000784D09 /* ElementListVC.swift in Sources */,
 				402FE2932102D9330068048C /* TwoTextFieldsViewController.swift in Sources */,
 				402FE2952102DA910068048C /* UITextField+Extensions.swift in Sources */,
 				3BEB60C320E5284100A234FE /* ValidateUtils.swift in Sources */,
 				3BEB60D420E529B400A234FE /* RegisterDto.swift in Sources */,
+				404CF51A210A4BFB00B21C96 /* ViewController+ARSCNViewDelegate.swift in Sources */,
 				3BEB60B020E526A600A234FE /* Constants.swift in Sources */,
+				404CF4F6210953EF00B21C96 /* ScrollMenu.swift in Sources */,
 				3BEB608C20E524BC00A234FE /* MenuVC.swift in Sources */,
 				402FE29E210313690068048C /* ChangePassVC.swift in Sources */,
 				3BEB60C420E5284100A234FE /* UIButton+Ext.swift in Sources */,
 				3BEB60E120E52A8B00A234FE /* BaseClvCell.swift in Sources */,
+				402AEF0B2108D78A00F3690C /* WebVC.swift in Sources */,
 				403A28EE2105092800BF0099 /* ElementTableCell.swift in Sources */,
+				402AEEFA2108715F00F3690C /* PeriodicCell.swift in Sources */,
 				407089D020F3119F00B922D4 /* Style+Navigation.swift in Sources */,
 				3BEB60DA20E52A3A00A234FE /* NSAtribitedString+Ext.swift in Sources */,
+				404CF518210A4BFB00B21C96 /* ThresholdPanGesture.swift in Sources */,
 				402FE2872102D3A20068048C /* UIAlertViewController + Ext.swift in Sources */,
 				40BC88F220FFAA2E0049CC44 /* HButton.swift in Sources */,
 				3BEB60C720E5284100A234FE /* UIView+Ext.swift in Sources */,
 				3BEB60E520E52ABC00A234FE /* BaseTbvCell.swift in Sources */,
 				4040BF6020F31601000158A0 /* SettingVC.swift in Sources */,
+				404CF4FA2109D7A200B21C96 /* PickerItemCell.swift in Sources */,
 				40BC88E820FF9FFB0049CC44 /* LoginRegisterVC.swift in Sources */,
 				402FE2922102D9330068048C /* OneTextFieldViewController.swift in Sources */,
 				402FE28C2102D7960068048C /* Common+Extensions.swift in Sources */,
+				402AEF0021088B6E00F3690C /* ItemCell.swift in Sources */,
 				407089D220F3120D00B922D4 /* CustomNavigation.swift in Sources */,
 				3BEB60A420E5254100A234FE /* LocationManager.swift in Sources */,
+				404CF519210A4BFB00B21C96 /* ViewController+Actions.swift in Sources */,
 				4045B5F620E50F3F00E225A5 /* AppDelegate.swift in Sources */,
 				40E113C02106317200290F9F /* User.swift in Sources */,
 				40F6727421042C4B00784D09 /* SubCollectionVC.swift in Sources */,
+				404CF50C210A4BD400B21C96 /* VirtualObjectLoader.swift in Sources */,
 				402FE2802101BFE10068048C /* ProfileVC.swift in Sources */,
 				3BEB60C820E5284100A234FE /* MoneyUtils.swift in Sources */,
+				402AEF0421088B8D00F3690C /* PickerItemVC.swift in Sources */,
 				3BEB60A920E5254100A234FE /* APIService.swift in Sources */,
 				4040BF6220F31776000158A0 /* ARKit.swift in Sources */,
 				402FE2982102E28C0068048C /* DatePickerViewController.swift in Sources */,
 				40BC88F020FFAA240049CC44 /* HView.swift in Sources */,
 				40BC88DF20FF9F160049CC44 /* TabBarTopViewCell.swift in Sources */,
 				3BEB60CB20E5289E00A234FE /* BaseDto.swift in Sources */,
+				402AEEF62108711900F3690C /* PeriodicCellFlow.swift in Sources */,
 				3BEB608B20E524BC00A234FE /* MenuCell.swift in Sources */,
+				404CF515210A4BFB00B21C96 /* ViewController+ObjectSelection.swift in Sources */,
 				4011BEBF2105764900A928C4 /* ElementCollectionCell.swift in Sources */,
 				3BEB609220E524ED00A234FE /* BaseVC.swift in Sources */,
 				40BC88EC20FFA2F70049CC44 /* String+Ext.swift in Sources */,
@@ -1196,6 +1359,7 @@
 				3BEB60AA20E5254100A234FE /* APIService+Profile.swift in Sources */,
 				3BEB60A520E5254100A234FE /* APIError.swift in Sources */,
 				40BC88E620FF9FC20049CC44 /* RegisterClvCell.swift in Sources */,
+				404CF4FF210A4BB200B21C96 /* VirtualObjectSelection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1237,6 +1401,14 @@
 				4045B5FF20E50F4000E225A5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		404CF51B210A4C3F00B21C96 /* ARKit.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				404CF51C210A4C3F00B21C96 /* Base */,
+			);
+			name = ARKit.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1365,7 +1537,10 @@
 				DEVELOPMENT_TEAM = 2UKZEPM7R9;
 				INFOPLIST_FILE = "ARChemistry/Suporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1382,7 +1557,10 @@
 				DEVELOPMENT_TEAM = 2UKZEPM7R9;
 				INFOPLIST_FILE = "ARChemistry/Suporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1397,7 +1575,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1413,7 +1595,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1428,7 +1614,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1443,7 +1633,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

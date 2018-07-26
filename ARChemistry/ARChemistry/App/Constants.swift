@@ -130,23 +130,18 @@ func stringToDate (_ from: String) -> Date {
     return Date()
 }
 
-func timestampToDate(_ from: Timestamp) -> Date {
-    return Date(timeIntervalSince1970: TimeInterval(from.seconds))
-}
-
-func timestampToString(_ from: Timestamp, _ format: String) -> String {
-    let date = timestampToDate(from)
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = format
-    return dateFormatter.string(from: date)
-}
-
 func showAlert(on: UIViewController, style: UIAlertControllerStyle, title: String?, message: String?, actions: [UIAlertAction] = [UIAlertAction(title: "Ok", style: .default, handler: nil)], completion: (() -> Swift.Void)? = nil) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: style)
     for action in actions {
         alert.addAction(action)
     }
     on.present(alert, animated: true, completion: completion)
+}
+
+func convertStringToNeededLink(_ from: String) -> String {
+    let replaceStr = from.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+    let linkStr = "https://vi.wikipedia.org/wiki/" + replaceStr!
+    return linkStr
 }
 
 struct AppColor {
@@ -170,6 +165,7 @@ struct AppColor {
     static let lantan               = UIColor(hex: "#FFA6FF")
     static let actinide             = UIColor(hex: "#FF7BCB")
     static let transition           = UIColor(hex: "#FFB9BE")
+    static let unknown              = UIColor(hex: "#E8E8E8")
 }
 
 struct ScreenSize {
@@ -187,7 +183,8 @@ public enum SBName : String {
     case ARKit = "ARKit";
     case Setting = "Setting";
     case Profile = "Profile";
-    case Element = "Elements"
+    case Element = "Elements";
+    case Common = "Common"
 
 }
 

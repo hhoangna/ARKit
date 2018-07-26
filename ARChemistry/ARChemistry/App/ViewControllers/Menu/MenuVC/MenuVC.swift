@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import Kingfisher
 import FirebaseAuth
 import ObjectMapper
 import ColorMatchTabs
 import FirebaseFirestore
+import Kingfisher
 
 class MenuVC: BaseVC {
     
@@ -87,6 +87,7 @@ extension MenuVC:UITableViewDataSource {
         if Config().user?.user?.imageUrl != nil {
             let url = URL(string: (Config().user?.user?.imageUrl)!)
             header.imvAvatar?.kf.setImage(with: url)
+            header.imvAvatar?.kf
         } else {
             header.imvAvatar?.image = UIImage(named: "ic_user")
         }
