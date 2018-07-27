@@ -68,7 +68,7 @@ class BaseVC: UIViewController {
     
     func needLandscapeMode() -> Bool {
         
-        if self is PeriodicTableVC || self is SettingVC{
+        if self is PeriodicTableVC{
             return true
         }
         

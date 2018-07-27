@@ -38,6 +38,8 @@ class StatusViewController: UIViewController {
     @IBOutlet weak private var messageLabel: UILabel!
     
     @IBOutlet weak private var restartExperienceButton: UIButton!
+    
+    @IBOutlet weak private var backButton: UIButton!
 
     // MARK: - Properties
     
@@ -119,6 +121,10 @@ class StatusViewController: UIViewController {
     
     @IBAction private func restartExperience(_ sender: UIButton) {
         restartExperienceHandler()
+    }
+    
+    @IBAction private func backToMain(_ sender: UIButton) {
+        App().mainVC?.showSlideMenu(isShow: true, animation: true)
     }
     
     // MARK: - Panel Visibility

@@ -20,7 +20,7 @@ class SettingVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(SWIDTH(), SHEIGHT())
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         
         clvContent.collectionViewLayout = PeriodicCellFlow(style: .regular)
         let nib = UINib(nibName: "PeriodicCell", bundle: nil)

@@ -142,6 +142,7 @@ extension MenuVC:UITableViewDelegate {
         case .AR_Element:
             let vcMain: ColorMatchTabsViewController = VCFromSB(ElementListVC(), SB: .Element)
             App().mainVC?.rootNV?.setViewControllers([vcMain], animated: false)
+            vcMain.navigationController?.setNavigationBarHidden(false, animated: false)
             curentFeature = feature;
             
             tableView.reloadData()
@@ -179,8 +180,10 @@ extension MenuVC:MenuCellDelegate {
     
     func didSelectedProfile(cell: MenuCell, btn: UIButton) {
         let vc: ProfileVC = VCFromSB(ProfileVC(), SB: .Profile)
+        vc.navigationController?.setNavigationBarHidden(false, animated: true)
         App().mainVC?.rootNV?.setViewControllers([vc], animated: false)
         App().mainVC?.showSlideMenu(isShow: false, animation: true)
+        curentFeature = nil
     }
 }
 
