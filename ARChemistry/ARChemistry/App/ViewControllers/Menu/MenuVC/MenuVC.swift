@@ -140,12 +140,7 @@ extension MenuVC:UITableViewDelegate {
         
         switch feature {
         case .AR_Element:
-            let vcMain: ColorMatchTabsViewController = VCFromSB(ElementListVC(), SB: .Element)
-            App().mainVC?.rootNV?.setViewControllers([vcMain], animated: false)
-            vcMain.navigationController?.setNavigationBarHidden(false, animated: false)
-            curentFeature = feature;
-            
-            tableView.reloadData()
+            vc = VCFromSB(ElementListVC(), SB: .Element)
             break
         case .AR_PredicTable:
             vc = VCFromSB(PeriodicTableVC(), SB: .PeriodicTable)

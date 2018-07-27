@@ -94,6 +94,7 @@
 		407089CC20F30C9200B922D4 /* PeriodicTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407089CB20F30C9200B922D4 /* PeriodicTableVC.swift */; };
 		407089D020F3119F00B922D4 /* Style+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407089CF20F3119F00B922D4 /* Style+Navigation.swift */; };
 		407089D220F3120D00B922D4 /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407089D120F3120D00B922D4 /* CustomNavigation.swift */; };
+		407D64BB210B921D0028ABD9 /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407D64BA210B921D0028ABD9 /* SearchBarCell.swift */; };
 		40BC88DF20FF9F160049CC44 /* TabBarTopViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88DB20FF9F160049CC44 /* TabBarTopViewCell.swift */; };
 		40BC88E020FF9F160049CC44 /* TabBarTopViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40BC88DC20FF9F160049CC44 /* TabBarTopViewCell.xib */; };
 		40BC88E120FF9F160049CC44 /* TabBarTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88DD20FF9F160049CC44 /* TabBarTopView.swift */; };
@@ -227,6 +228,7 @@
 		407089CB20F30C9200B922D4 /* PeriodicTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableVC.swift; sourceTree = "<group>"; };
 		407089CF20F3119F00B922D4 /* Style+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Style+Navigation.swift"; sourceTree = "<group>"; };
 		407089D120F3120D00B922D4 /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
+		407D64BA210B921D0028ABD9 /* SearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
 		40BC88DB20FF9F160049CC44 /* TabBarTopViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarTopViewCell.swift; sourceTree = "<group>"; };
 		40BC88DC20FF9F160049CC44 /* TabBarTopViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarTopViewCell.xib; sourceTree = "<group>"; };
 		40BC88DD20FF9F160049CC44 /* TabBarTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarTopView.swift; sourceTree = "<group>"; };
@@ -756,6 +758,7 @@
 				403A28EA2105064100BF0099 /* SubTableVCFowLayout.swift */,
 				403A28ED2105092800BF0099 /* ElementTableCell.swift */,
 				403A28EF2105098C00BF0099 /* ElementTableCell.xib */,
+				407D64BA210B921D0028ABD9 /* SearchBarCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1285,6 +1288,7 @@
 				40F6727621042C5900784D09 /* SubTableVC.swift in Sources */,
 				3BEB60C620E5284100A234FE /* UIColor+Ext.swift in Sources */,
 				404CF50B210A4BD400B21C96 /* VirtualObject.swift in Sources */,
+				407D64BB210B921D0028ABD9 /* SearchBarCell.swift in Sources */,
 				402FE2832101C0010068048C /* ProfileCell.swift in Sources */,
 				403A28EB2105064100BF0099 /* SubTableVCFowLayout.swift in Sources */,
 				3BEB60A620E5254100A234FE /* BaseAPIError.swift in Sources */,

@@ -17,9 +17,35 @@
                     <view key="view" contentMode="scaleToFill" id="xdQ-vt-1yw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wXm-Z8-2ux">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.11127865440586115" green="0.83650774552180729" blue="1" alpha="0.14728702910958905" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dKT-3H-EYn">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1Kr-PC-VCg" id="BsD-0k-AKW"/>
+                                    <outlet property="delegate" destination="1Kr-PC-VCg" id="UXN-AO-VVp"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TEW-5P-cCq" firstAttribute="bottom" secondItem="wXm-Z8-2ux" secondAttribute="bottom" id="0DZ-8C-mwR"/>
+                            <constraint firstItem="TEW-5P-cCq" firstAttribute="trailing" secondItem="wXm-Z8-2ux" secondAttribute="trailing" id="TvC-jz-emc"/>
+                            <constraint firstItem="wXm-Z8-2ux" firstAttribute="top" secondItem="TEW-5P-cCq" secondAttribute="top" id="YtY-Dy-KgE"/>
+                            <constraint firstItem="wXm-Z8-2ux" firstAttribute="leading" secondItem="TEW-5P-cCq" secondAttribute="leading" id="zx2-wG-ONh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TEW-5P-cCq"/>
                     </view>
+                    <connections>
+                        <outlet property="clvContent" destination="wXm-Z8-2ux" id="XG4-Hy-VdG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1RI-kz-qc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
