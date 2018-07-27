@@ -23,6 +23,7 @@ class BaseVC: UIViewController {
     fileprivate lazy var doneBarItem : UIBarButtonItem = UIBarButtonItem.doneButton(target: self, action: #selector(onNavigationSaveDone(_:)))
     fileprivate lazy var cancelBarItem : UIBarButtonItem = UIBarButtonItem.cancelButton(target: self, action: #selector(onNavigationBack(_:)))
     fileprivate lazy var editBarItem : UIBarButtonItem = UIBarButtonItem.editButton(target: self, action: #selector(onNavigationClickRightButton(_:)))
+    fileprivate lazy var filterBarItem : UIBarButtonItem = UIBarButtonItem.filterButton(target: self, action: #selector(onNavigationClickRightButton(_:)))
     
     weak var delegate:CustomNavigationDelegate?
     
@@ -186,6 +187,9 @@ extension BaseVC {
         case .BackEdit:
             self.navigationItem.leftBarButtonItem = menuBarItem
             self.navigationItem.rightBarButtonItem = editBarItem
+        case .MenuSort:
+            self.navigationItem.leftBarButtonItem = menuBarItem
+            self.navigationItem.rightBarButtonItem = filterBarItem
         }
     }
     

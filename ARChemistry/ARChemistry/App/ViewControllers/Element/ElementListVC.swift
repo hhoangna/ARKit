@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseFirestore
+import McPicker
 
 private let itemHeight: CGFloat = 100
 private let lineSpacing: CGFloat = 20
@@ -28,6 +29,7 @@ class ElementListVC: BaseVC {
         super.viewDidLoad()
         
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.delegate = self
     
         setupTableView()
         
@@ -38,12 +40,12 @@ class ElementListVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.updateNavigationBar(.Menu, "Chemical Element")
+        self.updateNavigationBar(.MenuSort, "Chemical Element")
     }
     
     private func loadElement(_ order: String) {
         
-        db.collection("Elements").order(by: "atom", descending: false).getDocuments { (snapshot, err) in
+        db.collection("Elements").order(by: order, descending: false).getDocuments { (snapshot, err) in
             if let err = err {
                 print("\(err.localizedDescription)")
             }else{
@@ -171,5 +173,34 @@ extension ElementListVC: UISearchBarDelegate {
             })
         }
         self.clvContent.reloadSections([1])
+    }
+}
+
+extension ElementListVC: CustomNavigationDelegate {
+    func didSelectedBackOrMenu() {
+        //
+    }
+    
+    func didSelectedRightButton() {
+        let data = ["Name", "Symbol", "Atom", "Type"]
+        McPicker.showAsPopover(data: [data], fromViewController: self, sourceView: nil, sourceRect: nil, barButtonItem: self.navigationItem.rightBarButtonItem) { [weak self](selections: [Int: String]) -> Void in
+            if let mode = selections[0] {
+                switch mode {
+                case "Name":
+                    self?.orderBy = "name"
+                case "Symbol":
+                    self?.orderBy = "symbol"
+                case "Atom":
+                    self?.orderBy = "atom"
+                case "Type":
+                    self?.orderBy = "type"
+                default:
+                    self?.orderBy = "atom"
+                }
+            }
+            self?.loadElement((self?.orderBy)!)
+            self?.clvContent.reloadSections([1])
+        }
+        
     }
 }

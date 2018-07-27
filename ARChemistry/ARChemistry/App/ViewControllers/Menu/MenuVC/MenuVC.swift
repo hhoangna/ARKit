@@ -9,7 +9,6 @@
 import UIKit
 import FirebaseAuth
 import ObjectMapper
-import ColorMatchTabs
 import FirebaseFirestore
 import Kingfisher
 

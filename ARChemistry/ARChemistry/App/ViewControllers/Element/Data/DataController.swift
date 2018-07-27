@@ -15,7 +15,6 @@
 //
 
 import UIKit
-import ColorMatchTabs
 
 private let collectionViewCellHeightCoefficient: CGFloat = 0.75
 private let collectionViewCellWidthCoefficient: CGFloat = 0.60 

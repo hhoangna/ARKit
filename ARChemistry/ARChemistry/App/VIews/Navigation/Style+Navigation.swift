@@ -100,6 +100,18 @@ extension UIBarButtonItem {
         return item
     }
     
+    class func filterButton(target: Any, action: Selector) -> UIBarButtonItem {
+        let frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        let button = customButton(with: #imageLiteral(resourceName: "ic-Sort"),
+                                  frame: frame,
+                                  target: target,
+                                  action: action)
+        
+        let item = UIBarButtonItem(customView: button)
+        
+        return item
+    }
+    
     class func cancelButton(target: Any, action: Selector) -> UIBarButtonItem {
         let button = setUpButtonWithText(text: "Cancel", target: target, action: action)
         let item = UIBarButtonItem(customView: button)
