@@ -210,6 +210,7 @@ class LoginClvCell: BaseClvCell, GIDSignInUIDelegate {
                 print("Document added")
                 App().hideHUDProgess("Success!", "", "ic_check", .customView)
                 Config().user?.token = uid
+                Config().user?.type = 1
                 Config().setUser(self.users)
                 App().loginSuccess()
             }

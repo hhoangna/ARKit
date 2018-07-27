@@ -21,13 +21,13 @@
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gyX-Ws-jVi" customClass="PeriodicTable" customModule="ARChemistry" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUx-6S-0Lo">
-                                        <rect key="frame" x="27" y="319" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUx-6S-0Lo">
+                                        <rect key="frame" x="35" y="319" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="hwX-w2-2QY"/>
                                             <constraint firstAttribute="width" constant="50" id="rT1-yx-RBt"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" image="ic-Back"/>
                                         <connections>
                                             <action selector="backToMain:" destination="VjK-5U-ExJ" eventType="touchUpInside" id="3zH-Wt-5js"/>
                                         </connections>
@@ -59,4 +59,7 @@
             <point key="canvasLocation" x="0.80000000000000004" y="32.833583208395808"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic-Back" width="30" height="30"/>
+    </resources>
 </document>
