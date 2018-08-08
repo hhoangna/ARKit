@@ -95,6 +95,8 @@
 		407089D020F3119F00B922D4 /* Style+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407089CF20F3119F00B922D4 /* Style+Navigation.swift */; };
 		407089D220F3120D00B922D4 /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407089D120F3120D00B922D4 /* CustomNavigation.swift */; };
 		407D64BB210B921D0028ABD9 /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407D64BA210B921D0028ABD9 /* SearchBarCell.swift */; };
+		40B3D24721197FD200C42DDC /* ListARKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B3D24621197FD200C42DDC /* ListARKit.swift */; };
+		40B3D24A2119812F00C42DDC /* CompoundDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B3D2492119812F00C42DDC /* CompoundDto.swift */; };
 		40BC88DF20FF9F160049CC44 /* TabBarTopViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88DB20FF9F160049CC44 /* TabBarTopViewCell.swift */; };
 		40BC88E020FF9F160049CC44 /* TabBarTopViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40BC88DC20FF9F160049CC44 /* TabBarTopViewCell.xib */; };
 		40BC88E120FF9F160049CC44 /* TabBarTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88DD20FF9F160049CC44 /* TabBarTopView.swift */; };
@@ -106,11 +108,10 @@
 		40BC88EC20FFA2F70049CC44 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88EB20FFA2F70049CC44 /* String+Ext.swift */; };
 		40BC88F020FFAA240049CC44 /* HView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88EF20FFAA240049CC44 /* HView.swift */; };
 		40BC88F220FFAA2E0049CC44 /* HButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC88F120FFAA2E0049CC44 /* HButton.swift */; };
+		40DFE9C0210DF79600864A3A /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DFE9BF210DF79600864A3A /* CameraVC.swift */; };
 		40E113C02106317200290F9F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E113BF2106317200290F9F /* User.swift */; };
 		40F67264210416B200784D09 /* Elements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40F67263210416B200784D09 /* Elements.storyboard */; };
 		40F6726721041B5000784D09 /* ElementListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F6726621041B5000784D09 /* ElementListVC.swift */; };
-		40F6727221042C1300784D09 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F6727121042C1300784D09 /* DataController.swift */; };
-		40F6727421042C4B00784D09 /* SubCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F6727321042C4B00784D09 /* SubCollectionVC.swift */; };
 		40F6727621042C5900784D09 /* SubTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F6727521042C5900784D09 /* SubTableVC.swift */; };
 		670CBD7411125318224EBACF /* Pods_ARChemistry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD748A86F5F7457567991A5B /* Pods_ARChemistry.framework */; };
 /* End PBXBuildFile section */
@@ -229,6 +230,8 @@
 		407089CF20F3119F00B922D4 /* Style+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Style+Navigation.swift"; sourceTree = "<group>"; };
 		407089D120F3120D00B922D4 /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
 		407D64BA210B921D0028ABD9 /* SearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
+		40B3D24621197FD200C42DDC /* ListARKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListARKit.swift; sourceTree = "<group>"; };
+		40B3D2492119812F00C42DDC /* CompoundDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundDto.swift; sourceTree = "<group>"; };
 		40BC88DB20FF9F160049CC44 /* TabBarTopViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarTopViewCell.swift; sourceTree = "<group>"; };
 		40BC88DC20FF9F160049CC44 /* TabBarTopViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarTopViewCell.xib; sourceTree = "<group>"; };
 		40BC88DD20FF9F160049CC44 /* TabBarTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarTopView.swift; sourceTree = "<group>"; };
@@ -240,11 +243,11 @@
 		40BC88EB20FFA2F70049CC44 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		40BC88EF20FFAA240049CC44 /* HView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HView.swift; sourceTree = "<group>"; };
 		40BC88F120FFAA2E0049CC44 /* HButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HButton.swift; sourceTree = "<group>"; };
+		40DFE9BE210DF76600864A3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ../../../../../../Downloads/Handling3DInteractionAndUIControlsInAugmentedReality/ARKitInteraction/en.lproj/ARKit.strings; sourceTree = "<group>"; };
+		40DFE9BF210DF79600864A3A /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		40E113BF2106317200290F9F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		40F67263210416B200784D09 /* Elements.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Elements.storyboard; sourceTree = "<group>"; };
 		40F6726621041B5000784D09 /* ElementListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementListVC.swift; sourceTree = "<group>"; };
-		40F6727121042C1300784D09 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		40F6727321042C4B00784D09 /* SubCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCollectionVC.swift; sourceTree = "<group>"; };
 		40F6727521042C5900784D09 /* SubTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTableVC.swift; sourceTree = "<group>"; };
 		FD748A86F5F7457567991A5B /* Pods_ARChemistry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARChemistry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -477,6 +480,7 @@
 		3BEB60AB20E5263300A234FE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				40B3D2482119811500C42DDC /* CompoundDto */,
 				3BEB60D220E529B400A234FE /* RegisterDto */,
 				3BEB60CF20E5299900A234FE /* LoginDto */,
 				3BEB60C920E5289D00A234FE /* BaseDto */,
@@ -737,7 +741,6 @@
 		403A28E82104EB1000BF0099 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
-				403A28F121050DFA00BF0099 /* SubCollectionVC */,
 				403A28E92105060400BF0099 /* SubTableVC */,
 			);
 			path = SubVC;
@@ -761,15 +764,6 @@
 				407D64BA210B921D0028ABD9 /* SearchBarCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		403A28F121050DFA00BF0099 /* SubCollectionVC */ = {
-			isa = PBXGroup;
-			children = (
-				4011BEBA2105757B00A928C4 /* Cell */,
-				40F6727321042C4B00784D09 /* SubCollectionVC.swift */,
-			);
-			path = SubCollectionVC;
 			sourceTree = "<group>";
 		};
 		4040BF6520F31E9C000158A0 /* View */ = {
@@ -921,17 +915,11 @@
 		407089C920F30B7800B922D4 /* ARKit */ = {
 			isa = PBXGroup;
 			children = (
-				404CF508210A4BD400B21C96 /* Virtual Objects */,
-				404CF505210A4BCE00B21C96 /* Utilities */,
-				404CF500210A4BBE00B21C96 /* Focus Square */,
-				404CF4FB210A4BB200B21C96 /* Additional View Controllers */,
+				4011BEBA2105757B00A928C4 /* Cell */,
+				40DFE9BC210DF5CA00864A3A /* Camera */,
+				40DFE9BB210DF54F00864A3A /* Environment */,
 				4040BF6120F31776000158A0 /* ARKit.swift */,
-				404CF511210A4BF800B21C96 /* ThresholdPanGesture.swift */,
-				404CF512210A4BFA00B21C96 /* ViewController+Actions.swift */,
-				404CF513210A4BFB00B21C96 /* ViewController+ARSCNViewDelegate.swift */,
-				404CF50E210A4BF500B21C96 /* ViewController+ObjectSelection.swift */,
-				404CF50F210A4BF600B21C96 /* VirtualObjectARView.swift */,
-				404CF510210A4BF700B21C96 /* VirtualObjectInteraction.swift */,
+				40B3D24621197FD200C42DDC /* ListARKit.swift */,
 			);
 			path = ARKit;
 			sourceTree = "<group>";
@@ -964,6 +952,14 @@
 				407089D120F3120D00B922D4 /* CustomNavigation.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		40B3D2482119811500C42DDC /* CompoundDto */ = {
+			isa = PBXGroup;
+			children = (
+				40B3D2492119812F00C42DDC /* CompoundDto.swift */,
+			);
+			path = CompoundDto;
 			sourceTree = "<group>";
 		};
 		40BC88D920FF9F160049CC44 /* TabBarTopView */ = {
@@ -1001,22 +997,46 @@
 			path = HButton;
 			sourceTree = "<group>";
 		};
+		40DFE9BB210DF54F00864A3A /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				404CF511210A4BF800B21C96 /* ThresholdPanGesture.swift */,
+				404CF512210A4BFA00B21C96 /* ViewController+Actions.swift */,
+				404CF513210A4BFB00B21C96 /* ViewController+ARSCNViewDelegate.swift */,
+				404CF50E210A4BF500B21C96 /* ViewController+ObjectSelection.swift */,
+				404CF50F210A4BF600B21C96 /* VirtualObjectARView.swift */,
+				404CF510210A4BF700B21C96 /* VirtualObjectInteraction.swift */,
+				404CF4FB210A4BB200B21C96 /* Additional View Controllers */,
+				404CF500210A4BBE00B21C96 /* Focus Square */,
+				404CF508210A4BD400B21C96 /* Virtual Objects */,
+				404CF505210A4BCE00B21C96 /* Utilities */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		40DFE9BC210DF5CA00864A3A /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				40DFE9C3210DFAC000864A3A /* Animation */,
+				40DFE9BF210DF79600864A3A /* CameraVC.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		40DFE9C3210DFAC000864A3A /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
 		40F6726521041B2D00784D09 /* Element */ = {
 			isa = PBXGroup;
 			children = (
 				403A28E82104EB1000BF0099 /* SubVC */,
-				40F6727021042BFF00784D09 /* Data */,
 				40F6726621041B5000784D09 /* ElementListVC.swift */,
 			);
 			path = Element;
-			sourceTree = "<group>";
-		};
-		40F6727021042BFF00784D09 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				40F6727121042C1300784D09 /* DataController.swift */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		779C234AA47064025A4DCB08 /* Frameworks */ = {
@@ -1293,6 +1313,7 @@
 				403A28EB2105064100BF0099 /* SubTableVCFowLayout.swift in Sources */,
 				3BEB60A620E5254100A234FE /* BaseAPIError.swift in Sources */,
 				40BC88E420FF9FAE0049CC44 /* LoginClvCell.swift in Sources */,
+				40B3D24A2119812F00C42DDC /* CompoundDto.swift in Sources */,
 				3BEB60A320E5254100A234FE /* Configuration.swift in Sources */,
 				3BEB60A720E5254100A234FE /* MessageKeys.swift in Sources */,
 				3BEB60CE20E5291600A234FE /* MainVC.swift in Sources */,
@@ -1303,9 +1324,9 @@
 				404CF507210A4BCE00B21C96 /* Utilities.swift in Sources */,
 				404CF4FE210A4BB200B21C96 /* StatusViewController.swift in Sources */,
 				40BC88E120FF9F160049CC44 /* TabBarTopView.swift in Sources */,
-				40F6727221042C1300784D09 /* DataController.swift in Sources */,
 				404CF517210A4BFB00B21C96 /* VirtualObjectInteraction.swift in Sources */,
 				4011BEBC2105759E00A928C4 /* SubCollectionVCFlowLayout.swift in Sources */,
+				40B3D24721197FD200C42DDC /* ListARKit.swift in Sources */,
 				40F6726721041B5000784D09 /* ElementListVC.swift in Sources */,
 				402FE2932102D9330068048C /* TwoTextFieldsViewController.swift in Sources */,
 				402FE2952102DA910068048C /* UITextField+Extensions.swift in Sources */,
@@ -1339,7 +1360,6 @@
 				404CF519210A4BFB00B21C96 /* ViewController+Actions.swift in Sources */,
 				4045B5F620E50F3F00E225A5 /* AppDelegate.swift in Sources */,
 				40E113C02106317200290F9F /* User.swift in Sources */,
-				40F6727421042C4B00784D09 /* SubCollectionVC.swift in Sources */,
 				404CF50C210A4BD400B21C96 /* VirtualObjectLoader.swift in Sources */,
 				402FE2802101BFE10068048C /* ProfileVC.swift in Sources */,
 				3BEB60C820E5284100A234FE /* MoneyUtils.swift in Sources */,
@@ -1360,6 +1380,7 @@
 				3BEB60C520E5284100A234FE /* UIKit+IB.swift in Sources */,
 				402FE28A2102D6580068048C /* HTextfield.swift in Sources */,
 				4054786E21076FE1002646B0 /* ElementDto.swift in Sources */,
+				40DFE9C0210DF79600864A3A /* CameraVC.swift in Sources */,
 				3BEB60AA20E5254100A234FE /* APIService+Profile.swift in Sources */,
 				3BEB60A520E5254100A234FE /* APIError.swift in Sources */,
 				40BC88E620FF9FC20049CC44 /* RegisterClvCell.swift in Sources */,
@@ -1411,6 +1432,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				404CF51C210A4C3F00B21C96 /* Base */,
+				40DFE9BE210DF76600864A3A /* en */,
 			);
 			name = ARKit.storyboard;
 			sourceTree = "<group>";
@@ -1541,7 +1563,10 @@
 				DEVELOPMENT_TEAM = 2UKZEPM7R9;
 				INFOPLIST_FILE = "ARChemistry/Suporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1558,7 +1583,10 @@
 				DEVELOPMENT_TEAM = 2UKZEPM7R9;
 				INFOPLIST_FILE = "ARChemistry/Suporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1573,7 +1601,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1589,7 +1621,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1604,7 +1640,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1619,7 +1659,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ARChemistryUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhumorous.ARChemistryUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

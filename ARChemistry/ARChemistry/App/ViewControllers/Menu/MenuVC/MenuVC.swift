@@ -146,7 +146,7 @@ extension MenuVC:UITableViewDelegate {
             break
     
         case .AR_Camera:
-            vc = VCFromSB(ARKit(), SB: .ARKit)
+            vc = VCFromSB(ListARKit(), SB: .ARKit)
             break
             
         case .AR_Setting:
