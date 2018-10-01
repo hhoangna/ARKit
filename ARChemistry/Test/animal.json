@@ -1,0 +1,20 @@
+{
+    "animals": [
+        {
+            "name": "Dog",
+            "weight": 30
+        },
+        {
+            "name": "Cat",
+            "weight": 10
+        },
+        {
+            "name": "Pig",
+            "weight": 100
+        },
+        {
+            "name": "Cow",
+            "weight": 150
+        }
+    ]
+}
